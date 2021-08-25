@@ -1,9 +1,6 @@
 @forward './config';
+@forward './logo';
 
 :root {
     --font-headings: "Space Mono";
-}
-
-body {
-    background-color: #eee;
 }

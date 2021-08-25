@@ -1,0 +1,31 @@
+.site-footer > .site-info .site-name::before,
+.site-branding::before {
+	position: absolute;
+	visibility: visible;
+	content: "";
+	display: flex;
+	background-size: cover;
+}
+.site-footer > .site-info .site-name,
+.site-description,
+.home .site-branding .site-title {
+	visibility: hidden;
+}
+
+// Header logo
+.site-branding .site-title > a {
+	opacity: 0;
+	display: flex;
+	width: min(50vw, 240px);
+	height: min(18vw, 100px);
+}
+.site-branding {
+    &::before {
+        width: min(50vw, 240px);
+        height: min(18vw, 100px);
+        background-image: svg-load("./build/images/icons/logo--margined.svg");
+    }
+}
+
+// Footer logo
+
