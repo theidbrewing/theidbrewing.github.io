@@ -1,0 +1,13 @@
+.primary-navigation {
+    .menu-item {
+        > a {
+            font-family: var(--theidbrewing--list--font-family);
+            font-weight: 600;
+
+            .menu-item-description {
+                font-family: var(--theidbrewing--ja--font-family);
+                font-weight: 300;
+            }
+        }
+    }
+}

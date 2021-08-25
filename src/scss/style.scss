@@ -1,6 +1,4 @@
 @forward './config';
-@forward './logo';
-
-:root {
-    --font-headings: "Space Mono";
-}
+@forward './components/logo';
+@forward './components/navigation';
+@forward './global';

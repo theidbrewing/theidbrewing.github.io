@@ -25,14 +25,25 @@ define('THEIDBREWING_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 /**
  * JSとCSSの読み込み
  */
-function set_enqueue_files()
+function theidbrewing_set_enqueue_files()
 {
+    // ENqueue Google Fonts.
+    // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Open+Sans:wght@600&family=Space+Mono:wght@400;700&display=swap', array(), null);
+    // phpcs:enable
     // Enqueue CSS.
     wp_enqueue_style(
-        'altslogo_admin_style',
+        'theidbrewing',
         THEIDBREWING_URL . '/style.css',
         array('wp-components'),
         filectime(THEIDBREWING_PATH . '/style.css')
     );
 }
-add_action( 'wp_enqueue_scripts', 'set_enqueue_files');
+add_action('wp_enqueue_scripts', 'theidbrewing_set_enqueue_files');
+
+function theidbrewing_set_enqueue_google_fonts()
+{
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+}
+add_action('wp_head', 'theidbrewing_set_enqueue_google_fonts');
