@@ -1,13 +1,41 @@
-.primary-navigation {
-    .menu-item {
-        > a {
-            font-family: var(--theidbrewing--list--font-family);
-            font-weight: 600;
+@use '../variable' as v;
 
-            .menu-item-description {
-                font-family: var(--theidbrewing--ja--font-family);
-                font-weight: 300;
+.theidbrewing {
+    .primary-navigation {
+        .menu-item {
+            > a {
+                font-family: var(--theidbrewing--list--font-family);
+                font-weight: 600;
+                text-align: center;
+    
+                .menu-item-description {
+                    font-family: var(--theidbrewing--ja--font-family);
+                    font-weight: 300;
+                }
+            }
+        }
+        .menu-button-container {
+            padding: 16px 8px 0 0;
+            #primary-mobile-menu.button {
+                padding: 0;
+            }
+        }
+        .dropdown-icon {
+            visibility: hidden;
+            position: relative;
+            width: var(--icon-size, 44px);
+            height: var(--icon-size, 44px);
+            overflow: hidden;
+            &.open::before {
+                visibility: visible;
+                position: absolute;
+                content: "";
+                display: flex;
+                width: var(--icon-size, 44px);
+                height: var(--icon-size, 44px);
+                background-image: svg-load("./build/images/icons/hamburger-menu.svg", fill=#{v.$color-purple-500});
             }
         }
     }
 }
+

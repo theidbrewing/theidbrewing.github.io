@@ -41,9 +41,23 @@ function theidbrewing_set_enqueue_files()
 }
 add_action('wp_enqueue_scripts', 'theidbrewing_set_enqueue_files');
 
+/**
+ * Google Font用のpreconnect
+ */
 function theidbrewing_set_enqueue_google_fonts()
 {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
 }
 add_action('wp_head', 'theidbrewing_set_enqueue_google_fonts');
+
+/**
+ * bodyに専用クラス付与
+ * 
+ * @param array $classes is CSS class name 
+ */
+function theidbrewing_set_body_class($classes)
+{
+    return array_merge( $classes, array( 'theidbrewing' ) );
+}
+add_filter( 'body_class', 'theidbrewing_set_body_class' );

@@ -1,9 +1,9 @@
 // Site Header
-
+.site .site-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+}
 @media only screen and (min-width: 822px) {
-    .site .site-header {
-        padding-top: 0;
-        padding-bottom: 0;
-        align-items: center;
-    }
+
 }
