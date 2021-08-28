@@ -1,3 +1,4 @@
+/* 追加CSSに書いていたコードのバックアップ　あとで消す */
 /* Global */
 :root {
     --responsive--aligndefault-width: min(calc(100vw - 4 * var(--global--spacing-horizontal)), 820px);
