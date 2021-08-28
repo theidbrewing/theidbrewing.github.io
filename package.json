@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
+    "init:skin": "node convert_to_scss.js",
     "lint-css": "wp-scripts lint-style './src/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
     "sass": "npx sass --no-source-map ./src/skins",
