@@ -13,28 +13,41 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 	 */
 	class TT1skin_Config {
 
+		/**
+		 * skin_data
+		 *
+		 * @var object $skin_data object getting from skin.json.
+		 */
+		public static $skin_data;
 
 		/**
 		 * Init
 		 */
 		public static function init() {
+
+			// Get skin data.
+			self::$skin_data = self::get_skin_datas();
+
 			// Enqueue files.
 			add_action( 'wp_enqueue_scripts', array( get_called_class(), 'set_enqueue_files' ) );
-			// preconnect.
-			// TODO Google Font が設定されているかどうか確認して実行するように変更する↓.
-			add_action( 'wp_head', array( get_called_class(), 'set_preconnect_google_fonts' ) );
+
+			if ( isset( self::$skin_data->settings->google_fonts_url ) ) {
+				// Preconnect for Google Fonts.
+				add_action( 'wp_head', array( get_called_class(), 'set_preconnect_google_fonts' ) );
+			}
 			// Set body class.
 			add_filter( 'body_class', array( get_called_class(), 'set_body_class' ) );
+
+			// Set Color Pallete.
+			add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_colors' ), 11 );
 		}
 
 		/**
 		 * Set enqueue files
 		 */
 		public static function set_enqueue_files() {
-			// Get skin.json data.
-			$skin_data = self::get_skin_datas();
-			if ( is_object( $skin_data ) ) {
-				$skin_name = $skin_data->name;
+			if ( is_object( self::$skin_data ) ) {
+				$skin_name = self::$skin_data->name;
 				if ( ! isset( $skin_name ) ) {
 					$skin_name = 'tt1-skin-default';
 				}
@@ -45,17 +58,17 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 					array(),
 					filectime( TT1SKIN_PATH . '/style.css' )
 				);
-				// Google fonts が指定されていれば読み込む.
-				if ( isset( $skin_data->settings->google_fonts_url ) ) {
+				// Enqueue Google fonts.
+				if ( isset( self::$skin_data->settings->google_fonts_url ) ) {
 					// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-					wp_enqueue_style( 'google-fonts', $skin_data->settings->google_fonts_url, array(), null );
+					wp_enqueue_style( 'google-fonts', self::$skin_data->settings->google_fonts_url, array(), null );
 					// phpcs:enable
 				}
 			}
 		}
 
 		/**
-		 * Google Font用のpreconnect
+		 * Set preconnect for Google Fonts
 		 */
 		public static function set_preconnect_google_fonts() {
 			echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
@@ -75,13 +88,26 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		}
 
 		/**
-		 * bodyに専用クラス付与
+		 * Set custom classes to body tag
 		 *
 		 * @param array $classes are CSS class names for body tag.
 		 */
 		public static function set_body_class( $classes ) {
-			// TODO JSONのスキン名を読み込ませる.
-			return array_merge( $classes, array( 'tt1skin', 'theidbrewing' ) );
+			if ( isset( self::$skin_data->name ) ) {
+				return array_merge( $classes, array( 'tt1skin', self::$skin_data->name ) );
+			} else {
+				return array_merge( $classes, array( 'tt1skin' ) );
+			}
+		}
+
+		/**
+		 * Set custom colors on the color palette
+		 */
+		public static function set_custom_colors() {
+			if ( isset( self::$skin_data->settings->color->palette ) ) {
+				$colors_array = (array) self::$skin_data->settings->color->palette;
+				add_theme_support( 'editor-color-palette', $colors_array );
+			}
 		}
 	}
 }

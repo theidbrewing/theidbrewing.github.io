@@ -4,7 +4,7 @@
  * Description:       CSS styles for the_ID Brewing demo sites
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           0.0.1
  * Author:            theidbrewing
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,6 @@ define( 'TT1SKIN_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
 // Json Controller.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-json-controller.php';
-// TT1 theme Skin Config.
+// TT1 Skin Config.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-config.php';
 TT1skin_Config::init();
