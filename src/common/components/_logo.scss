@@ -32,7 +32,7 @@
 		&::before {
 			width: min(50vw, var(--logo-width));
 			height: min(18vw, var(--logo-height));
-			background-image: svg-load("./build/images/icons/logo--margined.svg");
+			background-image: svg-load("../../../../build/images/icons/logo--margined.svg");
 		}
 	}
 
