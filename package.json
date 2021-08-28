@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
+    "init:skin": "node convert_to_scss.js",
     "lint-css": "wp-scripts lint-style './src/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
-    "sass": "npx sass --no-source-map src/scss/style.scss:style.css",
-    "postcss:autoprefix": "npx postcss style.css --use autoprefixer -r --no-map",
-    "postcss:svginline": "npx postcss style.css --use postcss-inline-svg -r --no-map",
-    "postcss:all": "npx postcss style.css --use autoprefixer postcss-inline-svg -r --no-map",
-    "build:css": "run-s sass postcss:all",
+    "sass": "npx sass --no-source-map ./src/skins",
+    "postcss:skin01": "npx postcss ./src/skins/theidbrewing/scss/style.css --use autoprefixer postcss-inline-svg -r --no-map",
+    "mv:skin01": "mv ./src/skins/theidbrewing/scss/style.css ./build/skins/theidbrewing",
+    "build:css": "run-s sass postcss:* mv:*",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses"
   },

@@ -13,6 +13,7 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 	 */
 	class TT1skin_Config {
 
+
 		/**
 		 * skin_data
 		 *
@@ -24,7 +25,6 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		 * Init
 		 */
 		public static function init() {
-
 			// Get skin data.
 			self::$skin_data = self::get_skin_datas();
 
@@ -48,16 +48,15 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		public static function set_enqueue_files() {
 			if ( is_object( self::$skin_data ) ) {
 				$skin_name = self::$skin_data->name;
-				if ( ! isset( $skin_name ) ) {
-					$skin_name = 'tt1-skin-default';
+				if ( isset( $skin_name ) ) {
+					// Enqueue CSS.
+					wp_enqueue_style(
+						$skin_name,
+						TT1SKIN_URL . '/build/skins/' . $skin_name . '/style.css',
+						array(),
+						filectime( TT1SKIN_PATH . '/build/skins/' . $skin_name . '/style.css' )
+					);
 				}
-				// Enqueue CSS.
-				wp_enqueue_style(
-					$skin_name,
-					TT1SKIN_URL . '/style.css',
-					array(),
-					filectime( TT1SKIN_PATH . '/style.css' )
-				);
 				// Enqueue Google fonts.
 				if ( isset( self::$skin_data->settings->google_fonts_url ) ) {
 					// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
