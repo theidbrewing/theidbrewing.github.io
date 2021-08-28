@@ -54,7 +54,7 @@ add_action('wp_head', 'theidbrewing_set_enqueue_google_fonts');
 /**
  * bodyに専用クラス付与
  * 
- * @param array $classes is CSS class name 
+ * @param array $classes are CSS class names for body tag
  */
 function theidbrewing_set_body_class($classes)
 {

@@ -1,15 +1,15 @@
 @use '../variable' as v;
 
-.theidbrewing {
+.#{v.$prefix-skin--common} {
     .primary-navigation {
         .menu-item {
             > a {
-                font-family: var(--theidbrewing--list--font-family);
+                font-family: var(--skin--list--font-family);
                 font-weight: 600;
                 text-align: center;
     
                 .menu-item-description {
-                    font-family: var(--theidbrewing--ja--font-family);
+                    font-family: var(--skin--ja--font-family);
                     font-weight: 300;
                 }
             }
@@ -33,7 +33,7 @@
                 display: flex;
                 width: var(--icon-size, 44px);
                 height: var(--icon-size, 44px);
-                background-image: svg-load("./build/images/icons/hamburger-menu.svg", fill=#{v.$color-purple-500});
+                background-image: svg-load("./build/images/icons/hamburger-menu.svg", fill=#{v.$color-accent-01-500});
             }
         }
     }

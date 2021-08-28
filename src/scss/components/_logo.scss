@@ -1,37 +1,40 @@
-.site-branding {
-	--logo-width: 280px;
-	--logo-height: 112px;
-	width: min(50vw, var(--logo-width));
-	height: min(18vw, var(--logo-height));
-}
-.site-footer > .site-info .site-name::before,
-.site-branding::before {
-	position: absolute;
-	visibility: visible;
-	content: "";
-	display: flex;
-	background-size: cover;
-}
-.site-footer > .site-info .site-name,
-.site-description,
-.home .site-branding .site-title {
-	visibility: hidden;
-}
+@use '../variable' as v;
 
-// Header logo
-.site-branding .site-title > a {
-	opacity: 0;
-	display: flex;
-	width: min(50vw, var(--logo-width));
-	height: min(18vw, var(--logo-height));
-}
-.site-branding {
-    &::before {
-        width: min(50vw, var(--logo-width));
-        height: min(18vw, var(--logo-height));
-        background-image: svg-load("./build/images/icons/logo--margined.svg");
-    }
-}
+.#{v.$prefix-skin--common} {
+	.site-branding {
+		--logo-width: 280px;
+		--logo-height: 112px;
+		width: min(50vw, var(--logo-width));
+		height: min(18vw, var(--logo-height));
+	}
+	.site-footer > .site-info .site-name::before,
+	.site-branding::before {
+		position: absolute;
+		visibility: visible;
+		content: "";
+		display: flex;
+		background-size: cover;
+	}
+	.site-footer > .site-info .site-name,
+	.site-description,
+	.site-branding .site-title {
+		visibility: hidden;
+	}
 
-// Footer logo
+	// Header logo
+	.site-branding .site-title > a {
+		opacity: 0;
+		display: flex;
+		width: min(50vw, var(--logo-width));
+		height: min(18vw, var(--logo-height));
+	}
+	.site-branding {
+		&::before {
+			width: min(50vw, var(--logo-width));
+			height: min(18vw, var(--logo-height));
+			background-image: svg-load("./build/images/icons/logo--margined.svg");
+		}
+	}
 
+	// Footer logo
+}
