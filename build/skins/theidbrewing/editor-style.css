@@ -2,10 +2,12 @@
   --icon-size: 44px;
 }
 
+:root,
 .tt1skin {
   --global--color-primary: #540CED;
   --global--color-secondary: #B900D8;
   --global--color-body: #1C0120;
+  --global--color-background: #fbfbfb;
   --button--font-size: min(5vw, 18px);
   --button--padding-vertical: min(3vw, 13px);
   --button--padding-horizontal: min(6vw, 28px);
@@ -79,6 +81,65 @@
   width: var(--icon-size, 44px);
   height: var(--icon-size, 44px);
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg' fill='%23540CED'%3E%3Cpath d='M9 9h26v3H9zM9 21h26v3H9zM9 32h26v3H9z'/%3E%3C/svg%3E");
+}
+
+.tt1skin .wp-block-button .wp-block-button__link {
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.tt1skin .wp-block-button.is-style-outline .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
+  color: var(--global--color-body);
+}
+.tt1skin .wp-block-button.is-style-outline .wp-block-button__link:hover {
+  color: var(--global--color-body) !important;
+  background-color: #fff !important;
+  border-color: var(--global--color-primary) !important;
+}
+.tt1skin .wp-block-button.is-style-fill .wp-block-button__link {
+  font-size: min(6vw, 21px);
+  font-weight: 700;
+  padding: calc(1.2 * var(--button--padding-vertical)) calc(1.4 * var(--button--padding-horizontal));
+}
+.tt1skin .wp-block-button.is-style-fill .wp-block-button__link:hover {
+  color: #fff !important;
+  background-color: #3F09B2 !important;
+  border-color: #3F09B2 !important;
+}
+
+.is-style-card,
+.wp-block-column.is-style-card {
+  color: var(--global--color-background);
+  background-color: var(--global--color-body);
+  font-size: min(5vw, 16px);
+}
+.is-style-card .is-style-subtitle,
+.wp-block-column.is-style-card .is-style-subtitle {
+  color: #bcbcbc;
+  font-family: var(--heading--font-family);
+  font-size: min(7vw, 24px);
+  font-weight: 700;
+}
+.is-style-card h3,
+.wp-block-column.is-style-card h3 {
+  font-size: min(8vw, 38px);
+  font-weight: 700;
+}
+.is-style-card .wp-block-table,
+.wp-block-column.is-style-card .wp-block-table {
+  min-width: auto;
+}
+.is-style-card .wp-block-table table,
+.wp-block-column.is-style-card .wp-block-table table {
+  min-width: auto;
+}
+.is-style-card .wp-block-table table th,
+.is-style-card .wp-block-table table td,
+.wp-block-column.is-style-card .wp-block-table table th,
+.wp-block-column.is-style-card .wp-block-table table td {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: #B2A923;
+  font-size: min(3.5vw, 14px);
 }
 
 .tt1skin .site .site-header {

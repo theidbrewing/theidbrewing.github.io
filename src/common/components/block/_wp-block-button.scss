@@ -1,0 +1,32 @@
+@use '../../variables/common' as cmn;
+.#{cmn.$prefix-skin--common} {
+    .wp-block-button {
+        .wp-block-button__link {
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        &.is-style-outline {
+            .wp-block-button__link {
+                &:not(:hover):not(:active):not(.has-text-color) {
+                    color: var(--global--color-body);
+                }
+                &:hover {
+                    color: var(--global--color-body) !important;
+                    background-color: #fff !important;
+                    border-color: var(--global--color-primary) !important;
+                }
+            }
+        }
+        &.is-style-fill {
+            .wp-block-button__link {
+                font-size: min(6vw, 21px);
+                font-weight: 700;
+                padding: calc(1.2 * var(--button--padding-vertical)) calc(1.4 * var(--button--padding-horizontal));
+                &:hover {
+                    color: #fff !important;
+                    background-color: #{cmn.$color-primary-600} !important;
+                    border-color: #{cmn.$color-primary-600} !important;
+                }
+            }
+        }
+    }
+}

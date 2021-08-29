@@ -2,7 +2,11 @@
 @forward '../../../common/css_variable';
 @forward './css_variable';
 
-// スキン共通スタイル
+// スキン共通スタイル　コンポーネント
 @forward '../../../common/components/logo';
 @forward '../../../common/components/navigation';
+@forward '../../../common/components/block/wp-block-button';
+@forward '../../../common/components/card';
+
+// スキン共通スタイル　グローバル
 @forward '../../../common/global';
