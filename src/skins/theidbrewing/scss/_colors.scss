@@ -1,0 +1,19 @@
+@use './skin_config' as skin;
+
+.#{skin.$skin-name} {
+    // カラーを変数として書き出し
+    @each $key, $color-var in skin.$skin-colors {
+        --color-#{$key}: #{$color-var};
+        --color-#{$key}-rgb: #{red($color-var)}, #{green($color-var)}, #{blue($color-var)};
+    }
+}
+
+// 文字色と背景色を書き出し
+@each $key, $color-var in skin.$skin-colors {
+    .has-#{$key}-color {
+        color: var(--color-#{$key});
+    }
+    .has-#{$key}-background-color {
+        background-color: var(--color-#{$key});
+    }
+}

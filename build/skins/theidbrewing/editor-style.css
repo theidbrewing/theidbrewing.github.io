@@ -115,7 +115,6 @@ h2.is-style-section-title,
   font-weight: 700;
   font-size: min(12vw, 120px);
   margin-bottom: 0;
-  color: #ED2455;
   position: relative;
   word-break: break-all;
   line-height: 0.9;
@@ -145,9 +144,9 @@ h2.is-style-section-title + *,
     position: absolute;
     z-index: -1;
     left: 0;
-    transform: rotate(90deg) translate(1.3em, 1.7em);
+    transform: rotate(90deg) translate(5em, 5.65em);
     max-width: none;
-    width: 50%;
+    width: 12em;
   }
   .tt1skin h2.is-style-section-title::after, .tt1skin h2.is-style-section-title.alignwide::after {
     top: -150px;
@@ -166,7 +165,7 @@ h2.is-style-section-title + *,
     text-align: left;
     left: auto;
     right: 0;
-    transform: rotate(90deg) translate(1.3em, -1.8em);
+    transform: rotate(90deg) translate(5em, -5.65em);
   }
 }
 .is-style-card,
@@ -206,6 +205,10 @@ h2.is-style-section-title + *,
   font-size: min(3.5vw, 14px);
 }
 
+.tt1skin {
+  width: 100%;
+  overflow-x: hidden;
+}
 .tt1skin .site .site-header {
   padding-top: 0;
   padding-bottom: 0;

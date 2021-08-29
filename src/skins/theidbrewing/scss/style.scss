@@ -13,3 +13,6 @@
 
 // スキン共通スタイル　グローバル
 @forward '../../../common/global';
+
+// スキン独自スタイル
+@forward './colors';

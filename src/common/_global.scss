@@ -1,6 +1,9 @@
 @use './variables/common' as cmn;
 
 .#{cmn.$prefix-skin--common} {
+    width: 100%;
+    overflow-x: hidden;
+    
     // Site Header
     .site .site-header {
         padding-top: 0;
