@@ -1,0 +1,32 @@
+@use '../variables/common' as cmn;
+
+.is-style-card,
+.wp-block-column.is-style-card {
+    color: var(--global--color-background);
+    background-color: var(--global--color-body);
+    font-size: min(5vw, 16px);
+    .is-style-subtitle {
+        color: #{cmn.$color-base-600};
+        font-family: var(--heading--font-family);
+        font-size: min(7vw, 24px);
+        font-weight: 700;
+    }
+    h3 {
+        font-size: min(8vw, 38px);
+        font-weight: 700;
+    }
+    .wp-block-table {
+        min-width: auto;
+        table {
+            min-width: auto;
+            th,
+            td {
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+                border-color: #{cmn.$color-accent-03-600};
+                font-size: min(3.5vw, 14px);
+            }
+        }
+    }
+}
