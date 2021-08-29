@@ -2,7 +2,17 @@
 
 Custom skin for WordPress Default theme TT1.
 
+## Required environment
+
+composer, node, npm.
+
 ## Install
+
+npm install
+
+```
+$ npm i
+```
 
 wp-env global install
 
@@ -31,4 +41,3 @@ $ npm run init:skin
 ```
 $ npm run build:css
 ```
-
