@@ -31,6 +31,9 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 			// Enqueue files.
 			add_action( 'wp_enqueue_scripts', array( get_called_class(), 'set_enqueue_files' ) );
 
+			// Set custom editor style.
+			add_action( 'after_setup_theme', array( get_called_class(), 'my_editor_style_setup' ), 12 );
+
 			if ( isset( self::$skin_data->settings->google_fonts_url ) ) {
 				// Preconnect for Google Fonts.
 				add_action( 'wp_head', array( get_called_class(), 'set_preconnect_google_fonts' ) );
@@ -63,6 +66,24 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 					wp_enqueue_style( 'google-fonts', self::$skin_data->settings->google_fonts_url, array(), null );
 					// phpcs:enable
 				}
+			}
+		}
+
+		/**
+		 * Add custom editor style
+		 *
+		 * カスタムエディタースタイルを反映.
+		 */
+		public static function my_editor_style_setup() {
+			add_theme_support( 'editor-styles' );
+			// テーマからの相対パスで指定.
+			// TODO distした時のパスを変更する処理が必要.
+			if ( isset( self::$skin_data->name ) ) {
+				add_editor_style( '../../plugins/theidbrewing.github.io/build/skins/' . self::$skin_data->name . '/editor-style.css' );
+			}
+			// Enqueue Google fonts.
+			if ( isset( self::$skin_data->settings->google_fonts_url ) ) {
+				add_editor_style( self::$skin_data->settings->google_fonts_url, array() );
 			}
 		}
 

@@ -7,8 +7,8 @@
     "lint-css": "wp-scripts lint-style './src/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
     "sass": "npx sass --no-source-map ./src/skins",
-    "postcss:skin01": "npx postcss ./src/skins/theidbrewing/scss/style.css --use autoprefixer postcss-inline-svg -r --no-map",
-    "mv:skin01": "mv ./src/skins/theidbrewing/scss/style.css ./build/skins/theidbrewing",
+    "postcss:skin01": "npx postcss ./src/skins/theidbrewing/scss/style.css --use autoprefixer postcss-inline-svg -r --no-map & npx postcss ./src/skins/theidbrewing/scss/editor-style.css --use autoprefixer postcss-inline-svg -r --no-map",
+    "mv:skin01": "mv ./src/skins/theidbrewing/scss/style.css ./build/skins/theidbrewing & mv ./src/skins/theidbrewing/scss/editor-style.css ./build/skins/theidbrewing",
     "build:css": "run-s sass postcss:* mv:*",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses"
