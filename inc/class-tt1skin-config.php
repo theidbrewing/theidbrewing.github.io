@@ -28,9 +28,6 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 			// Get skin data.
 			self::$skin_data = self::get_skin_datas( 'theidbrewing' );
 
-			// temp 読み込みテスト
-			self::get_skins_directory();
-
 			// Enqueue files.
 			add_action( 'wp_enqueue_scripts', array( get_called_class(), 'set_enqueue_files' ) );
 
