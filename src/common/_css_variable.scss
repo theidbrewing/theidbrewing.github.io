@@ -1,0 +1,18 @@
+@use './variables/common' as cmn;
+
+:root {
+    // icon
+    --icon-size: 44px;
+}
+.#{cmn.$prefix-skin--common} {
+    --global--color-primary: #{cmn.$color-primary-500};
+    --global--color-secondary: #{cmn.$color-accent-01-500};
+    --global--color-body: #{cmn.$color-body-500};
+
+    --button--font-size: min(5vw, 18px);
+    --button--padding-vertical: min(3vw, 13px);
+    --button--padding-horizontal: min(6vw, 28px);
+
+    // body color を上書き
+    color: var(--global--color-body);
+}

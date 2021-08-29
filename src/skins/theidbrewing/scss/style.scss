@@ -1,4 +1,8 @@
-@forward '../../../common/config';
+// CSS 変数
+@forward '../../../common/css_variable';
+@forward './css_variable';
+
+// スキン共通スタイル
 @forward '../../../common/components/logo';
 @forward '../../../common/components/navigation';
 @forward '../../../common/global';

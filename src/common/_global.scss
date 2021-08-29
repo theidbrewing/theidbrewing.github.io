@@ -1,13 +1,11 @@
-@use './variable' as v;
+@use './variables/common' as cmn;
 
-.#{v.$prefix-skin--common} {
+.#{cmn.$prefix-skin--common} {
     // Site Header
     .site .site-header {
         padding-top: 0;
         padding-bottom: 0;
         align-items: center;
-        max-width: 1024px;
-    }
-    @media only screen and (min-width: 822px) {
+        max-width: var(--responsive--alignwide-width);
     }
 }

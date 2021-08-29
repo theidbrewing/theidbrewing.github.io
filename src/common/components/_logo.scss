@@ -1,6 +1,6 @@
-@use '../variable' as v;
+@use '../variables/common' as cmn;
 
-.#{v.$prefix-skin--common} {
+.#{cmn.$prefix-skin--common} {
 	.site-branding {
 		--logo-width: 280px;
 		--logo-height: 112px;
