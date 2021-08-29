@@ -12,7 +12,9 @@
     "build:css": "run-s sass postcss:* mv:*",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses",
-    "list:skin": "ls -1 ./src/skins/"
+    "list:skin": "ls -1 ./src/skins/",
+    "count:skin": "skins_count=(`ls -1 ./src/skins`) && echo ${#skins_count[@]}",
+    "build:skin": "npx sass --no-source-map ./src/skins/$npm_config_skin && mkdir -p ./build/skins/$npm_config_skin && mv ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin"
   },
   "repository": {
     "type": "git",
