@@ -26,7 +26,10 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		 */
 		public static function init() {
 			// Get skin data.
-			self::$skin_data = self::get_skin_datas();
+			self::$skin_data = self::get_skin_datas( 'theidbrewing' );
+
+			// temp 読み込みテスト
+			self::get_skins_directory();
 
 			// Enqueue files.
 			add_action( 'wp_enqueue_scripts', array( get_called_class(), 'set_enqueue_files' ) );
@@ -76,9 +79,11 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 
 		/**
 		 * Get datas from skin.json
+		 *
+		 * @param string $skin_dir_name is skin dir name from ./src/skins/xxx.
 		 */
-		public static function get_skin_datas() {
-			$skin_data = TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/skin.json' );
+		public static function get_skin_datas( $skin_dir_name ) {
+			$skin_data = TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_dir_name . '/skin.json' );
 			if ( ! isset( $skin_data ) || ! is_object( $skin_data ) ) {
 				return;
 			} else {
@@ -107,6 +112,15 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 				$colors_array = (array) self::$skin_data->settings->color->palette;
 				add_theme_support( 'editor-color-palette', $colors_array );
 			}
+		}
+
+		/**
+		 * Get skins directory
+		 */
+		public static function get_skins_directory() {
+			$skins_dir      = TT1SKIN_PATH . '/src/skins';
+			$skins_name_arr = array_diff( scandir( $skins_dir ), array( '..', '.' ) );
+			return $skins_name_arr;
 		}
 	}
 }
