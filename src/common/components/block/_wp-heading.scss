@@ -80,6 +80,20 @@ h2,
     }
 }
 
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .#{cmn.$prefix-skin--common} h2 {
+            &.is-style-section-title,
+            &.is-style-section-title.alignwide {
+                &::before,
+                &::after {
+                    animation: none;
+                }
+            }
+        }
+    }
+}
+
 @keyframes bubbles {
     0% {
         transform: translate(0%);

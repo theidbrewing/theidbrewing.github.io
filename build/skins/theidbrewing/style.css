@@ -186,6 +186,14 @@ h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-titl
     right: auto;
   }
 }
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .tt1skin h2.is-style-section-title::before, .tt1skin h2.is-style-section-title::after, .tt1skin h2.is-style-section-title.alignwide::before, .tt1skin h2.is-style-section-title.alignwide::after {
+      -webkit-animation: none;
+              animation: none;
+    }
+  }
+}
 @-webkit-keyframes bubbles {
   0% {
     transform: translate(0%);
