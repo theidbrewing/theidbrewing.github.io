@@ -11,7 +11,8 @@
     "mv:skin01": "mv ./src/skins/theidbrewing/scss/style.css ./build/skins/theidbrewing & mv ./src/skins/theidbrewing/scss/editor-style.css ./build/skins/theidbrewing",
     "build:css": "run-s sass postcss:* mv:*",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
-    "check-licenses": "wp-scripts check-licenses"
+    "check-licenses": "wp-scripts check-licenses",
+    "dist:theidbrewing": "sh bin/dist.sh theidbrewing"
   },
   "repository": {
     "type": "git",
