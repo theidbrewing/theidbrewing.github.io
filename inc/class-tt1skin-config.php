@@ -26,8 +26,11 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		 */
 		public static function init() {
 			// Get skin data.
-			self::$skin_data = self::get_skin_datas( 'theidbrewing' );
-
+			if ( defined( 'TT1_SKIN_NAME' ) ) {
+				self::$skin_data = self::get_skin_datas( TT1_SKIN_NAME );
+			} else {
+				self::$skin_data = self::get_skin_datas( 'theidbrewing' );
+			}
 			// Enqueue files.
 			add_action( 'wp_enqueue_scripts', array( get_called_class(), 'set_enqueue_files' ) );
 
