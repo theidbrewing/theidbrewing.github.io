@@ -52,7 +52,7 @@ cp -r src/skins/$SKIN_NAME/skin.json $SKIN_DIST_SRC_DIR/skins/$SKIN_NAME/skin.js
 
 # copy build skin
 cp -r build/images/ $SKIN_DIST_BUILD_DIR/images/
-cp -r build/skins/$SKIN_NAME $SKIN_DIST_BUILD_DIR/skins/$SKIN_NAME
+cp -r build/skins/$SKIN_NAME $SKIN_DIST_BUILD_DIR/skins/
 
 # copy php files
 cp tt1skin.php $SKIN_DIST_DIR/tt1skin.php
@@ -75,4 +75,4 @@ cd ..
 zip -r 'tt1skin-'${SKIN_NAME}.zip $SKIN_NAME/
 
 # delete tmp dir
-rm -rf $SKIN_NAME/
+# rm -rf $SKIN_NAME/
