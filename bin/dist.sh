@@ -75,4 +75,4 @@ cd ..
 zip -r 'tt1skin-'${SKIN_NAME}.zip $SKIN_NAME/
 
 # delete tmp dir
-# rm -rf $SKIN_NAME/
+rm -rf $SKIN_NAME/
