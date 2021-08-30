@@ -41,3 +41,9 @@ $ npm run init:skin
 ```
 $ npm run build:css
 ```
+
+### Dist Skin
+
+```
+$ npm run dist:theidbrewing
+```
