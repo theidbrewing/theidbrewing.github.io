@@ -32,12 +32,23 @@ if [ -d $SKIN_DIST_DIR ]; then
 fi
 mkdir -p $SKIN_DIST_DIR
 
+# skin buid dir
 SKIN_DIST_BUILD_DIR=$SKIN_DIST_DIR/build
 if [ ! -d $SKIN_DIST_BUILD_DIR ]; then
     mkdir -p $SKIN_DIST_BUILD_DIR
     mkdir -p $SKIN_DIST_BUILD_DIR/images
     mkdir -p $SKIN_DIST_BUILD_DIR/skins/$SKIN_NAME
 fi
+
+# skin src dir
+SKIN_DIST_SRC_DIR=$SKIN_DIST_DIR/src
+if [ ! -d $SKIN_DIST_SRC_DIR ]; then
+    mkdir -p $SKIN_DIST_SRC_DIR
+    mkdir -p $SKIN_DIST_SRC_DIR/skins/$SKIN_NAME
+fi
+
+# copy src/{skin}/skin.json
+cp -r src/skins/$SKIN_NAME/skin.json $SKIN_DIST_SRC_DIR/skins/$SKIN_NAME/skin.json
 
 # copy build skin
 cp -r build/images/ $SKIN_DIST_BUILD_DIR/images/
