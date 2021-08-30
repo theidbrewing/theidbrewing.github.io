@@ -41,3 +41,13 @@ $ npm run init:skin
 ```
 $ npm run build:css
 ```
+### Skin List check
+
+```
+$ npm run list:skin
+```
+### Build Skin (one each)
+
+```
+$ npm run build:skin --skin=[skinname]
+```
