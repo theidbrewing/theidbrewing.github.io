@@ -8,6 +8,7 @@
   --global--color-secondary: #B900D8;
   --global--color-body: #1C0120;
   --global--color-background: #fbfbfb;
+  --global--color-border: #49344D;
   --button--font-size: min(5vw, 18px);
   --button--padding-vertical: min(3vw, 13px);
   --button--padding-horizontal: min(6vw, 28px);
@@ -119,7 +120,8 @@ h2.is-style-section-title,
   word-break: break-all;
   line-height: 0.9;
 }
-h2.is-style-section-title::after,
+h2.is-style-section-title::before, h2.is-style-section-title::after,
+.tt1skin h2.is-style-section-title::before,
 .tt1skin h2.is-style-section-title::after {
   content: "";
   position: absolute;
@@ -127,14 +129,32 @@ h2.is-style-section-title::after,
   display: flex;
   width: min(50vw, 600px);
   height: min(50vw, 600px);
+}
+h2.is-style-section-title::after,
+.tt1skin h2.is-style-section-title::after {
   mix-blend-mode: screen;
   background-size: contain;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='712' height='712' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='.2'%3E%3Cg style='mix-blend-mode:screen' fill='%2300F'%3E%3Cpath d='M354 417a62 62 0 100-125 62 62 0 000 125z'/%3E%3Cpath d='M410 477a54 54 0 100-108 54 54 0 000 108z'/%3E%3Cpath d='M306 482a54 54 0 100-108 54 54 0 000 108z'/%3E%3Cpath d='M269 383a52 52 0 100-103 52 52 0 000 103z'/%3E%3Cpath d='M350 320a54 54 0 100-108 54 54 0 000 108z'/%3E%3Cpath d='M437 376a54 54 0 100-107 54 54 0 000 107zM465 506a15 15 0 100-30 15 15 0 000 30zM364 563a33 33 0 100-66 33 33 0 000 66zM258 544a42 42 0 100-84 42 42 0 000 84zM190 443a26 26 0 100-51 26 26 0 000 51zM184 318a9 9 0 100-19 9 9 0 000 19zM243 236a18 18 0 100-37 18 18 0 000 37zM345 214a36 36 0 100-72 36 36 0 000 72zM450 250a43 43 0 100-87 43 43 0 000 87z'/%3E%3Cpath d='M519 318a27 27 0 100-54 27 27 0 000 54zM525 411a11 11 0 100-22 11 11 0 000 22zM521 600a40 40 0 100-80 40 40 0 000 80zM423 649a39 39 0 100-78 39 39 0 000 78zM313 653a37 37 0 100-75 37 37 0 000 75zM210 615a39 39 0 100-78 39 39 0 000 78zM133 537a39 39 0 100-78 39 39 0 000 78zM93 434a39 39 0 100-77 39 39 0 000 77zM99 324a38 38 0 100-76 38 38 0 000 76zM149 227a40 40 0 100-79 40 40 0 000 79zM234 157a39 39 0 100-77 39 39 0 000 77zM340 129a39 39 0 100-78 39 39 0 000 78zM449 146a39 39 0 100-77 39 39 0 000 77zM541 206a38 38 0 100-77 38 38 0 000 77zM601 297a38 38 0 100-75 38 38 0 000 75zM618 405a37 37 0 100-74 37 37 0 000 74zM590 513a39 39 0 100-78 39 39 0 000 78zM576 633a4 4 0 100-9 4 4 0 000 9zM481 689a5 5 0 100-11 5 5 0 000 11zM373 712a6 6 0 100-11 6 6 0 000 11zM263 699a4 4 0 100-8 4 4 0 000 8zM162 655a5 5 0 100-10 5 5 0 000 10zM80 581a5 5 0 100-10 5 5 0 000 10zM25 486a5 5 0 100-11 5 5 0 000 11zM2 375a2 2 0 100-4 2 2 0 000 4zM14 268a5 5 0 100-10 5 5 0 000 10zM59 168a5 5 0 100-11 5 5 0 000 11zM132 85a5 5 0 100-10 5 5 0 000 10zM228 31a6 6 0 100-12 6 6 0 000 12zM336 4a2 2 0 100-4 2 2 0 000 4zM446 19a5 5 0 100-10 5 5 0 000 10zM546 63a5 5 0 100-9 5 5 0 000 9zM628 138a5 5 0 100-11 5 5 0 000 11zM683 233a5 5 0 100-10 5 5 0 000 10zM706 341a6 6 0 100-11 6 6 0 000 11zM695 450a5 5 0 100-9 5 5 0 000 9zM650 551a5 5 0 100-9 5 5 0 000 9z'/%3E%3C/g%3E%3Cg style='mix-blend-mode:screen' fill='%230F0'%3E%3Cpath d='M354 417a62 62 0 100-125 62 62 0 000 125z'/%3E%3Cpath d='M435 446a55 55 0 100-111 55 55 0 000 111z'/%3E%3Cpath d='M344 494a52 52 0 100-104 52 52 0 000 104z'/%3E%3Cpath d='M268 425a53 53 0 100-106 53 53 0 000 106z'/%3E%3Cpath d='M311 331a53 53 0 100-106 53 53 0 000 106z'/%3E%3Cpath d='M414 343a54 54 0 100-107 54 54 0 000 107zM515 456a29 29 0 100-58 29 29 0 000 58zM441 518a10 10 0 100-21 10 10 0 000 21zM335 543a14 14 0 100-27 14 14 0 000 27zM235 519a35 35 0 100-69 35 35 0 000 69zM182 432a43 43 0 100-85 43 43 0 000 85zM194 308a26 26 0 100-53 26 26 0 000 53zM267 212a11 11 0 100-22 11 11 0 000 22zM374 195a16 16 0 100-32 16 16 0 000 32z'/%3E%3Cpath d='M473 259a35 35 0 100-70 35 35 0 000 70zM527 361a43 43 0 100-85 43 43 0 000 85zM595 503a39 39 0 100-79 39 39 0 000 79zM530 592a40 40 0 100-79 40 40 0 000 79zM434 645a39 39 0 100-78 39 39 0 000 78zM325 654a37 37 0 100-74 37 37 0 000 74zM220 621a39 39 0 100-78 39 39 0 000 78zM139 547a39 39 0 100-78 39 39 0 000 78zM95 445a38 38 0 100-76 38 38 0 000 76zM96 335a38 38 0 100-76 38 38 0 000 76zM142 237a40 40 0 100-79 40 40 0 000 79zM224 163a39 39 0 100-77 39 39 0 000 77zM329 130a39 39 0 100-78 39 39 0 000 78zM438 142a39 39 0 100-77 39 39 0 000 77zM533 198a39 39 0 100-77 39 39 0 000 77zM597 286a38 38 0 100-75 38 38 0 000 75zM619 393a37 37 0 100-74 37 37 0 000 74zM675 505a4 4 0 100-9 4 4 0 000 9zM615 596a4 4 0 100-8 4 4 0 000 8zM528 666a5 5 0 100-10 5 5 0 000 10zM425 705a5 5 0 100-10 5 5 0 000 10zM315 710a5 5 0 100-11 5 5 0 000 11zM208 680a5 5 0 100-10 5 5 0 000 10zM116 620a5 5 0 100-11 5 5 0 000 11zM48 533a5 5 0 100-9 5 5 0 000 9zM9 430a5 5 0 100-10 5 5 0 000 10zM4 318a3 3 0 100-6 3 3 0 000 6zM33 215a6 6 0 100-13 6 6 0 000 13zM94 121a4 4 0 100-9 4 4 0 000 9zM180 53a5 5 0 100-11 5 5 0 000 11zM284 14a5 5 0 100-10 5 5 0 000 10zM394 7a3 3 0 100-6 3 3 0 000 6zM500 38a5 5 0 100-10 5 5 0 000 10zM592 99a5 5 0 100-10 5 5 0 000 10zM661 185a5 5 0 100-10 5 5 0 000 10zM700 288a4 4 0 100-9 4 4 0 000 9zM705 399a6 6 0 100-11 6 6 0 000 11z'/%3E%3C/g%3E%3Cg style='mix-blend-mode:screen' fill='red'%3E%3Cpath d='M354 417a62 62 0 100-125 62 62 0 000 125z'/%3E%3Cpath d='M373 494a54 54 0 100-107 54 54 0 000 107z'/%3E%3Cpath d='M278 451a52 52 0 100-104 52 52 0 000 104z'/%3E%3Cpath d='M288 350a55 55 0 100-109 55 55 0 000 109z'/%3E%3Cpath d='M390 327a53 53 0 100-107 53 53 0 000 107z'/%3E%3Cpath d='M442 417a54 54 0 100-108 54 54 0 000 108zM392 567a41 41 0 100-81 41 41 0 000 81zM284 541a25 25 0 100-51 25 25 0 000 51zM202 452a9 9 0 100-17 9 9 0 000 17zM179 356a19 19 0 100-37 19 19 0 000 37zM222 274a37 37 0 100-74 37 37 0 000 74zM316 224a42 42 0 100-83 42 42 0 000 83zM425 219a26 26 0 100-53 26 26 0 000 53zM506 276a11 11 0 100-22 11 11 0 000 22zM530 388a16 16 0 100-33 16 16 0 000 33zM486 507a35 35 0 100-71 35 35 0 000 71zM411 651a39 39 0 100-77 39 39 0 000 77zM301 651a38 38 0 100-75 38 38 0 000 75zM200 608a38 38 0 100-77 38 38 0 000 77zM126 527a39 39 0 100-78 39 39 0 000 78zM92 423a39 39 0 100-78 39 39 0 000 78zM102 313a38 38 0 100-77 38 38 0 000 77zM156 219a40 40 0 100-80 40 40 0 000 80zM245 152a39 39 0 100-77 39 39 0 000 77zM352 129a39 39 0 100-78 39 39 0 000 78zM460 151a39 39 0 100-78 39 39 0 000 78zM549 214a38 38 0 100-77 38 38 0 000 77zM605 309a38 38 0 100-76 38 38 0 000 76zM617 417a37 37 0 100-74 37 37 0 000 74zM584 524a39 39 0 100-79 39 39 0 000 79zM511 607a40 40 0 100-80 40 40 0 000 80zM430 703a5 5 0 100-9 5 5 0 000 9zM320 711a6 6 0 100-11 6 6 0 000 11zM213 682a5 5 0 100-9 5 5 0 000 9zM120 623a5 5 0 100-10 5 5 0 000 10zM50 538a5 5 0 100-10 5 5 0 000 10zM10 435a5 5 0 100-10 5 5 0 000 10zM3 323a3 3 0 100-6 3 3 0 000 6zM31 219a6 6 0 100-12 6 6 0 000 12zM90 125a5 5 0 100-9 5 5 0 000 9zM176 56a6 6 0 100-11 6 6 0 000 11zM278 15a5 5 0 100-10 5 5 0 000 10zM388 6a3 3 0 100-5 3 3 0 000 5zM495 36a5 5 0 100-10 5 5 0 000 10zM588 95a5 5 0 100-9 5 5 0 000 9zM658 180a5 5 0 100-9 5 5 0 000 9zM699 282a4 4 0 100-8 4 4 0 000 8zM705 394a6 6 0 100-11 6 6 0 000 11zM677 500a4 4 0 100-9 4 4 0 000 9zM618 592a4 4 0 100-8 4 4 0 000 8zM533 663a4 4 0 100-9 4 4 0 000 9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+h2.is-style-section-title::before,
+.tt1skin h2.is-style-section-title::before {
+  z-index: -1;
+  position: absolute;
+  background-color: var(--global--color-background);
 }
 h2.is-style-section-title + *,
 .tt1skin h2.is-style-section-title + * {
   margin-top: 0;
   padding-top: 0;
+}
+h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-title.has-text-align-right::after,
+.tt1skin h2.is-style-section-title.has-text-align-right::before,
+.tt1skin h2.is-style-section-title.has-text-align-right::after {
+  right: 0;
+}
+
+.tt1skin h2.is-style-section-title {
+  z-index: -1;
 }
 
 @media only screen and (min-width: 1500px) {
@@ -142,30 +162,253 @@ h2.is-style-section-title + *,
     margin: 0;
     font-size: min(12vw, 240px);
     position: absolute;
-    z-index: -1;
     left: 0;
     transform: rotate(90deg) translate(5em, 5.65em);
     max-width: none;
     width: 12em;
   }
-  .tt1skin h2.is-style-section-title::after, .tt1skin h2.is-style-section-title.alignwide::after {
+  .tt1skin h2.is-style-section-title::before, .tt1skin h2.is-style-section-title::after, .tt1skin h2.is-style-section-title.alignwide::before, .tt1skin h2.is-style-section-title.alignwide::after {
     top: -150px;
+    -webkit-animation: bubbles 12s ease-in-out 5s infinite;
+            animation: bubbles 12s ease-in-out 5s infinite;
   }
   .tt1skin h2.is-style-section-title::before, .tt1skin h2.is-style-section-title.alignwide::before {
-    content: "";
-    display: flex;
-    top: -150px;
-    z-index: -1;
-    position: absolute;
-    width: min(50vw, 600px);
-    height: min(50vw, 600px);
-    background-color: var(--global--color-background);
+    -webkit-animation-name: bubbles-background;
+            animation-name: bubbles-background;
   }
   .tt1skin h2.is-style-section-title.has-text-align-right, .tt1skin h2.is-style-section-title.alignwide.has-text-align-right {
     text-align: left;
     left: auto;
     right: 0;
     transform: rotate(90deg) translate(5em, -5.65em);
+  }
+  .tt1skin h2.is-style-section-title.has-text-align-right::before, .tt1skin h2.is-style-section-title.has-text-align-right::after, .tt1skin h2.is-style-section-title.alignwide.has-text-align-right::before, .tt1skin h2.is-style-section-title.alignwide.has-text-align-right::after {
+    right: auto;
+  }
+}
+@-webkit-keyframes bubbles {
+  0% {
+    transform: translate(0%);
+    visibility: visible;
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+    mix-blend-mode: screen;
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+    mix-blend-mode: hue;
+  }
+  36% {
+    visibility: hidden;
+    mix-blend-mode: overlay;
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+@keyframes bubbles {
+  0% {
+    transform: translate(0%);
+    visibility: visible;
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+    mix-blend-mode: screen;
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+    mix-blend-mode: hue;
+  }
+  36% {
+    visibility: hidden;
+    mix-blend-mode: overlay;
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+@-webkit-keyframes bubbles-background {
+  0% {
+    transform: translate(0%);
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+@keyframes bubbles-background {
+  0% {
+    transform: translate(0%);
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+.wp-block-latest-posts.wp-block-latest-posts__list,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list {
+  border-top: 0;
+  border-bottom: 0;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list.is-style-twentytwentyone-latest-posts-dividers > li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-style-twentytwentyone-latest-posts-dividers > li {
+  border-bottom: 0;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list .wp-block-latest-posts__post-date,
+.wp-block-latest-posts.wp-block-latest-posts__list .wp-block-latest-posts__post-author,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list .wp-block-latest-posts__post-date,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list .wp-block-latest-posts__post-author {
+  color: #49344D;
+  font-size: min(4vw, 14px);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list > li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li {
+  font-size: min(4.5vw, 16px);
+}
+.wp-block-latest-posts.wp-block-latest-posts__list > li > a,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li > a {
+  color: var(--global--color-body);
+  font-weight: 700;
+  font-size: min(5.5vw, 38px);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.1em;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list > li > a:hover,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li > a:hover {
+  text-decoration-thickness: 4px;
+  -webkit-text-decoration-color: var(--global--color-primary);
+          text-decoration-color: var(--global--color-primary);
+}
+.wp-block-latest-posts.wp-block-latest-posts__list > li .wp-block-latest-posts__featured-image > a,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li .wp-block-latest-posts__featured-image > a {
+  width: 100%;
+  border: 2px solid var(--global--color-body);
+  transition: filter 0.5s;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list > li .wp-block-latest-posts__featured-image > a:hover,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li .wp-block-latest-posts__featured-image > a:hover {
+  filter: contrast(1.3);
+}
+.wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li {
+  margin: 0 0 1.25em 0;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li > a,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li > a {
+  font-size: min(5vw, 28px);
+}
+.wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li .wp-block-latest-posts__featured-image > a,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li .wp-block-latest-posts__featured-image > a {
+  border-width: 1px;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+2):nth-child(2n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+3):nth-child(3n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+4):nth-child(4n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+5):nth-child(5n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+6):nth-child(6n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+2):nth-child(2n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+3):nth-child(3n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+4):nth-child(4n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+5):nth-child(5n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+6):nth-child(6n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+2):nth-child(2n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+3):nth-child(3n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+4):nth-child(4n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+5):nth-child(5n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+6):nth-child(6n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+2):nth-child(2n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+3):nth-child(3n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+4):nth-child(4n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+5):nth-child(5n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+6):nth-child(6n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+2):nth-child(2n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+3):nth-child(3n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+4):nth-child(4n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+5):nth-child(5n+1), .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+6):nth-child(6n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+2):nth-child(2n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+3):nth-child(3n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+4):nth-child(4n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+5):nth-child(5n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+6):nth-child(6n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+2):nth-child(2n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+3):nth-child(3n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+4):nth-child(4n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+5):nth-child(5n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+6):nth-child(6n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+2):nth-child(2n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+3):nth-child(3n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+4):nth-child(4n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+5):nth-child(5n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+6):nth-child(6n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+2):nth-child(2n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+3):nth-child(3n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+4):nth-child(4n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+5):nth-child(5n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+6):nth-child(6n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+2):nth-child(2n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+3):nth-child(3n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+4):nth-child(4n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+5):nth-child(5n+1),
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+6):nth-child(6n+1) {
+  margin-bottom: 1.25em;
+}
+.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li, .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-4 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-5 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+2):nth-child(2n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+3):nth-child(3n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+4):nth-child(4n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+5):nth-child(5n+1) ~ li,
+.tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-6 > li:nth-last-child(-n+6):nth-child(6n+1) ~ li {
+  margin-bottom: 1.25em;
+}
+
+@media only screen and (min-width: 592px) {
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li {
+    display: grid;
+    grid-template: "image title" "image time" "image excerpt";
+    grid-template-columns: calc(25% + 34px) 1fr;
+    grid-template-rows: 1fr 1.5em 1fr;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li > a {
+    margin-top: 0;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li .wp-block-latest-posts__featured-image {
+    grid-area: image;
+    margin-right: 34px;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li .wp-block-latest-posts__featured-image > a > img.wp-post-image {
+    height: 18vw !important;
+    min-height: 180px;
+    max-height: 213px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid > li {
+    margin: 0 1.25em 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-3 > li:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid .wp-block-latest-posts__featured-image {
+    margin-right: 0;
+  }
+  .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list.is-grid .wp-block-latest-posts__featured-image > a > img.wp-post-image {
+    height: 24vw !important;
+    min-height: 180px;
+    max-height: 240px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .is-style-card,
