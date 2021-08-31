@@ -54,6 +54,13 @@ $ npm run list:skin
 $ npm run build:skin --skin=[skinname]
 ```
 
+### Build Skins (all)
+
+```
+$ npm run build:skins
+$ ./bin/build-skins.sh
+```
+
 ### Dist Skin
 
 ```
