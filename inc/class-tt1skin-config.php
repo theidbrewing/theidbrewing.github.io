@@ -77,9 +77,10 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		public static function my_editor_style_setup() {
 			add_theme_support( 'editor-styles' );
 			// テーマからの相対パスで指定.
-			// TODO distした時のパスを変更する処理が必要.
 			if ( isset( self::$skin_data->name ) ) {
-				add_editor_style( '../../plugins/theidbrewing.github.io/build/skins/' . self::$skin_data->name . '/editor-style.css' );
+				$skin_plugin_path = '../../' . str_replace( WP_CONTENT_DIR, '', TT1SKIN_PATH );
+				add_editor_style( $skin_plugin_path . '/build/skins/' . self::$skin_data->name . '/editor-style.css' );
+
 			}
 			// Enqueue Google fonts.
 			if ( isset( self::$skin_data->settings->google_fonts_url ) ) {
