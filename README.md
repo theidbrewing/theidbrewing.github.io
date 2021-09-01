@@ -66,3 +66,9 @@ $ ./bin/build-skins.sh
 ```
 $ npm run dist:theidbrewing
 ```
+
+### Dist All
+build skin (all), dist skin(all)
+```
+$ npm run dist:all
+```
