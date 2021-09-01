@@ -21,6 +21,9 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'TT1SKIN_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'TT1SKIN_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
+if ( is_file( 'tt1skin.config.php' ) ) {
+	require_once 'tt1skin.config.php';
+}
 // Json Controller.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-json-controller.php';
 // TT1 Skin Config.

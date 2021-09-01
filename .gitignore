@@ -3,3 +3,6 @@ node_modules
 .wp-env.override.json
 .DS_Store
 .vscode/
+dist/theidbrewing/
+
+build/skins/

@@ -41,3 +41,34 @@ $ npm run init:skin
 ```
 $ npm run build:css
 ```
+
+### Skin List check
+
+```
+$ npm run list:skin
+```
+
+### Build Skin (one each)
+
+```
+$ npm run build:skin --skin=[skinname]
+```
+
+### Build Skins (all)
+
+```
+$ npm run build:skins
+$ ./bin/build-skins.sh
+```
+
+### Dist Skin
+
+```
+$ npm run dist:theidbrewing
+```
+
+### Dist All
+build skin (all), dist skin(all)
+```
+$ npm run dist:all
+```
