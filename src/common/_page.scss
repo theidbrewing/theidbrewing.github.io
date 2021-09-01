@@ -1,0 +1,10 @@
+@use './variables/common' as cmn;
+
+.#{cmn.$prefix-skin--common} {
+   &.home {
+       // menuとの余白調整
+       .site-main {
+           padding-top: 0;
+       }
+   }
+}

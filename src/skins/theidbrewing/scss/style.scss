@@ -9,11 +9,15 @@
 @forward '../../../common/components/block/wp-block-button';
 @forward '../../../common/components/block/wp-heading';
 @forward '../../../common/components/block/wp-block-latest-posts';
+@forward '../../../common/components/block/wp-block-group';
 
 @forward '../../../common/components/card';
 
 // スキン共通スタイル　グローバル
 @forward '../../../common/global';
+
+// スキン共通スタイル　ページ
+@forward '../../../common/page';
 
 // スキン独自スタイル
 @forward './colors';
