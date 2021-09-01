@@ -1,15 +1,18 @@
 @use '../variables/common' as cmn;
 
 .#{cmn.$prefix-skin--common} {
+	--logo-width: 280px;
+	--logo-height: 112px;
+	--logo-width--square: 394px;
 	.site-branding {
-		--logo-width: 280px;
-		--logo-height: 112px;
 		width: min(50vw, var(--logo-width));
 		height: min(18vw, var(--logo-height));
 	}
-	.site-footer > .site-info .site-name::before,
 	.site-branding::before {
 		position: absolute;
+	}
+	.site-footer > .site-info .site-name::before,
+	.site-branding::before {
 		visibility: visible;
 		content: "";
 		display: flex;
@@ -23,6 +26,7 @@
 
 	// Header logo
 	.site-branding .site-title > a {
+		visibility: visible;
 		opacity: 0;
 		display: flex;
 		width: min(50vw, var(--logo-width));
@@ -37,4 +41,13 @@
 	}
 
 	// Footer logo
+	.site-footer > .site-info .site-name {
+		&::before {
+			margin-left: auto;
+			margin-right: auto;
+			width: min(60vw, var(--logo-width--square));
+			height: min(60vw, var(--logo-width--square));
+			background-image: svg-load("../../../../build/images/icons/logo--knockout.svg");
+		}
+	}
 }
