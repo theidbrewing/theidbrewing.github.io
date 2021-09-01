@@ -3,12 +3,72 @@
 .#{cmn.$prefix-skin--common} {
     width: 100%;
     overflow-x: hidden;
-    
+
     // Site Header
     .site .site-header {
         padding-top: 0;
         padding-bottom: 0;
         align-items: center;
         max-width: var(--responsive--alignwide-width);
+    }
+    // Site Footer
+    .site-footer {
+        width: 100%;
+        overflow: hidden;
+        color: var(--global--color-background);
+        background-color: var(--global--color-body);
+        max-width: none;
+        display: flex;
+        flex-direction: column-reverse;
+        // // bubble
+        // &::before,
+        // &::after {
+        //     position: fixed;
+        //     z-index: -1;
+        //     bottom: max(-10vw, -300px);
+        //     content: "";
+        //     display: flex;
+        //     width: min(50vw, 600px);
+        //     height: min(50vw, 600px);
+        //     mix-blend-mode: screen;
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     background-image: svg-load("../../../../build/images/icons/bubble.svg");
+        //     opacity: 0.25;
+        // }
+        // &::after {
+        //     width: min(65vw, 800px);
+        //     height: min(65vw, 800px);
+        //     right: max(-10vw, -300px);
+        //     opacity: 0.2;
+        // }
+        .footer-navigation-wrapper {
+            li {
+                a {
+                    &:link,
+                    &:visited,
+                    &:active {
+                        color: var(--global--color-background);
+                    }
+                }
+            }
+        }
+        > .site-info {
+            border-top: 0;
+            flex-direction: column;
+            .site-name {
+                text-align: center;
+            }
+            .powered-by {
+                margin-left: 0;
+                color: #{cmn.$color-base-600};
+                font-size: min(3.5vw, 14px);
+                text-align: center;
+                font-family: var(--skin--list--font-family);
+                a {
+                    color: #{cmn.$color-base-600};
+                }
+            }
+        }
     }
 }

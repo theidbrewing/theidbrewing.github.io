@@ -2,6 +2,8 @@
 
 h2,
 .#{cmn.$prefix-skin--common} h2 {
+    font-size: min(6.55vw, 38px);
+    letter-spacing: -0.06em;
     &.is-style-section-title {
         font-weight: 700;
         font-size: min(12vw, 120px);
@@ -22,6 +24,7 @@ h2,
             mix-blend-mode: screen;
             background-size: contain;
             background-image: svg-load("../../../../build/images/icons/bubble.svg");
+            opacity: 0.5;
         }
         &::before {
             z-index: -1;
@@ -61,7 +64,10 @@ h2,
             &::before,
             &::after {
                 top: -150px;
-                animation: bubbles 12s ease-in-out 5s infinite;
+                animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
+            }
+            &::after {
+                //transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
             }
             &::before {
                 animation-name: bubbles-background;
