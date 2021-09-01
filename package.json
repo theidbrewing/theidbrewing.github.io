@@ -14,7 +14,7 @@
     "check-licenses": "wp-scripts check-licenses",
     "list:skin": "ls -1 ./src/skins/",
     "count:skin": "skins_count=(`ls -1 ./src/skins`) && echo ${#skins_count[@]}",
-    "build:skin": "npx sass --no-source-map ./src/skins/$npm_config_skin_name && mkdir -p ./build/skins/$npm_config_skin_name && mv ./src/skins/$npm_config_skin_name/scss/style.css ./build/skins/$npm_config_skin_name && mv ./src/skins/$npm_config_skin_name/scss/editor-style.css ./build/skins/$npm_config_skin_name/",
+    "build:skin": "npx sass --no-source-map ./src/skins/$npm_config_skin && mkdir -p ./build/skins/$npm_config_skin && mv ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin && mv ./src/skins/$npm_config_skin/scss/editor-style.css ./build/skins/$npm_config_skin/",
     "build:skins": "chmod +x bin/*.sh && sh bin/build-skins.sh",
     "dist:theidbrewing": "sh bin/dist.sh theidbrewing",
     "dist:all": "chmod +x bin/*.sh && sh bin/dist-all.sh"

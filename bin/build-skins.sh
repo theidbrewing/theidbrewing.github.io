@@ -51,7 +51,7 @@ rm -rf $SKIN_DIST_BUILD_DIR/*
 for i in ${SKIN_ARRAY[@]}
 do
     echo "building style : $i"
-    ${npm} run build:skin --skin_name=$i
+    ${npm} run build:skin --skin=$i
 done
 
 echo "Skin Build Done!!"
