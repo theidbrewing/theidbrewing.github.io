@@ -7,8 +7,9 @@
     "lint-css": "wp-scripts lint-style './src/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
     "sass": "exsc sass",
-    "postcss:skin01": "npx postcss ./src/skins/theidbrewing/scss/style.css --use autoprefixer postcss-inline-svg -r --no-map & npx postcss ./src/skins/theidbrewing/scss/editor-style.css --use autoprefixer postcss-inline-svg -r --no-map",
+    "postcss": "npx postcss ./src/skins/**/scss/[^_]*.css --use autoprefixer postcss-inline-svg -r --no-map",
     "mv:skin01": "mv ./src/skins/theidbrewing/scss/style.css ./build/skins/theidbrewing & mv ./src/skins/theidbrewing/scss/editor-style.css ./build/skins/theidbrewing",
+    "mv": "exsc mv",
     "build:css": "run-s sass postcss:* mv:*",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses",
@@ -22,15 +23,21 @@
   },
   "exsc": {
     "sass": {
-        "command": "npx sass --no-source-map ./src/skins/{skinname}",
+        "command": "npx sass --no-source-map ./src/skins/{skin}",
         "defaults": {
-            "skinname": ""
+            "skin": ""
         }
       },
-    "test": {
-      "command": "echo {skinname}",
+    "mv": {
+      "command": "mv ./src/skins/{skin}/scss/style.css ./build/skins/{skin}/ & mv ./src/skins/{skin}/scss/editor-style.css ./build/skins/{skin}/",
       "defaults": {
-          "skinname": "test"
+          "skin": "theidbrewing"
+      }
+    },
+    "test": {
+      "command": "echo {skin}",
+      "defaults": {
+          "skin": "test"
       }
     }
   },
