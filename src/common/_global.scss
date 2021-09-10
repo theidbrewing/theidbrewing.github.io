@@ -11,6 +11,15 @@
         align-items: center;
         max-width: var(--responsive--alignwide-width);
     }
+
+    .site-main .page-header {
+        border-bottom: 0;
+        padding-bottom: 0;
+        .page-title {
+            font-weight: 700;
+        }
+    }
+    
     // Site Footer
     .site-footer {
         width: 100%;

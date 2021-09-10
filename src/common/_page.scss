@@ -1,10 +1,33 @@
 @use './variables/common' as cmn;
 
 .#{cmn.$prefix-skin--common} {
-   &.home {
-       // menuとの余白調整
-       .site-main {
-           padding-top: 0;
-       }
-   }
+    // ホーム
+    &.home {
+        // menuとの余白調整
+        .site-main {
+            padding-top: 0;
+        }
+    }
+    // アーカイブページ
+    &.archive {
+        .page-title {
+            visibility: hidden;
+            position: relative;
+            > span {
+                visibility: visible;
+                position: absolute;
+                left: 0;
+            }
+        }
+        .post {
+            .entry-header {
+            }
+            .entry-content {
+
+            }
+            .entry-footer {
+
+            }
+        }
+    }
 }

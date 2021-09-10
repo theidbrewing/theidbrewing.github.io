@@ -9,6 +9,8 @@
   --global--color-body: #1C0120;
   --global--color-background: #fbfbfb;
   --global--color-border: #49344D;
+  --heading--font-size-h1: min(8vw, 64px);
+  --global--font-size-page-title: min(8vw, 64px);
   --button--font-size: min(5vw, 18px);
   --button--padding-vertical: min(3vw, 13px);
   --button--padding-horizontal: min(6vw, 28px);
@@ -384,6 +386,13 @@ h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-titl
   padding-bottom: 0;
   align-items: center;
   max-width: var(--responsive--alignwide-width);
+}
+.tt1skin .site-main .page-header {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.tt1skin .site-main .page-header .page-title {
+  font-weight: 700;
 }
 .tt1skin .site-footer {
   width: 100%;
