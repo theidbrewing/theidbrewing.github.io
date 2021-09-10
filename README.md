@@ -58,6 +58,7 @@ $ npm run build:skin --skin=[skinname]
 
 ```
 $ npm run build:skins
+    or
 $ ./bin/build-skins.sh
 ```
 
