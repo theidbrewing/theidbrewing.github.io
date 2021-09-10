@@ -8,6 +8,7 @@ SKIN_DIST_BUILD_DIR='../build/skins'
 SKIN_COUNT=''
 SKIN_ARRAY=''
 
+
 npm='npm --prefix ../'
 
 ## test overwrite
@@ -38,20 +39,49 @@ echo "================================"
 #echo "================================"
 #echo "Skin List"
 #echo "--------------------------------"
+
 SKIN_ARRAY=(`ls -1 $SKIN_SRC_DIR`)
 
 
-## Build Skin
-echo "================================"
-echo "Build Skin(s) before Clear SKIN_DIST_BUILD_DIR"
-echo "--------------------------------"
-mkdir -p $SKIN_DIST_BUILD_DIR/
-rm -rf $SKIN_DIST_BUILD_DIR/*
+## init:skin
+#echo "================================"
+#echo "init:skin"
+#echo "--------------------------------"
+
+${npm} run init:skin
+
+
+## run sass
+#echo "================================"
+#echo "run sass"
+#echo "--------------------------------"
+
+${npm} run sass
+
+
+## run postcss
+#echo "================================"
+#echo "run postcss"
+#echo "--------------------------------"
+
+${npm} run postcss
+
+
+## run mv
+#echo "================================"
+#echo "run mv (all skins)"
+#echo "--------------------------------"
+
+SKIN_ARRAY=(`ls -1 $SKIN_SRC_DIR`)
 
 for i in ${SKIN_ARRAY[@]}
 do
-    echo "building style : $i"
-    ${npm} run build:skin --skin=$i
+    echo "move css src to build : $i"
+    mkdir -p ${SKIN_DIST_BUILD_DIR}/$i/
+    mv ${SKIN_SRC_DIR}/$i/scss/style.css ${SKIN_DIST_BUILD_DIR}/$i/
+    mv ${SKIN_SRC_DIR}/$i/scss/editor-style.css ${SKIN_DIST_BUILD_DIR}/$i/
 done
 
-echo "Skin Build Done!!"
+echo "================================"
+echo "Done !"
+echo "--------------------------------"

@@ -58,6 +58,7 @@ $ npm run build:skin --skin=[skinname]
 
 ```
 $ npm run build:skins
+    or
 $ ./bin/build-skins.sh
 ```
 
@@ -67,7 +68,7 @@ $ ./bin/build-skins.sh
 $ npm run dist:theidbrewing
 ```
 
-### Dist All
+### Dist All (include `Build Skins`)
 build skin (all), dist skin(all)
 ```
 $ npm run dist:all
