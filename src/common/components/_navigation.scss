@@ -1,6 +1,13 @@
 @use '../variables/common' as cmn;
 
 .#{cmn.$prefix-skin--common} {
+    .navigation {
+        color: var(--global--color-body);
+        a {
+            color: var(--global--color-body);
+            text-decoration: underline;
+        }
+    }
     .primary-navigation {
         .menu-item {
             > a {
