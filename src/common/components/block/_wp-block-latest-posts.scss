@@ -21,7 +21,7 @@
             > a {
                 color: var(--global--color-body);
                 font-weight: 700;
-                font-size: min(5.5vw, 38px);
+                font-size: var(--heading--font-size-h2);
                 text-decoration-thickness: 2px;
                 text-underline-offset: 0.1em;
                 &:hover {

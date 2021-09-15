@@ -10,10 +10,14 @@
   --global--color-background: #fbfbfb;
   --global--color-border: #49344D;
   --heading--font-size-h1: min(8vw, 64px);
-  --global--font-size-page-title: min(8vw, 64px);
-  --button--font-size: min(5vw, 18px);
+  --global--font-size-page-title: min(8vw, 2.5rem);
+  --heading--font-size-h2: min(5.5vw, 2rem);
+  --global--font-size-body: min(3.8vw, 1.15rem);
+  --global--font-size-caption: min(3.5vw, 0.9rem);
+  --button--font-size: min(5vw, 1.2rem);
   --button--padding-vertical: min(3vw, 13px);
   --button--padding-horizontal: min(6vw, 28px);
+  --base--margin: 40px;
   color: var(--global--color-body);
 }
 
@@ -393,6 +397,10 @@ h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-titl
 }
 .tt1skin .site-main .page-header .page-title {
   font-weight: 700;
+}
+.tt1skin .site-main > * {
+  margin-top: calc(2 * var(--global--spacing-vertical));
+  margin-bottom: calc(2 * var(--global--spacing-vertical));
 }
 .tt1skin .site-footer {
   width: 100%;

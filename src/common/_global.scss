@@ -20,6 +20,11 @@
         }
     }
     
+    .site-main > * {
+        margin-top: calc(2 * var(--global--spacing-vertical));
+        margin-bottom: calc(2 * var(--global--spacing-vertical));
+    }
+
     // Site Footer
     .site-footer {
         width: 100%;

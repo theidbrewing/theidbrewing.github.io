@@ -10,10 +10,14 @@
   --global--color-background: #fbfbfb;
   --global--color-border: #49344D;
   --heading--font-size-h1: min(8vw, 64px);
-  --global--font-size-page-title: min(8vw, 64px);
-  --button--font-size: min(5vw, 18px);
+  --global--font-size-page-title: min(8vw, 2.5rem);
+  --heading--font-size-h2: min(5.5vw, 2rem);
+  --global--font-size-body: min(3.8vw, 1.15rem);
+  --global--font-size-caption: min(3.5vw, 0.9rem);
+  --button--font-size: min(5vw, 1.2rem);
   --button--padding-vertical: min(3vw, 13px);
   --button--padding-horizontal: min(6vw, 28px);
+  --base--margin: 40px;
   color: var(--global--color-body);
 }
 
@@ -97,6 +101,10 @@
   width: var(--icon-size, 44px);
   height: var(--icon-size, 44px);
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg' fill='%23540CED'%3E%3Cpath d='M9 9h26v3H9zM9 21h26v3H9zM9 32h26v3H9z'/%3E%3C/svg%3E");
+}
+
+.entry .entry-footer {
+  color: var(--global--color-body);
 }
 
 .wp-block-button .wp-block-button__link,
@@ -311,7 +319,7 @@ h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-titl
 .tt1skin .wp-block-latest-posts.wp-block-latest-posts__list > li > a {
   color: var(--global--color-body);
   font-weight: 700;
-  font-size: min(5.5vw, 38px);
+  font-size: var(--heading--font-size-h2);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.1em;
 }
@@ -582,6 +590,10 @@ h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-titl
 .tt1skin .site-main .page-header .page-title {
   font-weight: 700;
 }
+.tt1skin .site-main > * {
+  margin-top: calc(2 * var(--global--spacing-vertical));
+  margin-bottom: calc(2 * var(--global--spacing-vertical));
+}
 .tt1skin .site-footer {
   width: 100%;
   overflow: hidden;
@@ -623,6 +635,84 @@ h2.is-style-section-title.has-text-align-right::before, h2.is-style-section-titl
   visibility: visible;
   position: absolute;
   left: 0;
+}
+.tt1skin.archive .post .site-main > * {
+  margin-bottom: 0;
+}
+.tt1skin.archive .post .entry-header .entry-title {
+  font-size: var(--heading--font-size-h2);
+  margin-bottom: 0;
+}
+.tt1skin.archive .post .entry-header .entry-title > a {
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.1em;
+}
+.tt1skin.archive .post .entry-header .entry-title > a:hover {
+  text-decoration-thickness: 4px;
+  -webkit-text-decoration-color: var(--global--color-primary);
+          text-decoration-color: var(--global--color-primary);
+}
+.tt1skin.archive .post .entry-header .post-thumbnail .wp-post-image {
+  margin-top: 0;
+}
+.tt1skin.archive .post .entry-content > p {
+  font-size: var(--global--font-size-body);
+}
+.tt1skin.archive .post .entry-footer {
+  border-bottom: 0;
+  margin-top: 0;
+  padding: 1em 0 0 0;
+  font-size: var(--global--font-size-caption);
+}
+.tt1skin.archive.category-news .cat-links, .tt1skin.archive.category-blog .cat-links {
+  display: none;
+}
+
+@media only screen and (min-width: 652px) {
+  .tt1skin.archive .post {
+    --thumbnail-min-height: min(20vw, 230px);
+    clear: both;
+    max-width: var(--responsive--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tt1skin.archive .post.has-post-thumbnail {
+    min-height: calc(var(--thumbnail-min-height) + 2.5rem + (var(--base--margin) / 2));
+  }
+  .tt1skin.archive .post .entry-header {
+    margin-bottom: calc(var(--base--margin) / 2);
+  }
+  .tt1skin.archive .post .entry-header .entry-title {
+    max-width: none;
+    margin: 0;
+  }
+  .tt1skin.archive .post .entry-header .post-thumbnail {
+    float: left;
+    max-width: none;
+    width: 33.3%;
+    margin-top: calc(var(--base--margin) / 2);
+    padding-right: var(--base--margin);
+  }
+  .tt1skin.archive .post .entry-header .post-thumbnail .wp-post-image {
+    height: var(--thumbnail-min-height) !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .tt1skin.archive .post .entry-content {
+    max-width: none;
+    margin: 0;
+    display: flex;
+  }
+  .tt1skin.archive .post .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+    max-width: none;
+    margin: 0;
+  }
+  .tt1skin.archive .post .entry-footer {
+    max-width: none;
+    margin: 0;
+    clear: none;
+  }
 }
 .theidbrewing {
   --color-primary: #540CED;
