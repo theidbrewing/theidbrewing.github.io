@@ -1,5 +1,12 @@
-.entry {
-    .entry-footer {
-        color: var(--global--color-body);
+
+@use '../variables/common' as cmn;
+.#{cmn.$prefix-skin--common} {
+    .entry {
+        .entry-header {
+            border-bottom: 0;
+        }
+        .entry-footer {
+            color: var(--global--color-body);
+        }
     }
 }

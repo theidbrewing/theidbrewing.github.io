@@ -1,7 +1,7 @@
-@use '../../variables/common' as cmn;
+@use './../../skin_config' as skin;
 
 h2,
-.#{cmn.$prefix-skin--common} h2 {
+.#{skin.$skin-name} h2 {
     font-size: min(6.55vw, 38px);
     letter-spacing: -0.06em;
     &.is-style-section-title {
@@ -44,14 +44,14 @@ h2,
     }
 }
 // frontのみz-index調整
-.#{cmn.$prefix-skin--common} h2 {
+.#{skin.$skin-name} h2 {
     &.is-style-section-title {
         z-index: -1;
     }
 }
 
 @media only screen and (min-width: 1500px) {
-    .#{cmn.$prefix-skin--common} h2 {
+    .#{skin.$skin-name} h2 {
         &.is-style-section-title,
         &.is-style-section-title.alignwide {
             margin: 0;
@@ -88,7 +88,7 @@ h2,
 
 @media not all and (min-resolution:.001dpcm) { 
     @supports (-webkit-appearance:none) {
-        .#{cmn.$prefix-skin--common} h2 {
+        .#{skin.$skin-name} h2 {
             &.is-style-section-title,
             &.is-style-section-title.alignwide {
                 &::before,
