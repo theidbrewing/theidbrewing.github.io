@@ -1,10 +1,140 @@
-@use './variables/common' as cmn;
+@use "./variables/common" as cmn;
 
 .#{cmn.$prefix-skin--common} {
-   &.home {
-       // menuとの余白調整
-       .site-main {
-           padding-top: 0;
-       }
-   }
+    // ホーム
+    &.home {
+        // menuとの余白調整
+        .site-main {
+            padding-top: 0;
+        }
+    }
+    // アーカイブページ
+    &.archive {
+        // タイトルのみにする
+        .page-title {
+            visibility: hidden;
+            position: relative;
+            > span {
+                visibility: visible;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+    // アーカイブページ
+    // 検索結果
+    &.archive,
+    &.search-results {
+        .post,
+        .page {
+            .site-main > * {
+                margin-bottom: 0;
+            }
+            .entry-header {
+                .entry-title {
+                    font-size: var(--heading--font-size-h2);
+                    margin-bottom: 0;
+                    > a {
+                        font-weight: 700;
+                        text-decoration-thickness: 2px;
+                        text-underline-offset: 0.1em;
+                        &:hover {
+                            text-decoration-thickness: 4px;
+                            text-decoration-color: var(--global--color-primary);
+                        }
+                    }
+                }
+                .post-thumbnail {
+                    .wp-post-image {
+                        margin-top: 0;
+                    }
+                }
+            }
+            .entry-content {
+                > p {
+                    font-size: var(--global--font-size-body);
+                }
+            }
+            .entry-footer {
+                border-bottom: 0;
+                margin-top: 0;
+                padding: 1em 0 0 0;
+                font-size: var(--global--font-size-caption);
+            }
+        }
+        // アーカイブ NEWS, BLOG
+        &.category-news,
+        &.category-blog {
+            .cat-links {
+                display: none;
+            }
+        }
+    }
+    // 投稿ページ
+     &.single-post {
+         .post-thumbnail {
+             .wp-post-image {
+                max-height: 60vh;
+                object-fit: cover;
+                filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.12));
+             }
+         }
+     }
+}
+
+// tablet =<
+@media only screen and (min-width: #{cmn.$breakpoint_lg}) {
+    .#{cmn.$prefix-skin--common} {
+        // アーカイブページ
+        // 検索結果
+        &.archive,
+        &.search-results {
+            .search-result-count {
+                max-width: var(--responsive--alignwide-width);
+            }
+            .post,
+            .page {
+                --thumbnail-min-height: min(20vw, 230px);
+                clear: both;
+                max-width: var(--responsive--alignwide-width);
+                margin-left: auto;
+                margin-right: auto;
+                &.has-post-thumbnail {
+                    min-height: calc(var(--thumbnail-min-height) + 2.5rem + (var(--base--margin) / 2));
+                }
+                .entry-header {
+                    margin-bottom: calc(var(--base--margin) / 2);
+                    .entry-title {
+                        max-width: none;
+                        margin: 0;
+                    }
+                    .post-thumbnail {
+                        float: left;
+                        max-width: none;
+                        width: 33.3%;
+                        margin-top: calc(var(--base--margin) / 2);
+                        padding-right: var(--base--margin);
+                        .wp-post-image {
+                            height: var(--thumbnail-min-height) !important;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .entry-content {
+                    max-width: none;
+                    margin: 0;
+                    display: flex;
+                    > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+                        max-width: none;
+                        margin: 0;
+                    }
+                }
+                .entry-footer {
+                    max-width: none;
+                    margin: 0;
+                    clear: none;
+                }
+            }
+        }
+    }
 }
