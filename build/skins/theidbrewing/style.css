@@ -18,6 +18,7 @@
   --button--padding-vertical: min(3vw, 13px);
   --button--padding-horizontal: min(6vw, 28px);
   --base--margin: 40px;
+  --widget-width: 1440px;
   color: var(--global--color-body);
 }
 
@@ -461,6 +462,31 @@
   margin-bottom: var(--global--spacing-vertical);
 }
 
+@media only screen and (min-width: 652px) {
+  .tt1skin .widget-area {
+    margin-top: calc(3 * var(--global--spacing-vertical));
+    display: block;
+    max-width: var(--widget-width);
+  }
+}
+@media only screen and (min-width: 822px) {
+  .tt1skin .widget-area .widget.widget_block {
+    margin: 0;
+  }
+  .tt1skin .widget-area .widget.widget_block .wp-block-group.tt1skin-widget-columns {
+    max-width: var(--widget-width);
+  }
+  .tt1skin .widget-area .widget.widget_block .wp-block-group.tt1skin-widget-columns > .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--base--margin);
+  }
+  .tt1skin .widget-area .widget.widget_block .wp-block-group.tt1skin-widget-columns > .wp-block-group__inner-container > .wp-block-group {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
 .tt1skin {
   width: 100%;
   overflow-x: hidden;
