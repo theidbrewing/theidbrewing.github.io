@@ -1,0 +1,64 @@
+@use "../variables/common" as cmn;
+
+.#{cmn.$prefix-skin--common} {
+    .widget-area {
+        margin-top: calc(3 * var(--global--spacing-vertical));
+        margin-bottom: calc(3 * var(--global--spacing-vertical));
+        display: block;
+        max-width: var(--widget-width);
+        .tt1-widget-title {
+            font-size: var(--heading--font-size-h3);
+            font-weight: 700;
+            opacity: 0.8;
+        }
+        .widget.widget_block {
+            .wp-block-group.tt1skin-widget-columns {
+                .wp-block-cover {
+                    align-items: stretch;
+                    .wp-block-cover__inner-container {
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+// pc =<
+@media only screen and (min-width: #{cmn.$breakpoint_xxl}) {
+    .#{cmn.$prefix-skin--common} {
+        .widget-area {
+            // margin-top: calc(3 * var(--global--spacing-vertical));
+            // display: block;
+            *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
+                max-width: none;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .widget.widget_block {
+                margin: 0;
+                .wp-block-group.tt1skin-widget-columns {
+                    max-width: var(--widget-width);
+                    > .wp-block-group__inner-container {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: var(--base--margin);
+                        > .wp-block-group {
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            width: 100%;
+                            max-width: none;
+                            display: flex;
+                            > .wp-block-group__inner-container {
+                                display: flex;
+                                margin-left: 0;
+                                margin-right: 0;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
