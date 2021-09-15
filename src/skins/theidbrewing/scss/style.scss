@@ -8,7 +8,6 @@
 @forward '../../../common/components/entry';
 
 @forward '../../../common/components/block/wp-block-button';
-@forward '../../../common/components/block/wp-heading';
 @forward '../../../common/components/block/wp-block-latest-posts';
 @forward '../../../common/components/block/wp-block-group';
 
@@ -22,3 +21,9 @@
 
 // スキン独自スタイル
 @forward './colors';
+
+@forward './components/block/wp-heading';
+
+@forward './components/entry';
+
+@forward './page';

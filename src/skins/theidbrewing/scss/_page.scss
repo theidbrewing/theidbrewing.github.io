@@ -1,0 +1,34 @@
+@use "./skin_config" as skin;
+
+.#{skin.$skin-name} {
+    // page title
+    // archive title
+    &.archive .page-header .page-title,
+    &.page .entry .entry-header .entry-title {
+        position: relative;
+        font-size: min(12vw, 72px);
+        font-weight: 700;
+        z-index: -1;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            visibility: visible;
+            top: max(-25vw, -300px);
+            display: flex;
+            width: min(50vw, 600px);
+            height: min(50vw, 600px);
+        }
+        &::after {
+            mix-blend-mode: screen;
+            background-size: contain;
+            background-image: svg-load("../../../../build/images/icons/bubble.svg");
+            opacity: 0.5;
+        }
+        &::before {
+            z-index: -2;
+            position: absolute;
+            background-color: var(--global--color-background);
+        }
+    }
+}

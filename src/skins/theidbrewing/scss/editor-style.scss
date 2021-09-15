@@ -7,9 +7,18 @@
 @forward '../../../common/components/navigation';
 
 @forward '../../../common/components/block/wp-block-button';
-@forward '../../../common/components/block/wp-heading';
 
 @forward '../../../common/components/card';
 
 // スキン共通スタイル　グローバル
 @forward '../../../common/global';
+
+// スキン独自スタイル
+@forward './colors';
+
+@forward './components/block/wp-heading';
+
+// Editor only
+.wp-block.editor-post-title__block {
+    border-bottom: 0;
+}

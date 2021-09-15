@@ -1,20 +1,20 @@
-@use '../../variables/common' as cmn;
+@use "../../variables/common" as cmn;
 
 .wp-block-button,
 .#{cmn.$prefix-skin--common} .wp-block-button {
     .wp-block-button__link {
         transition: background-color 0.3s, border-color 0.3s;
     }
-    &.is-style-outline {
-        .wp-block-button__link {
-            &:not(:hover):not(:active):not(.has-text-color) {
-                color: var(--global--color-body);
-            }
-            &:hover {
-                color: var(--global--color-body) !important;
-                background-color: #fff !important;
-                border-color: var(--global--color-primary) !important;
-            }
+    // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
+    .wp-block-button__link,
+    &.is-style-outline .wp-block-button__link {
+        &:not(:hover):not(:active):not(.has-text-color) {
+            color: var(--global--color-body);
+        }
+        &:hover {
+            color: var(--global--color-body) !important;
+            background-color: #fff !important;
+            border-color: var(--global--color-primary) !important;
         }
     }
     &.is-style-fill {
