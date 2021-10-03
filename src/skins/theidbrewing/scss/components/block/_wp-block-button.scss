@@ -1,0 +1,26 @@
+@use './../../skin_config' as skin;
+@use "./../../colors" as color;
+
+.#{skin.$skin-name} .wp-block-button {
+    // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
+    .wp-block-button__link,
+    &.is-style-outline .wp-block-button__link {
+        &:not(:hover):not(:active):not(.has-text-color) {
+            color: var(--global--color-body);
+        }
+        &:hover {
+            color: var(--global--color-body) !important;
+            background-color: #fff !important;
+            border-color: var(--global--color-primary) !important;
+        }
+    }
+    &.is-style-fill {
+        .wp-block-button__link {
+            &:hover {
+                color: #fff !important;
+                background-color: #{color.$color-primary-600} !important;
+                border-color: #{color.$color-primary-600} !important;
+            }
+        }
+    }
+}

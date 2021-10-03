@@ -1,0 +1,38 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as color;
+
+.#{skin.$skin-name} {
+    .wp-block-column.is-style-card {
+        color: var(--global--color-background);
+        background-color: var(--global--color-body);
+        .is-style-subtitle {
+            color: #{color.$color-base-600};
+            font-family: var(--heading--font-family);
+        }
+        .wp-block-table {
+            table {
+                th,
+                td {
+                    border-color: #{color.$color-accent-03-600};
+                }
+            }
+        }
+    }
+    .wp-block-column.is-style-card--member {
+        border: 4px solid var(--global--color-body);
+        background-color: #fff;
+        .wp-block-image.is-style-rounded {
+            img {
+                border: 4px solid var(--global--color-body);
+            }
+        }
+        .area-texts {
+            background-color: var(--global--color-body);
+        }
+        h3 {
+            color: var(--color-accent-03);
+        }
+    }
+}
+
+

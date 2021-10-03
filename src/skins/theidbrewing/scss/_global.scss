@@ -1,0 +1,30 @@
+@use "./skin_config" as skin;
+@use "./colors" as color;
+
+.#{skin.$skin-name} {
+    // Site Footer
+    .site-footer {
+        color: var(--global--color-background);
+        background-color: var(--global--color-body);
+        .footer-navigation-wrapper {
+            li {
+                a {
+                    &:link,
+                    &:visited,
+                    &:active {
+                        color: var(--global--color-background);
+                    }
+                }
+            }
+        }
+        > .site-info {
+            .powered-by {
+                color: #{color.$color-base-600};
+                font-family: var(--skin--list--font-family);
+                a {
+                    color: #{color.$color-base-600};
+                }
+            }
+        }
+    }
+}
