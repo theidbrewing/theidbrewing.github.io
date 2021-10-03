@@ -2,21 +2,17 @@
 
 .#{cmn.$prefix-skin--common} {
     .navigation {
-        color: var(--global--color-body);
         a {
-            color: var(--global--color-body);
             text-decoration: underline;
         }
     }
     .primary-navigation {
         .menu-item {
             > a {
-                font-family: var(--skin--list--font-family);
                 font-weight: 600;
                 text-align: center;
     
                 .menu-item-description {
-                    font-family: var(--skin--ja--font-family);
                     font-weight: 300;
                 }
             }
@@ -40,7 +36,6 @@
                 display: flex;
                 width: var(--icon-size, 44px);
                 height: var(--icon-size, 44px);
-                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{cmn.$color-primary-500});
             }
         }
     }
