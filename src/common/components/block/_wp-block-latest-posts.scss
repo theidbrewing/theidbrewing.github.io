@@ -1,6 +1,6 @@
 @use "../../variables/common" as cmn;
 
-.wp-block-latest-posts,
+.block-editor-block-list__layout .wp-block-latest-posts,
 .#{cmn.$prefix-skin--common} .wp-block-latest-posts {
     &.wp-block-latest-posts__list {
         border-top: 0;

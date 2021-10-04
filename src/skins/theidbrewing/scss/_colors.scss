@@ -1,5 +1,6 @@
 @use './skin_config' as skin;
 
+.block-editor-block-list__layout,
 .#{skin.$skin-name} {
     // カラーを変数として書き出し
     @each $key, $color-var in skin.$skin-colors {

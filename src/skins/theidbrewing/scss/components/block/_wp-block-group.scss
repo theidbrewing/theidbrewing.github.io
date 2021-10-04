@@ -1,7 +1,7 @@
 @use './../../skin_config' as skin;
 @use "./../../colors" as color;
 
-.wp-block-group,
+.block-editor-block-list__layout .wp-block-group,
 .#{skin.$skin-name} .wp-block-group {
     &.is-style-section-mission {
         position: relative;

@@ -1,6 +1,7 @@
 @use "./colors" as color;
 @use './skin_config' as skin;
 
+.block-editor-block-list__layout,
 .#{skin.$skin-name} {
     // font-family
     --font-headings: 'Space Mono';

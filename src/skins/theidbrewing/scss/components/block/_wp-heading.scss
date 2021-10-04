@@ -1,6 +1,6 @@
 @use './../../skin_config' as skin;
 
-h2,
+.block-editor-block-list__layout h2,
 .#{skin.$skin-name} h2 {
     font-size: min(6.55vw, 38px);
     letter-spacing: -0.06em;

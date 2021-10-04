@@ -17,6 +17,17 @@
 @forward './colors';
 
 @forward './components/block/wp-heading';
+@forward './components/block/wp-block-button';
+@forward './components/block/wp-block-group';
+@forward './components/block/wp-block-latest-posts';
+
+@forward './components/card';
+@forward './components/navigation';
+@forward './components/entry';
+@forward './components/widget';
+
+@forward './global';
+@forward './page';
 
 // Editor only
 .wp-block.editor-post-title__block {
