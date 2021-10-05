@@ -8,6 +8,11 @@
         h2 + .wp-block-buttons {
             margin-top: 2em;
         }
+    }
+}
+// 背景画像のカスタムはフロントだけに限定
+.#{skin.$skin-name} .wp-block-group {
+    &.is-style-section-mission {
         &::before,
         &::after {
             content: "";

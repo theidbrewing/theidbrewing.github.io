@@ -18,6 +18,9 @@
         }
         &.is-style-fill {
             .wp-block-button__link {
+                &:not(:hover):not(:active):not(.has-text-color) {
+                    color: #fff;
+                }
                 &:hover {
                     color: #fff !important;
                     background-color: #{color.$color-primary-600} !important;
