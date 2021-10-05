@@ -1,6 +1,6 @@
 @use './../../skin_config' as skin;
 
-h2,
+.block-editor-block-list__layout h2,
 .#{skin.$skin-name} h2 {
     font-size: min(6.55vw, 38px);
     letter-spacing: -0.06em;
@@ -11,6 +11,24 @@ h2,
         position: relative;
         word-break: break-all;
         line-height: 0.9;
+        & + * {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        &.has-text-align-right {
+            &::before,
+            &::after {
+                right: 0;
+            }
+        }
+    }
+}
+// frontのみz-index調整とバブルを反映
+.#{skin.$skin-name} h2 {
+    &.is-style-section-title {
+        z-index: -1;
+    }
+    &.is-style-section-title {
         &::before,
         &::after {
             content: "";
@@ -31,22 +49,6 @@ h2,
             position: absolute;
             background-color: var(--global--color-background);
         }
-        & + * {
-            margin-top: 0;
-            padding-top: 0;
-        }
-        &.has-text-align-right {
-            &::before,
-            &::after {
-                right: 0;
-            }
-        }
-    }
-}
-// frontのみz-index調整
-.#{skin.$skin-name} h2 {
-    &.is-style-section-title {
-        z-index: -1;
     }
 }
 

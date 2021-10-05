@@ -1,7 +1,7 @@
 @use '../variables/common' as cmn;
 
-.is-style-card,
-.wp-block-column.is-style-card,
+.block-editor-block-list__layout .is-style-card,
+.block-editor-block-list__layout .wp-block-column.is-style-card,
 .#{cmn.$prefix-skin--common} .wp-block-column.is-style-card {
     font-size: min(5vw, 16px);
     .is-style-subtitle {
@@ -26,8 +26,8 @@
         }
     }
 }
-.is-style-card--member,
-.wp-block-column.is-style-card--member,
+.block-editor-block-list__layout .is-style-card--member,
+.block-editor-block-list__layout .wp-block-column.is-style-card--member,
 .#{cmn.$prefix-skin--common} .wp-block-column.is-style-card--member {
     @extend .is-style-card;
     margin-top: max( 10%, 100px );

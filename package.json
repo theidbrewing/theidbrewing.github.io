@@ -25,21 +25,21 @@
   },
   "exsc": {
     "sass": {
-        "command": "npx sass --no-source-map ./src/skins/{skin}",
-        "defaults": {
-            "skin": ""
-        }
-      },
+      "command": "npx sass --no-source-map ./src/skins/{skin}",
+      "defaults": {
+        "skin": ""
+      }
+    },
     "mv": {
       "command": "mv ./src/skins/{skin}/scss/style.css ./build/skins/{skin}/ & mv ./src/skins/{skin}/scss/editor-style.css ./build/skins/{skin}/",
       "defaults": {
-          "skin": "theidbrewing"
+        "skin": "theidbrewing"
       }
     },
     "test": {
       "command": "echo {skin}",
       "defaults": {
-          "skin": "test"
+        "skin": "test"
       }
     }
   },
