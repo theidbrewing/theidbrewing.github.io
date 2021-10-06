@@ -1,53 +1,27 @@
 @use '../variables/common' as cmn;
 
 .#{cmn.$prefix-skin--common} {
-	--logo-width: 280px;
-	--logo-height: 112px;
-	--logo-width--square: 394px;
-	.site-branding {
-		width: min(50vw, var(--logo-width));
-		height: min(18vw, var(--logo-height));
-	}
-	.site-branding::before {
-		position: absolute;
-	}
-	.site-footer > .site-info .site-name::before,
-	.site-branding::before {
-		visibility: visible;
-		content: "";
-		display: flex;
-		background-size: cover;
-	}
-	.site-footer > .site-info .site-name,
-	.site-description,
-	.site-branding .site-title {
-		visibility: hidden;
-	}
-
-	// Header logo
-	.site-branding .site-title > a {
-		visibility: visible;
-		opacity: 0;
-		display: flex;
-		width: min(50vw, var(--logo-width));
-		height: min(18vw, var(--logo-height));
-	}
-	.site-branding {
-		&::before {
-			width: min(50vw, var(--logo-width));
-			height: min(18vw, var(--logo-height));
-			background-image: svg-load("../../../../build/images/icons/logo--margined.svg");
+	.site-header {
+		> .site-logo {
+			border-bottom: 0;
+			width: auto;
+			padding-bottom: 0;
+		}
+		// logo がある時にsvgのlogoを非表示
+		&.has-logo {
+			.site-branding {
+				width: 1px;
+				height: 1px;
+				&::before {
+					display: none;
+				}
+			}
+			~ .site-footer .site-info .site-name::after {
+				display: none;
+			}
 		}
 	}
-
-	// Footer logo
-	.site-footer > .site-info .site-name {
-		&::before {
-			margin-left: auto;
-			margin-right: auto;
-			width: min(60vw, var(--logo-width--square));
-			height: min(60vw, var(--logo-width--square));
-			background-image: svg-load("../../../../build/images/icons/logo--knockout.svg");
-		}
+	.site-footer .site-info .site-name .site-logo {
+		visibility: visible;
 	}
 }
