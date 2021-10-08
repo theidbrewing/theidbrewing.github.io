@@ -29,3 +29,7 @@ require_once TT1SKIN_PATH . '/inc/class-tt1skin-json-controller.php';
 // TT1 Skin Config.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-config.php';
 TT1skin_Config::init();
+
+// TT1 Skin Block Style.
+require_once TT1SKIN_PATH . '/inc/class-tt1skin-block-style.php';
+TT1skin_Block_Style::init();

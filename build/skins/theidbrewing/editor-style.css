@@ -86,6 +86,7 @@
 .block-editor-block-list__layout,
 .theidbrewing {
   --font-headings: "Space Mono";
+  --heading--font-family: "Space Mono", "Noto Sans JP", sans-serif;
   --skin--list--font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --skin--ja--font-family: "Noto Sans JP", sans-serif;
   --global--color-primary: #540CED;
@@ -336,113 +337,6 @@
   background-color: var(--global--color-background);
 }
 
-@media only screen and (min-width: 1500px) {
-  .theidbrewing h2.is-style-section-title, .theidbrewing h2.is-style-section-title.alignwide {
-    margin: 0;
-    font-size: min(12vw, 240px);
-    position: absolute;
-    left: 0;
-    transform: rotate(90deg) translate(5em, 5.65em);
-    max-width: none;
-    width: 12em;
-  }
-  .theidbrewing h2.is-style-section-title::before, .theidbrewing h2.is-style-section-title::after, .theidbrewing h2.is-style-section-title.alignwide::before, .theidbrewing h2.is-style-section-title.alignwide::after {
-    top: -150px;
-    -webkit-animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
-            animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
-  }
-  .theidbrewing h2.is-style-section-title::before, .theidbrewing h2.is-style-section-title.alignwide::before {
-    -webkit-animation-name: bubbles-background;
-            animation-name: bubbles-background;
-  }
-  .theidbrewing h2.is-style-section-title.has-text-align-right, .theidbrewing h2.is-style-section-title.alignwide.has-text-align-right {
-    text-align: left;
-    left: auto;
-    right: 0;
-    transform: rotate(90deg) translate(5em, -5.65em);
-  }
-  .theidbrewing h2.is-style-section-title.has-text-align-right::before, .theidbrewing h2.is-style-section-title.has-text-align-right::after, .theidbrewing h2.is-style-section-title.alignwide.has-text-align-right::before, .theidbrewing h2.is-style-section-title.alignwide.has-text-align-right::after {
-    right: auto;
-  }
-}
-@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .theidbrewing h2.is-style-section-title::before, .theidbrewing h2.is-style-section-title::after, .theidbrewing h2.is-style-section-title.alignwide::before, .theidbrewing h2.is-style-section-title.alignwide::after {
-      -webkit-animation: none;
-              animation: none;
-    }
-  }
-}
-@-webkit-keyframes bubbles {
-  0% {
-    transform: translate(0%);
-    visibility: visible;
-  }
-  7%, 10% {
-    transform: translate(70%, 10%);
-    mix-blend-mode: screen;
-  }
-  25%, 35% {
-    transform: translate(-100%, 12%);
-    mix-blend-mode: hue;
-  }
-  36% {
-    visibility: hidden;
-    mix-blend-mode: overlay;
-  }
-  45% {
-    transform: translate(0%);
-  }
-}
-@keyframes bubbles {
-  0% {
-    transform: translate(0%);
-    visibility: visible;
-  }
-  7%, 10% {
-    transform: translate(70%, 10%);
-    mix-blend-mode: screen;
-  }
-  25%, 35% {
-    transform: translate(-100%, 12%);
-    mix-blend-mode: hue;
-  }
-  36% {
-    visibility: hidden;
-    mix-blend-mode: overlay;
-  }
-  45% {
-    transform: translate(0%);
-  }
-}
-@-webkit-keyframes bubbles-background {
-  0% {
-    transform: translate(0%);
-  }
-  7%, 10% {
-    transform: translate(70%, 10%);
-  }
-  25%, 35% {
-    transform: translate(-100%, 12%);
-  }
-  45% {
-    transform: translate(0%);
-  }
-}
-@keyframes bubbles-background {
-  0% {
-    transform: translate(0%);
-  }
-  7%, 10% {
-    transform: translate(70%, 10%);
-  }
-  25%, 35% {
-    transform: translate(-100%, 12%);
-  }
-  45% {
-    transform: translate(0%);
-  }
-}
 .block-editor-block-list__layout .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-text-color), .block-editor-block-list__layout .wp-block-button.is-style-outline .wp-block-button__link:not(:hover):not(:active):not(.has-text-color),
 .theidbrewing .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-text-color),
 .theidbrewing .wp-block-button.is-style-outline .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
@@ -657,6 +551,113 @@
   background-color: var(--global--color-background);
 }
 
+@media only screen and (min-width: 1500px) {
+  .theidbrewing.home h2.is-style-section-title, .theidbrewing.home h2.is-style-section-title.alignwide {
+    margin: 0;
+    font-size: min(12vw, 240px);
+    position: absolute;
+    left: 0;
+    transform: rotate(90deg) translate(5em, 5.65em);
+    max-width: none;
+    width: 12em;
+  }
+  .theidbrewing.home h2.is-style-section-title::before, .theidbrewing.home h2.is-style-section-title::after, .theidbrewing.home h2.is-style-section-title.alignwide::before, .theidbrewing.home h2.is-style-section-title.alignwide::after {
+    top: -150px;
+    -webkit-animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
+            animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
+  }
+  .theidbrewing.home h2.is-style-section-title::before, .theidbrewing.home h2.is-style-section-title.alignwide::before {
+    -webkit-animation-name: bubbles-background;
+            animation-name: bubbles-background;
+  }
+  .theidbrewing.home h2.is-style-section-title.has-text-align-right, .theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right {
+    text-align: left;
+    left: auto;
+    right: 0;
+    transform: rotate(90deg) translate(5em, -5.65em);
+  }
+  .theidbrewing.home h2.is-style-section-title.has-text-align-right::before, .theidbrewing.home h2.is-style-section-title.has-text-align-right::after, .theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right::before, .theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right::after {
+    right: auto;
+  }
+}
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .theidbrewing h2.is-style-section-title::before, .theidbrewing h2.is-style-section-title::after, .theidbrewing h2.is-style-section-title.alignwide::before, .theidbrewing h2.is-style-section-title.alignwide::after {
+      -webkit-animation: none;
+              animation: none;
+    }
+  }
+}
+@-webkit-keyframes bubbles {
+  0% {
+    transform: translate(0%);
+    visibility: visible;
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+    mix-blend-mode: screen;
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+    mix-blend-mode: hue;
+  }
+  36% {
+    visibility: hidden;
+    mix-blend-mode: overlay;
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+@keyframes bubbles {
+  0% {
+    transform: translate(0%);
+    visibility: visible;
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+    mix-blend-mode: screen;
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+    mix-blend-mode: hue;
+  }
+  36% {
+    visibility: hidden;
+    mix-blend-mode: overlay;
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+@-webkit-keyframes bubbles-background {
+  0% {
+    transform: translate(0%);
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
+@keyframes bubbles-background {
+  0% {
+    transform: translate(0%);
+  }
+  7%, 10% {
+    transform: translate(70%, 10%);
+  }
+  25%, 35% {
+    transform: translate(-100%, 12%);
+  }
+  45% {
+    transform: translate(0%);
+  }
+}
 .wp-block-social-links.has-icon-color.is-style-twentytwentyone-social-icons-color button {
   color: inherit;
 }
