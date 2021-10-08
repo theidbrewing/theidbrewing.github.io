@@ -131,7 +131,7 @@ if ( ! class_exists( 'TT1skin_Config' ) ) {
 		 */
 		public static function set_custom_colors() {
 			if ( isset( self::$skin_data->settings->color->palette ) ) {
-				$colors_array = json_decode(json_encode(self::$skin_data->settings->color->palette), true);
+				$colors_array = json_decode( wp_json_encode( self::$skin_data->settings->color->palette ), true );
 				add_theme_support( 'editor-color-palette', $colors_array );
 			}
 		}
