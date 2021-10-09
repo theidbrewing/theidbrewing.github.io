@@ -15,11 +15,11 @@ if ( ! class_exists( 'TT1skin_Json_Controller' ) ) {
         /**
 		 * 外部JSONを指定して配列を返す.
 		 *
-		 * @param string $url json file's url.
+		 * @param string $path json file's path.
 		 */
-		public static function get_json_data( $url ) {
+		public static function get_json_data( $path ) {
 			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-			$json = file_get_contents( $url );
+			$json = file_get_contents( $path );
 			// phpcs:enable
 			$arr  = json_decode( $json );
 			// TODO JSON error check.

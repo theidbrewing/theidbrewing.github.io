@@ -26,10 +26,17 @@ if ( is_file( 'tt1skin.config.php' ) ) {
 }
 // Json Controller.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-json-controller.php';
+// TT1 Skin data.
+require_once TT1SKIN_PATH . '/inc/class-tt1skin-skin-data.php';
+
 // TT1 Skin Config.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin-config.php';
-TT1skin_Config::init();
+require_once TT1SKIN_PATH . '/inc/class-tt1skin.php';
+TT1skin::init();
 
 // TT1 Skin Block Style.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-block-style.php';
 TT1skin_Block_Style::init();
+
+// TT1 Skin Block Pattern.
+require_once TT1SKIN_PATH . '/inc/class-tt1skin-block-pattern.php';
+TT1skin_Block_Pattern::init();

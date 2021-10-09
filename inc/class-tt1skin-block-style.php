@@ -1,8 +1,8 @@
 <?php
 /**
- * Class tt1skin Config
+ * Class tt1skin Block Style
  *
- * The file that defines the core plugin class
+ * The file that defines Block Styles
  *
  * @package tt1skin
  */
