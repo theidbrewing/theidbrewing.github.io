@@ -25,6 +25,7 @@
                 }
             }
         }
+        // デフォルトカラーではイエローベースのボーダー色にする
         &:not(.has-background) {
             .wp-block-table {
                 table {

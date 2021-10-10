@@ -4,9 +4,8 @@
     // icon
     --icon-size: 44px;
 }
-:root,
+body.block-editor-writing-flow,
 .#{cmn.$prefix-skin--common} {
-
     --heading--font-size-h1: min(8vw, 64px);
     --global--font-size-page-title: min(8vw, 2.5rem);
     --heading--font-size-h2: min(5.5vw, 2rem);
@@ -22,7 +21,4 @@
     --widget-width: 1440px;
 
     --logo-width--square: 200px;
-
-    // body color を上書き
-    color: var(--global--color-body);
 }
