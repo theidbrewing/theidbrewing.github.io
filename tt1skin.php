@@ -29,7 +29,7 @@ require_once TT1SKIN_PATH . '/inc/class-tt1skin-json-controller.php';
 // TT1 Skin data.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-skin-data.php';
 
-// TT1 Skin Config.
+// TT1 Skin Main Class.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin.php';
 TT1skin::init();
 
@@ -40,3 +40,7 @@ TT1skin_Block_Style::init();
 // TT1 Skin Block Pattern.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-block-pattern.php';
 TT1skin_Block_Pattern::init();
+
+// TT1 Skin Customizer Colors.
+require_once TT1SKIN_PATH . '/inc/class-tt1skin-customizer-colors.php';
+TT1skin_Customizer_Colors::register_hooks();
