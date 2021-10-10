@@ -160,10 +160,16 @@ body.block-editor-writing-flow,
 .tt1skin .wp-block-button .wp-block-button__link {
   transition: background-color 0.3s, border-color 0.3s;
 }
+.block-editor-block-list__layout .wp-block-button.is-style-fill:not(.has-custom-font-size),
+.tt1skin .wp-block-button.is-style-fill:not(.has-custom-font-size) {
+  font-size: min(6vw, 21px);
+}
+.block-editor-block-list__layout .wp-block-button.is-style-fill:not(.has-custom-font-size) .wp-block-button__link,
+.tt1skin .wp-block-button.is-style-fill:not(.has-custom-font-size) .wp-block-button__link {
+  font-weight: 700;
+}
 .block-editor-block-list__layout .wp-block-button.is-style-fill .wp-block-button__link,
 .tt1skin .wp-block-button.is-style-fill .wp-block-button__link {
-  font-size: min(6vw, 21px);
-  font-weight: 700;
   padding: calc(1.2 * var(--button--padding-vertical)) calc(1.4 * var(--button--padding-horizontal));
 }
 
@@ -704,7 +710,7 @@ body.block-editor-writing-flow,
 
 .block-editor-block-list__layout h3.is-style-section-title,
 .theidbrewing h3.is-style-section-title {
-  font-size: min(10vw, 90px);
+  font-size: min(9vw, 64px);
 }
 
 .theidbrewing h2.is-style-section-title,
