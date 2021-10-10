@@ -39,20 +39,20 @@ if ( ! class_exists( 'TT1skin' ) ) {
 		 */
 		public static function set_enqueue_files() {
 			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
-			if ( is_object( $skin_data ) ) {
-				if ( isset( $skin_data->name ) ) {
+			if ( is_array( $skin_data ) ) {
+				if ( isset( $skin_data['name'] ) ) {
 					// Enqueue CSS.
 					wp_enqueue_style(
-						$skin_data->name,
-						TT1SKIN_URL . '/build/skins/' . $skin_data->name . '/style.css',
+						$skin_data['name'],
+						TT1SKIN_URL . '/build/skins/' . $skin_data['name'] . '/style.css',
 						array(),
-						filectime( TT1SKIN_PATH . '/build/skins/' . $skin_data->name . '/style.css' )
+						filectime( TT1SKIN_PATH . '/build/skins/' . $skin_data['name'] . '/style.css' )
 					);
 				}
 				// Enqueue Google fonts.
-				if ( isset( $skin_data->settings->google_fonts_url ) ) {
+				if ( isset( $skin_data['settings']['google_fonts_url'] ) ) {
 					// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-					wp_enqueue_style( 'google-fonts', $skin_data->settings->google_fonts_url, array(), null );
+					wp_enqueue_style( 'google-fonts', $skin_data['settings']['google_fonts_url'], array(), null );
 					// phpcs:enable
 				}
 			}
@@ -67,14 +67,14 @@ if ( ! class_exists( 'TT1skin' ) ) {
 			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
 			add_theme_support( 'editor-styles' );
 			// テーマからの相対パスで指定.
-			if ( isset( $skin_data->name ) ) {
+			if ( isset( $skin_data['name'] ) ) {
 				$skin_plugin_path = '../../' . str_replace( WP_CONTENT_DIR, '', TT1SKIN_PATH );
-				add_editor_style( $skin_plugin_path . '/build/skins/' . $skin_data->name . '/editor-style.css' );
+				add_editor_style( $skin_plugin_path . '/build/skins/' . $skin_data['name'] . '/editor-style.css' );
 
 			}
 			// Enqueue Google fonts.
-			if ( isset( $skin_data->settings->google_fonts_url ) ) {
-				add_editor_style( $skin_data->settings->google_fonts_url, array() );
+			if ( isset( $skin_data['settings']['google_fonts_url'] ) ) {
+				add_editor_style( $skin_data['settings']['google_fonts_url'], array() );
 			}
 		}
 
@@ -92,8 +92,9 @@ if ( ! class_exists( 'TT1skin' ) ) {
 		 * @param array $classes are CSS class names for body tag.
 		 */
 		public static function set_body_class( $classes ) {
-			if ( isset( TT1skin_Skin_Data::get_instance()->get_skin_data()->name ) ) {
-				return array_merge( $classes, array( 'tt1skin', TT1skin_Skin_Data::get_instance()->get_skin_data()->name ) );
+			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
+			if ( isset( $skin_data['name'] ) ) {
+				return array_merge( $classes, array( 'tt1skin', $skin_data['name'] ) );
 			} else {
 				return array_merge( $classes, array( 'tt1skin' ) );
 			}
@@ -103,8 +104,9 @@ if ( ! class_exists( 'TT1skin' ) ) {
 		 * Set custom colors on the color palette
 		 */
 		public static function set_custom_colors() {
-			if ( isset( TT1skin_Skin_Data::get_instance()->get_skin_data()->settings->color->palette ) ) {
-				$colors_array = json_decode( wp_json_encode( TT1skin_Skin_Data::get_instance()->get_skin_data()->settings->color->palette ), true );
+			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
+			if ( isset( $skin_data['settings']['color']['palette'] ) ) {
+				$colors_array = $skin_data['settings']['color']['palette'];
 				add_theme_support( 'editor-color-palette', $colors_array );
 			}
 		}

@@ -690,6 +690,7 @@
 
 .theidbrewing h2.is-style-section-title {
   z-index: -1;
+  overflow: hidden;
 }
 .theidbrewing h2.is-style-section-title::before, .theidbrewing h2.is-style-section-title::after {
   content: "";

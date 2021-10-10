@@ -61,7 +61,7 @@ if ( ! class_exists( 'TT1skin_Skin_Data' ) ) {
 		 */
 		public function load_skin_datas( $skin_dir_name ) {
 			$skin_data = TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_dir_name . '/skin.json' );
-			if ( ! isset( $skin_data ) || ! is_object( $skin_data ) ) {
+			if ( ! isset( $skin_data ) || ! is_array( $skin_data ) ) {
 				return;
 			} else {
 				return $skin_data;

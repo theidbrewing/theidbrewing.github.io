@@ -27,8 +27,7 @@
 .#{skin.$skin-name} h2 {
     &.is-style-section-title {
         z-index: -1;
-    }
-    &.is-style-section-title {
+        overflow: hidden;
         &::before,
         &::after {
             content: "";

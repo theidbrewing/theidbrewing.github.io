@@ -22,7 +22,7 @@ if ( ! class_exists( 'TT1skin_Json_Controller' ) ) {
 			$json = file_get_contents( $path );
 			// phpcs:enable
 			$arr  = json_decode( $json , true );
-			// TODO JSON error check.
+			// TODO JSON error check
 			return $arr;
 		}
     }
