@@ -21,8 +21,8 @@ if ( ! class_exists( 'TT1skin_Json_Controller' ) ) {
 			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 			$json = file_get_contents( $path );
 			// phpcs:enable
-			$arr  = json_decode( $json );
-			// TODO JSON error check.
+			$arr  = json_decode( $json , true );
+			// TODO JSON error check
 			return $arr;
 		}
     }

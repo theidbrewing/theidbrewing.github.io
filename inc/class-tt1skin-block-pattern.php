@@ -28,7 +28,7 @@ if ( ! class_exists( 'TT1skin_Block_Pattern' ) ) {
 		 * Remove TT1 block patterns
 		 */
 		// public static function unregister_tt1_pattern_category() {
-		// 	unregister_block_pattern_category( 'twentytwentyone' );
+		// unregister_block_pattern_category( 'twentytwentyone' );
 		// }
 
 		/**
@@ -48,11 +48,11 @@ if ( ! class_exists( 'TT1skin_Block_Pattern' ) ) {
 			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
 			register_block_pattern(
 				'tt1skin/card',
-				json_decode( wp_json_encode( TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data->name . '/block_pattern/card.json' ) ), true )
+				TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/block_pattern/card.json' )
 			);
 			register_block_pattern(
 				'tt1skin/card--member',
-				json_decode( wp_json_encode( TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data->name . '/block_pattern/card--member.json' ) ), true )
+				TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/block_pattern/card--member.json' )
 			);
 		}
 	}

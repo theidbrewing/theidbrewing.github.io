@@ -1,20 +1,37 @@
+@use "sass:color";
+
 @use "./../skin_config" as skin;
-@use "./../colors" as color;
+@use "./../colors" as tt1color;
+@use "./../functions" as func;
 
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
     .wp-block-column.is-style-card {
         color: var(--global--color-background);
         background-color: var(--global--color-body);
+        // カラーパレットでの変更を有効にする
+        @include func.palletColors;
         .is-style-subtitle {
-            color: #{color.$color-base-600};
+            color: #{tt1color.$color-base-600};
             font-family: var(--heading--font-family);
+            // カラーパレットでの変更を有効にする
+            @include func.palletTextColors;
         }
         .wp-block-table {
             table {
                 th,
                 td {
-                    border-color: #{color.$color-accent-03-600};
+                    border-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+        &:not(.has-background) {
+            .wp-block-table {
+                table {
+                    th,
+                    td {
+                        border-color: #{tt1color.$color-accent-03-600};
+                    }
                 }
             }
         }
@@ -22,6 +39,8 @@
     .wp-block-column.is-style-card--member {
         border: 4px solid var(--global--color-body);
         background-color: #fff;
+        // カラーパレットでの変更を有効にする
+        @include func.palletBackgroundColors;
         .wp-block-image.is-style-rounded {
             img {
                 border: 4px solid var(--global--color-body);
@@ -29,11 +48,13 @@
         }
         .area-texts {
             background-color: var(--global--color-body);
+            // カラーパレットでの変更を有効にする
+            @include func.palletBackgroundColors;
         }
         h3 {
             color: var(--color-accent-03);
+            // カラーパレットでの変更を有効にする
+            @include func.palletTextColors;
         }
     }
 }
-
-
