@@ -1,4 +1,5 @@
 @use './skin_config' as skin;
+@use './functions' as func;
 
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
@@ -7,15 +8,14 @@
         --color-#{$key}: #{$color-var};
         --color-#{$key}-rgb: #{red($color-var)}, #{green($color-var)}, #{blue($color-var)};
     }
-}
-
-// 文字色と背景色を書き出し
-@each $key, $color-var in skin.$skin-colors {
-    .has-#{$key}-color {
-        color: var(--color-#{$key});
-    }
-    .has-#{$key}-background-color {
-        background-color: var(--color-#{$key});
+    // 文字色と背景色を書き出し
+    @each $key, $color-var in skin.$skin-colors {
+        .has-#{$key}-color {
+            color: var(--color-#{$key});
+        }
+        .has-#{$key}-background-color {
+            background-color: var(--color-#{$key});
+        }
     }
 }
 

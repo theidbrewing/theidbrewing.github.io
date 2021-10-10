@@ -1,0 +1,42 @@
+@use "sass:color";
+
+@use './skin_config' as skin;
+
+// --- mixin and function
+
+// == hex to rgb ==
+@function hexToRGBString($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+// --- 背景色や文字色を変更した際にパレットカラーで上書きできるようにするmixin
+// 文字色と背景色を書き出し
+@mixin palletColors {
+    @each $key, $color-var in skin.$skin-colors {
+        &.has-#{$key}-color {
+            color: var(--color-#{$key});
+        }
+        &.has-#{$key}-background-color {
+            background-color: var(--color-#{$key});
+        }
+    }
+}
+
+// 文字色を書き出し
+@mixin palletTextColors {
+    
+    @each $key, $color-var in skin.$skin-colors {
+        &.has-#{$key}-color {
+            color: var(--color-#{$key});
+        }
+    }
+}
+
+// 背景色を書き出し
+@mixin palletBackgroundColors {
+    @each $key, $color-var in skin.$skin-colors {
+        &.has-#{$key}-background-color {
+            background-color: var(--color-#{$key});
+        }
+    }
+}

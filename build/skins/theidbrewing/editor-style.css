@@ -34,52 +34,52 @@
   --color-accent-03: #EDE12F;
   --color-accent-03-rgb: 237, 225, 47;
 }
-
-.has-primary-color {
+.block-editor-block-list__layout .has-primary-color,
+.theidbrewing .has-primary-color {
   color: var(--color-primary);
 }
-
-.has-primary-background-color {
+.block-editor-block-list__layout .has-primary-background-color,
+.theidbrewing .has-primary-background-color {
   background-color: var(--color-primary);
 }
-
-.has-body-color {
+.block-editor-block-list__layout .has-body-color,
+.theidbrewing .has-body-color {
   color: var(--color-body);
 }
-
-.has-body-background-color {
+.block-editor-block-list__layout .has-body-background-color,
+.theidbrewing .has-body-background-color {
   background-color: var(--color-body);
 }
-
-.has-base-color {
+.block-editor-block-list__layout .has-base-color,
+.theidbrewing .has-base-color {
   color: var(--color-base);
 }
-
-.has-base-background-color {
+.block-editor-block-list__layout .has-base-background-color,
+.theidbrewing .has-base-background-color {
   background-color: var(--color-base);
 }
-
-.has-accent-01-color {
+.block-editor-block-list__layout .has-accent-01-color,
+.theidbrewing .has-accent-01-color {
   color: var(--color-accent-01);
 }
-
-.has-accent-01-background-color {
+.block-editor-block-list__layout .has-accent-01-background-color,
+.theidbrewing .has-accent-01-background-color {
   background-color: var(--color-accent-01);
 }
-
-.has-accent-02-color {
+.block-editor-block-list__layout .has-accent-02-color,
+.theidbrewing .has-accent-02-color {
   color: var(--color-accent-02);
 }
-
-.has-accent-02-background-color {
+.block-editor-block-list__layout .has-accent-02-background-color,
+.theidbrewing .has-accent-02-background-color {
   background-color: var(--color-accent-02);
 }
-
-.has-accent-03-color {
+.block-editor-block-list__layout .has-accent-03-color,
+.theidbrewing .has-accent-03-color {
   color: var(--color-accent-03);
 }
-
-.has-accent-03-background-color {
+.block-editor-block-list__layout .has-accent-03-background-color,
+.theidbrewing .has-accent-03-background-color {
   background-color: var(--color-accent-03);
 }
 
@@ -428,21 +428,123 @@
   color: var(--global--color-background);
   background-color: var(--global--color-body);
 }
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-primary-color,
+.theidbrewing .wp-block-column.is-style-card.has-primary-color {
+  color: var(--color-primary);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-primary-background-color,
+.theidbrewing .wp-block-column.is-style-card.has-primary-background-color {
+  background-color: var(--color-primary);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-body-color,
+.theidbrewing .wp-block-column.is-style-card.has-body-color {
+  color: var(--color-body);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-body-background-color,
+.theidbrewing .wp-block-column.is-style-card.has-body-background-color {
+  background-color: var(--color-body);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-base-color,
+.theidbrewing .wp-block-column.is-style-card.has-base-color {
+  color: var(--color-base);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-base-background-color,
+.theidbrewing .wp-block-column.is-style-card.has-base-background-color {
+  background-color: var(--color-base);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-accent-01-color,
+.theidbrewing .wp-block-column.is-style-card.has-accent-01-color {
+  color: var(--color-accent-01);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-accent-01-background-color,
+.theidbrewing .wp-block-column.is-style-card.has-accent-01-background-color {
+  background-color: var(--color-accent-01);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-accent-02-color,
+.theidbrewing .wp-block-column.is-style-card.has-accent-02-color {
+  color: var(--color-accent-02);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-accent-02-background-color,
+.theidbrewing .wp-block-column.is-style-card.has-accent-02-background-color {
+  background-color: var(--color-accent-02);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-accent-03-color,
+.theidbrewing .wp-block-column.is-style-card.has-accent-03-color {
+  color: var(--color-accent-03);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card.has-accent-03-background-color,
+.theidbrewing .wp-block-column.is-style-card.has-accent-03-background-color {
+  background-color: var(--color-accent-03);
+}
 .block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle,
 .theidbrewing .wp-block-column.is-style-card .is-style-subtitle {
   color: #bcbcbc;
   font-family: var(--heading--font-family);
 }
+.block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle.has-primary-color,
+.theidbrewing .wp-block-column.is-style-card .is-style-subtitle.has-primary-color {
+  color: var(--color-primary);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle.has-body-color,
+.theidbrewing .wp-block-column.is-style-card .is-style-subtitle.has-body-color {
+  color: var(--color-body);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle.has-base-color,
+.theidbrewing .wp-block-column.is-style-card .is-style-subtitle.has-base-color {
+  color: var(--color-base);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle.has-accent-01-color,
+.theidbrewing .wp-block-column.is-style-card .is-style-subtitle.has-accent-01-color {
+  color: var(--color-accent-01);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle.has-accent-02-color,
+.theidbrewing .wp-block-column.is-style-card .is-style-subtitle.has-accent-02-color {
+  color: var(--color-accent-02);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card .is-style-subtitle.has-accent-03-color,
+.theidbrewing .wp-block-column.is-style-card .is-style-subtitle.has-accent-03-color {
+  color: var(--color-accent-03);
+}
 .block-editor-block-list__layout .wp-block-column.is-style-card .wp-block-table table th,
 .block-editor-block-list__layout .wp-block-column.is-style-card .wp-block-table table td,
 .theidbrewing .wp-block-column.is-style-card .wp-block-table table th,
 .theidbrewing .wp-block-column.is-style-card .wp-block-table table td {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card:not(.has-background) .wp-block-table table th,
+.block-editor-block-list__layout .wp-block-column.is-style-card:not(.has-background) .wp-block-table table td,
+.theidbrewing .wp-block-column.is-style-card:not(.has-background) .wp-block-table table th,
+.theidbrewing .wp-block-column.is-style-card:not(.has-background) .wp-block-table table td {
   border-color: #B2A923;
 }
 .block-editor-block-list__layout .wp-block-column.is-style-card--member,
 .theidbrewing .wp-block-column.is-style-card--member {
   border: 4px solid var(--global--color-body);
   background-color: #fff;
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member.has-primary-background-color,
+.theidbrewing .wp-block-column.is-style-card--member.has-primary-background-color {
+  background-color: var(--color-primary);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member.has-body-background-color,
+.theidbrewing .wp-block-column.is-style-card--member.has-body-background-color {
+  background-color: var(--color-body);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member.has-base-background-color,
+.theidbrewing .wp-block-column.is-style-card--member.has-base-background-color {
+  background-color: var(--color-base);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member.has-accent-01-background-color,
+.theidbrewing .wp-block-column.is-style-card--member.has-accent-01-background-color {
+  background-color: var(--color-accent-01);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member.has-accent-02-background-color,
+.theidbrewing .wp-block-column.is-style-card--member.has-accent-02-background-color {
+  background-color: var(--color-accent-02);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member.has-accent-03-background-color,
+.theidbrewing .wp-block-column.is-style-card--member.has-accent-03-background-color {
+  background-color: var(--color-accent-03);
 }
 .block-editor-block-list__layout .wp-block-column.is-style-card--member .wp-block-image.is-style-rounded img,
 .theidbrewing .wp-block-column.is-style-card--member .wp-block-image.is-style-rounded img {
@@ -452,8 +554,56 @@
 .theidbrewing .wp-block-column.is-style-card--member .area-texts {
   background-color: var(--global--color-body);
 }
+.block-editor-block-list__layout .wp-block-column.is-style-card--member .area-texts.has-primary-background-color,
+.theidbrewing .wp-block-column.is-style-card--member .area-texts.has-primary-background-color {
+  background-color: var(--color-primary);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member .area-texts.has-body-background-color,
+.theidbrewing .wp-block-column.is-style-card--member .area-texts.has-body-background-color {
+  background-color: var(--color-body);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member .area-texts.has-base-background-color,
+.theidbrewing .wp-block-column.is-style-card--member .area-texts.has-base-background-color {
+  background-color: var(--color-base);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member .area-texts.has-accent-01-background-color,
+.theidbrewing .wp-block-column.is-style-card--member .area-texts.has-accent-01-background-color {
+  background-color: var(--color-accent-01);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member .area-texts.has-accent-02-background-color,
+.theidbrewing .wp-block-column.is-style-card--member .area-texts.has-accent-02-background-color {
+  background-color: var(--color-accent-02);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member .area-texts.has-accent-03-background-color,
+.theidbrewing .wp-block-column.is-style-card--member .area-texts.has-accent-03-background-color {
+  background-color: var(--color-accent-03);
+}
 .block-editor-block-list__layout .wp-block-column.is-style-card--member h3,
 .theidbrewing .wp-block-column.is-style-card--member h3 {
+  color: var(--color-accent-03);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member h3.has-primary-color,
+.theidbrewing .wp-block-column.is-style-card--member h3.has-primary-color {
+  color: var(--color-primary);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member h3.has-body-color,
+.theidbrewing .wp-block-column.is-style-card--member h3.has-body-color {
+  color: var(--color-body);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member h3.has-base-color,
+.theidbrewing .wp-block-column.is-style-card--member h3.has-base-color {
+  color: var(--color-base);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member h3.has-accent-01-color,
+.theidbrewing .wp-block-column.is-style-card--member h3.has-accent-01-color {
+  color: var(--color-accent-01);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member h3.has-accent-02-color,
+.theidbrewing .wp-block-column.is-style-card--member h3.has-accent-02-color {
+  color: var(--color-accent-02);
+}
+.block-editor-block-list__layout .wp-block-column.is-style-card--member h3.has-accent-03-color,
+.theidbrewing .wp-block-column.is-style-card--member h3.has-accent-03-color {
   color: var(--color-accent-03);
 }
 
@@ -673,6 +823,7 @@
     transform: translate(0%);
   }
 }
+/*! tt1skin editor-style.css */
 .wp-block-social-links.has-icon-color.is-style-twentytwentyone-social-icons-color button {
   color: inherit;
 }
