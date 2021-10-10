@@ -1,12 +1,11 @@
-@use './../../skin_config' as skin;
+@use "./../../skin_config" as skin;
 
 .block-editor-block-list__layout h2,
-.#{skin.$skin-name} h2 {
-    font-size: min(6.55vw, 38px);
-    letter-spacing: -0.06em;
+.block-editor-block-list__layout h3,
+.#{skin.$skin-name} h2,
+.#{skin.$skin-name} h3 {
     &.is-style-section-title {
         font-weight: 700;
-        font-size: min(12vw, 120px);
         margin-bottom: 0;
         position: relative;
         word-break: break-all;
@@ -23,30 +22,50 @@
         }
     }
 }
-// frontのみz-index調整とバブルを反映
+
+.block-editor-block-list__layout h2,
 .#{skin.$skin-name} h2 {
+    font-size: min(6.55vw, 38px);
+    letter-spacing: -0.06em;
     &.is-style-section-title {
-        z-index: -1;
-        overflow: hidden;
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            top: max(-25vw, -300px);
-            display: flex;
-            width: min(50vw, 600px);
-            height: min(50vw, 600px);
-        }
-        &::after {
-            mix-blend-mode: screen;
-            background-size: contain;
-            background-image: svg-load("../../../../build/images/icons/bubble.svg");
-            opacity: 0.5;
-        }
-        &::before {
+        font-size: min(12vw, 120px);
+    }
+}
+
+.block-editor-block-list__layout h3,
+.#{skin.$skin-name} h3 {
+    &.is-style-section-title {
+        font-size: min(10vw, 90px);
+    }
+}
+
+// frontのみz-index調整とバブルを反映
+.#{skin.$skin-name} {
+    h2,
+    h3 {
+        &.is-style-section-title {
             z-index: -1;
-            position: absolute;
-            background-color: var(--global--color-background);
+            overflow: hidden;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: max(-25vw, -300px);
+                display: flex;
+                width: min(50vw, 600px);
+                height: min(50vw, 600px);
+            }
+            &::after {
+                mix-blend-mode: screen;
+                background-size: contain;
+                background-image: svg-load("../../../../build/images/icons/bubble.svg");
+                opacity: 0.5;
+            }
+            &::before {
+                z-index: -1;
+                position: absolute;
+                background-color: var(--global--color-background);
+            }
         }
     }
 }

@@ -42,6 +42,9 @@
 // タイトル下にボーダーが入るのを上書き
 .wp-block.editor-post-title__block {
     border-bottom: 0;
+    .editor-post-title__input {
+        color: var(--global--color-body);
+    }
 }
 
 // メンバーカード　表示調整
