@@ -6,9 +6,13 @@
         transition: background-color 0.3s, border-color 0.3s;
     }
     &.is-style-fill {
-        .wp-block-button__link {
+        &:not(.has-custom-font-size) {
             font-size: min(6vw, 21px);
-            font-weight: 700;
+            .wp-block-button__link {
+                font-weight: 700;
+            }
+        }
+        .wp-block-button__link {
             padding: calc(1.2 * var(--button--padding-vertical)) calc(1.4 * var(--button--padding-horizontal));
         }
     }
