@@ -552,7 +552,9 @@
 }
 
 @media only screen and (min-width: 1500px) {
-  .theidbrewing.home h2.is-style-section-title, .theidbrewing.home h2.is-style-section-title.alignwide {
+  .tt1skin-special h2.is-style-section-title, .tt1skin-special h2.is-style-section-title.alignwide,
+.theidbrewing.home h2.is-style-section-title,
+.theidbrewing.home h2.is-style-section-title.alignwide {
     margin: 0;
     font-size: min(12vw, 240px);
     position: absolute;
@@ -561,22 +563,34 @@
     max-width: none;
     width: 12em;
   }
-  .theidbrewing.home h2.is-style-section-title::before, .theidbrewing.home h2.is-style-section-title::after, .theidbrewing.home h2.is-style-section-title.alignwide::before, .theidbrewing.home h2.is-style-section-title.alignwide::after {
+  .tt1skin-special h2.is-style-section-title::before, .tt1skin-special h2.is-style-section-title::after, .tt1skin-special h2.is-style-section-title.alignwide::before, .tt1skin-special h2.is-style-section-title.alignwide::after,
+.theidbrewing.home h2.is-style-section-title::before,
+.theidbrewing.home h2.is-style-section-title::after,
+.theidbrewing.home h2.is-style-section-title.alignwide::before,
+.theidbrewing.home h2.is-style-section-title.alignwide::after {
     top: -150px;
     -webkit-animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
             animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
   }
-  .theidbrewing.home h2.is-style-section-title::before, .theidbrewing.home h2.is-style-section-title.alignwide::before {
+  .tt1skin-special h2.is-style-section-title::before, .tt1skin-special h2.is-style-section-title.alignwide::before,
+.theidbrewing.home h2.is-style-section-title::before,
+.theidbrewing.home h2.is-style-section-title.alignwide::before {
     -webkit-animation-name: bubbles-background;
             animation-name: bubbles-background;
   }
-  .theidbrewing.home h2.is-style-section-title.has-text-align-right, .theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right {
+  .tt1skin-special h2.is-style-section-title.has-text-align-right, .tt1skin-special h2.is-style-section-title.alignwide.has-text-align-right,
+.theidbrewing.home h2.is-style-section-title.has-text-align-right,
+.theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right {
     text-align: left;
     left: auto;
     right: 0;
     transform: rotate(90deg) translate(5em, -5.65em);
   }
-  .theidbrewing.home h2.is-style-section-title.has-text-align-right::before, .theidbrewing.home h2.is-style-section-title.has-text-align-right::after, .theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right::before, .theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right::after {
+  .tt1skin-special h2.is-style-section-title.has-text-align-right::before, .tt1skin-special h2.is-style-section-title.has-text-align-right::after, .tt1skin-special h2.is-style-section-title.alignwide.has-text-align-right::before, .tt1skin-special h2.is-style-section-title.alignwide.has-text-align-right::after,
+.theidbrewing.home h2.is-style-section-title.has-text-align-right::before,
+.theidbrewing.home h2.is-style-section-title.has-text-align-right::after,
+.theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right::before,
+.theidbrewing.home h2.is-style-section-title.alignwide.has-text-align-right::after {
     right: auto;
   }
 }
