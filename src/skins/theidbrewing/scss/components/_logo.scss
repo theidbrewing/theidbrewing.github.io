@@ -7,6 +7,7 @@
 	.site-branding {
 		width: min(50vw, var(--logo-width));
 		height: min(18vw, var(--logo-height));
+		margin-left: -1.5rem;
 	}
 	.site-branding::before {
 		position: absolute;

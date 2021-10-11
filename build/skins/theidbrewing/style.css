@@ -1032,6 +1032,10 @@ body.block-editor-writing-flow,
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='44' height='44' xmlns='http://www.w3.org/2000/svg' fill='%23540CED'%3E%3Cpath d='M9 9h26v3H9zM9 21h26v3H9zM9 32h26v3H9z'/%3E%3C/svg%3E");
 }
 
+.theidbrewing .entry .entry-header {
+  padding-bottom: 0;
+}
+
 .block-editor-block-list__layout .widget-area .wp-block-group.tt1skin-widget-columns > .wp-block-group__inner-container > .wp-block-group .wp-block-cover,
 .theidbrewing .widget-area .wp-block-group.tt1skin-widget-columns > .wp-block-group__inner-container > .wp-block-group .wp-block-cover {
   overflow: hidden;
@@ -1072,6 +1076,7 @@ body.block-editor-writing-flow,
 .theidbrewing .site-branding {
   width: min(50vw, var(--logo-width));
   height: min(18vw, var(--logo-height));
+  margin-left: -1.5rem;
 }
 .theidbrewing .site-branding::before {
   position: absolute;
