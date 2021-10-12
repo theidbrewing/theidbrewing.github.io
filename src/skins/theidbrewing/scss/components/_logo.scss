@@ -1,3 +1,4 @@
+@use "./../../../../common/variables/common" as cmn;
 @use "./../skin_config" as skin;
 
 .#{skin.$skin-name} {
@@ -49,6 +50,15 @@
 			width: min(60vw, var(--logo-width--square));
 			height: min(60vw, var(--logo-width--square));
 			background-image: svg-load("../../../../build/images/icons/logo--knockout.svg");
+		}
+	}
+}
+
+// tablet =<
+@media only screen and (min-width: #{cmn.$breakpoint_lg}) {
+	.#{skin.$skin-name} {
+		.site-branding {
+			margin-left: -1.5rem;
 		}
 	}
 }
