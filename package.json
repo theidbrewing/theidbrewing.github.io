@@ -10,12 +10,11 @@
     "exsc:postcss": "npx postcss ./src/skins/$npm_config_skin/scss/style.css --replace --no-map & npx postcss ./src/skins/$npm_config_skin/scss/editor-style.css --replace --no-map",
     "exsc:mv": "move-cli ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin/style.css --mkdirp & move-cli ./src/skins/$npm_config_skin/scss/editor-style.css ./build/skins/$npm_config_skin/editor-style.css --mkdirp",
     "build:css": "run-s exsc:{sass,postcss,mv}",
+    "build:all": "chmod +x bin/*.sh && sh bin/build-skins.sh",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses",
     "list:skin": "ls -1 ./src/skins/",
     "count:skin": "skins_count=(`ls -1 ./src/skins`) && echo ${#skins_count[@]}",
-    "build:skin": "npx sass --no-source-map ./src/skins/$npm_config_skin && mkdir -p ./build/skins/$npm_config_skin && mv ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin && mv ./src/skins/$npm_config_skin/scss/editor-style.css ./build/skins/$npm_config_skin/",
-    "build:skins": "chmod +x bin/*.sh && sh bin/build-skins.sh",
     "dist:theidbrewing": "sh bin/dist.sh theidbrewing",
     "dist:all": "chmod +x bin/*.sh && sh bin/dist-all.sh",
     "test": "exsc test"

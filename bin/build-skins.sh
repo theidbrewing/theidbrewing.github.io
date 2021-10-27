@@ -51,36 +51,14 @@ SKIN_ARRAY=(`ls -1 $SKIN_SRC_DIR`)
 ${npm} run init:skin
 
 
-## run sass
+#run build:css
 #echo "================================"
-#echo "run sass"
-#echo "--------------------------------"
-
-${npm} run sass
-
-
-## run postcss
-#echo "================================"
-#echo "run postcss"
-#echo "--------------------------------"
-
-${npm} run postcss
-
-
-## run mv
-#echo "================================"
-#echo "run mv (all skins)"
+#echo "run build:css"
 #echo "--------------------------------"
 
 SKIN_ARRAY=(`ls -1 $SKIN_SRC_DIR`)
+${npm} run build:css --skin=${SKIN_ARRAY}
 
-for i in ${SKIN_ARRAY[@]}
-do
-    echo "move css src to build : $i"
-    mkdir -p ${SKIN_DIST_BUILD_DIR}/$i/
-    mv ${SKIN_SRC_DIR}/$i/scss/style.css ${SKIN_DIST_BUILD_DIR}/$i/
-    mv ${SKIN_SRC_DIR}/$i/scss/editor-style.css ${SKIN_DIST_BUILD_DIR}/$i/
-done
 
 echo "================================"
 echo "Done !"
