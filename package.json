@@ -6,13 +6,10 @@
     "init:skin": "node convert_to_scss.js",
     "lint-css": "wp-scripts lint-style './src/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
-    "sass": "exsc sass",
-    "postcss:skin01": "npx postcss ./src/skins/theidbrewing/scss/style.css --use autoprefixer postcss-inline-svg -r --no-map & npx postcss ./src/skins/theidbrewing/scss/editor-style.css --use autoprefixer postcss-inline-svg -r --no-map",
-    "postcss": "npx postcss ./src/skins/**/scss/[^_]*.css --use autoprefixer postcss-inline-svg -r --no-map",
-    "mv:skin01": "mv ./src/skins/theidbrewing/scss/style.css ./build/skins/theidbrewing & mv ./src/skins/theidbrewing/scss/editor-style.css ./build/skins/theidbrewing",
-    "mv": "exsc mv",
-    "build:skin01": "run-s sass postcss:skin01 mv:skin01",
-    "build:css": "run-s sass postcss:* mv:*",
+    "exsc:sass": "npx sass --no-source-map ./src/skins/$npm_config_skin/",
+    "exsc:postcss": "npx postcss ./src/skins/$npm_config_skin/scss/style.css --replace --no-map & npx postcss ./src/skins/$npm_config_skin/scss/editor-style.css --replace --no-map",
+    "exsc:mv": "move-cli ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin/style.css --mkdirp & move-cli ./src/skins/$npm_config_skin/scss/editor-style.css ./build/skins/$npm_config_skin/editor-style.css --mkdirp",
+    "build:css": "run-s exsc:{sass,postcss,mv}",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses",
     "list:skin": "ls -1 ./src/skins/",
@@ -33,7 +30,7 @@
     "mv": {
       "command": "mv ./src/skins/{skin}/scss/style.css ./build/skins/{skin}/ & mv ./src/skins/{skin}/scss/editor-style.css ./build/skins/{skin}/",
       "defaults": {
-        "skin": "theidbrewing"
+        "skin": ""
       }
     },
     "test": {
@@ -58,11 +55,12 @@
     "css-select": "^4.1.3",
     "css-what": "^5.0.1",
     "ejs": "^3.1.6",
+    "exsc": "gist:cc7ad5bc1a8417b57accb254f31be6a1",
     "imagemin": "^8.0.1",
     "imagemin-svgo": "^9.0.0",
+    "move-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.3.1",
-    "postcss-inline-svg": "^5.0.0",
-    "exsc": "gist:cc7ad5bc1a8417b57accb254f31be6a1"
+    "postcss-inline-svg": "^5.0.0"
   }
 }
