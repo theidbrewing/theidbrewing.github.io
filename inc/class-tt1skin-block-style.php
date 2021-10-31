@@ -34,6 +34,16 @@ if ( ! class_exists( 'TT1skin_Block_Style' ) ) {
 					'label' => 'section title',
 				)
 			);
+			/**
+			 * wp-block-cover
+			 */
+			register_block_style(
+				'core/cover',
+				array(
+					'name'  => 'special',
+					'label' => 'special',
+				)
+			);
 		}
 	}
 }
