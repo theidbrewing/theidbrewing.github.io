@@ -1,0 +1,28 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as color;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .navigation {
+        color: var(--global--color-body);
+        a {
+            color: var(--global--color-body);
+        }
+    }
+    .primary-navigation {
+        .menu-item {
+            > a {
+                font-family: var(--skin--list--font-family);
+                .menu-item-description {
+                    font-family: var(--skin--ja--font-family);
+                }
+            }
+        }
+        .dropdown-icon {
+            &.open::before {
+                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{color.$color-primary-500});
+            }
+        }
+    }
+}
+

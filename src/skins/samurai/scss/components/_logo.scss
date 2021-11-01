@@ -1,0 +1,31 @@
+@use "./../../../../common/variables/common" as cmn;
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+
+.#{skin.$skin-name} {
+	.site-footer > .site-info .site-name{
+		color: #fff;
+		font-family: Noto Serif jP;
+		font-weight: 700;
+	}
+	.site-branding .site-title {
+		color: #{tt1color.$Samurai-Primary-700};
+		font-family: Noto Serif jP;
+		font-weight: 700;
+	}
+
+	.site-description{
+		display: none;
+	}
+
+
+}
+
+// tablet =<
+@media only screen and (min-width: #{cmn.$breakpoint_lg}) {
+	.#{skin.$skin-name} {
+		.site-branding {
+			margin-left: -1.5rem;
+		}
+	}
+}
