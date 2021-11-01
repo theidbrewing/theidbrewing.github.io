@@ -2,29 +2,69 @@
 @use "./colors" as color;
 
 .#{skin.$skin-name} {
+    width: 100%;
+    overflow-x: hidden;
+
+    // Site Header
+    .site .site-header {
+        padding-top: 0;
+        padding-bottom: 0;
+        align-items: center;
+        max-width: 100%;
+
+        //サイトタイトルをグローバルナビの下へ
+        flex-direction: column-reverse; 
+    }
+
+    .site-main .page-header {
+        border-bottom: 0;
+        padding-bottom: 0;
+        .page-title {
+            font-weight: 700;
+        }
+    }
+
+    // Site Header
+    // TT1のスタイルを打ち消し
+    .site-header {
+        row-gap: 0;
+    }
+    .site-header::before,.site-header::after{
+        content: none;
+        display: none;
+        table-layout: none;
+    }
+
+    // Entey Header
+    // TT1のmarginを打ち消し
+    .singular .entry-header {
+        padding-bottom: 0;
+    }
+    
+    .site-main > * {
+        margin-top: calc(2 * var(--global--spacing-vertical));
+        margin-bottom: calc(2 * var(--global--spacing-vertical));
+    }
+
     // Site Footer
     .site-footer {
-        color: var(--global--color-background);
-        background-color: var(--global--color-body);
-        .footer-navigation-wrapper {
-            li {
-                a {
-                    &:link,
-                    &:visited,
-                    &:active {
-                        color: var(--global--color-background);
-                    }
-                }
-            }
-        }
+        width: 100%;
+        overflow: hidden;
+        max-width: none;
+        display: flex;
+        flex-direction: column-reverse;
         > .site-info {
+            border-top: 0;
+            flex-direction: column;
+            .site-name {
+                text-align: center;
+            }
             .powered-by {
-                color: #{color.$color-base-600};
-                font-family: var(--skin--list--font-family);
-                a {
-                    color: #{color.$color-base-600};
-                }
+                margin-left: 0;
+                font-size: min(3.5vw, 14px);
+                text-align: center;
             }
         }
     }
 }
+
