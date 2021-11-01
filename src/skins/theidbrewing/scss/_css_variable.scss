@@ -1,6 +1,7 @@
 @use "./colors" as color;
 @use "./skin_config" as skin;
 
+body.block-editor-block-preview__container,
 body.block-editor-writing-flow,
 .#{skin.$skin-name} {
     // font-family
