@@ -36,10 +36,10 @@ Convert the skin settings set in `skin.json` to SCSS.
 $ npm run init:skin
 ```
 
-### Build CSS
+### Build CSS (one each)
 
 ```
-$ npm run build:css
+$ npm run build:css --skin=[skinname]
 ```
 
 ### Build ALL(Skins)
@@ -49,12 +49,6 @@ $ npm run build:all
 
 ```
 $ npm run list:skin
-```
-
-### Build Skin (one each)
-
-```
-$ npm run build:skin --skin=[skinname]
 ```
 
 ### Dist Skin
