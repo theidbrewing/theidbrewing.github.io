@@ -9,6 +9,7 @@ body.block-editor-writing-flow,
     --heading--font-family: "Noto Serif JP", serif;
     --skin--list--font-family: "Noto Serif JP", serif;
     --skin--ja--font-family: "Noto Serif JP", serif;
+    --footer--font-family: "Noto Serif JP", serif;
 
     // color
     --global--color-primary: #{color.$Samurai-Primary-500};
@@ -17,6 +18,7 @@ body.block-editor-writing-flow,
     --global--color-body: #{color.$Samurai-Body-600};
     --global--color-background: #{color.$Samurai-base-500};
     --global--color-border: #{color.$Samurai-Primary-300};
+
 
     // font size
     --primary-nav--font-size: 18px;

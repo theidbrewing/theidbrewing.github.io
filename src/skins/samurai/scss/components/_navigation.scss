@@ -25,7 +25,7 @@
         .menu-item {
             > a {
                 font-family: var(--skin--list--font-family);
-                text-underline-offset:8px;
+                text-underline-offset:6px;
                 padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
                 .menu-item-description {
                     font-family: var(--skin--ja--font-family);
@@ -34,7 +34,7 @@
         }
         .dropdown-icon {
             &.open::before {
-                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{color.$color-primary-500});
+                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{color.$Samurai-Body-700});
             }
         }
 
@@ -49,22 +49,34 @@
         //最後のメニューは電話アクション用ボタンスタイルに
         > div > .menu-wrapper > li:last-child{
             background-color: #{color.$Samurai-Primary-500};
+            transition: all .3s ease 0s;
             border-radius: 8px;
-            a{color: #fff; font-size: 22px;text-decoration: none;}
+            a{
+                color: #fff;
+                font-size: 22px;
+                text-decoration: none;
+                &:focus{
+                    background-color: #{color.$Samurai-Primary-400};
+                    border-radius: 8px;
+                }
+            }
             .menu-item-description{line-height: 1em;}
         }
         > div > .menu-wrapper > li:last-child:hover{
             background-color: #{color.$Samurai-Primary-600};
-            position: relative;
-            top: 1px;
-            left: 1px;
+            transform: translateY(2px);
         }
-
 
     }
 
     // active、hover、focus時のアンダーライン
-    .primary-navigation .current-menu-item > a:first-child, .primary-navigation .current_page_item > a:first-child{
+    .primary-navigation a{
+        transition: all .3s ease 0s;
+        text-decoration-color:#FFF;
+        text-decoration-thickness:4px;
+    }
+    .primary-navigation .current-menu-item > a:first-child, 
+    .primary-navigation .current_page_item > a:first-child{
         text-decoration-color:#{color.$Samurai-Primary-500};
         text-decoration-thickness:4px;
     }
@@ -75,8 +87,12 @@
         text-decoration-style: solid;
         text-decoration-thickness:4px;
     }
-    .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button)
-    {text-decoration-thickness:4px;}
+    .site .primary-navigation a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
+        text-decoration-color:#{color.$Samurai-Primary-400};
+        text-decoration-thickness:4px;
+        background: #fff;
+        color: #000;
+    }
 
 }
 

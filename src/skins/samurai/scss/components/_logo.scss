@@ -17,6 +17,10 @@
 		font-weight: 700;
 		font-size: 40px;
 		a{font-weight: 700; text-decoration: none;}
+		a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+			background: none;
+			color: #{tt1color.$Samurai-Primary-500};
+		}
 	}
 	.site-description{
 		display: none;

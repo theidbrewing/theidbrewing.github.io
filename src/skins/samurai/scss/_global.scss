@@ -51,18 +51,42 @@
         width: 100%;
         overflow: hidden;
         max-width: none;
+        color: #{color.$Samurai-Body-50};
+        background-color: var(--global--color-primary-dark);
         display: flex;
         flex-direction: column-reverse;
+
+        .footer-navigation-wrapper {
+            li {
+                a {
+                    &:link,
+                    &:visited,
+                    &:active {
+                        color:#{color.$Samurai-Body-50};
+                    }
+                }
+            }
+        }
+        
         > .site-info {
+            color:  #{color.$Samurai-Body-50};
             border-top: 0;
             flex-direction: column;
             .site-name {
                 text-align: center;
+                a{
+                    color: #{color.$Samurai-Body-50};
+                    text-decoration: none;
+                }
             }
             .powered-by {
+                color:  #{color.$Samurai-Body-50};
                 margin-left: 0;
                 font-size: min(3.5vw, 14px);
                 text-align: center;
+                a {
+                    color: #{color.$Samurai-Body-50};
+                }
             }
         }
     }
