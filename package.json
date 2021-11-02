@@ -16,6 +16,7 @@
     "list:skin": "ls -1 ./src/skins/",
     "count:skin": "skins_count=(`ls -1 ./src/skins`) && echo ${#skins_count[@]}",
     "dist:theidbrewing": "sh bin/dist.sh theidbrewing",
+    "dist:samurai": "sh bin/dist.sh samurai",
     "dist:all": "chmod +x bin/*.sh && sh bin/dist-all.sh",
     "test": "exsc test"
   },
