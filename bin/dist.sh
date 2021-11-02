@@ -49,7 +49,9 @@ fi
 cp src/skins/$SKIN_NAME/skin.json $SKIN_DIST_SRC_DIR/skins/$SKIN_NAME/skin.json
 
 # copy src/{skin}/block_pattern/
-cp -r src/skins/$SKIN_NAME/block_pattern/ $SKIN_DIST_SRC_DIR/skins/$SKIN_NAME/block_pattern/
+if [ -d src/skins/$SKIN_NAME/block_pattern ]; then
+    cp -r src/skins/$SKIN_NAME/block_pattern/ $SKIN_DIST_SRC_DIR/skins/$SKIN_NAME/block_pattern/
+fi
 
 # copy build skin
 cp -r build/images/ $SKIN_DIST_BUILD_DIR/images/
