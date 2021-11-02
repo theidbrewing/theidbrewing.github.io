@@ -6,30 +6,8 @@
     &.archive .page-header .page-title,
     &.page .entry .entry-header .entry-title {
         position: relative;
-        font-size: min(12vw, 72px);
+        font-size: min(12vw, 48px);
         font-weight: 700;
-        z-index: -1;
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            visibility: visible;
-            top: max(-25vw, -300px);
-            display: flex;
-            width: min(50vw, 600px);
-            height: min(50vw, 600px);
-        }
-        &::after {
-            mix-blend-mode: screen;
-            background-size: contain;
-            background-image: svg-load("../../../../build/images/icons/bubble.svg");
-            opacity: 0.5;
-        }
-        &::before {
-            z-index: -2;
-            position: absolute;
-            background-color: var(--global--color-background);
-        }
     }
 }
 
@@ -39,34 +17,7 @@
     .#{skin.$skin-name}.home h2 {
         &.is-style-section-title,
         &.is-style-section-title.alignwide {
-            margin: 0;
-            font-size: min(12vw, 240px);
-            position: absolute;
-            left: 0;
-            transform: rotate(90deg) translate(5em, 5.65em);
-            max-width: none;
-            width: 12em;
-            &::before,
-            &::after {
-                top: -150px;
-                animation: bubbles 14s cubic-bezier(0.83, 0, 0.17, 1) 5s infinite;
-            }
-            &::after {
-                //transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
-            }
-            &::before {
-                animation-name: bubbles-background;
-            }
-            &.has-text-align-right {
-                text-align: left;
-                left: auto;
-                right: 0;
-                transform: rotate(90deg) translate(5em, -5.65em);
-                &::before,
-                &::after {
-                    right: auto;
-                }
-            }
+            font-size: min(12vw, 80px);
         }
     }
 }
@@ -82,41 +33,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes bubbles {
-    0% {
-        transform: translate(0%);
-        visibility: visible;
-    }
-    7%,10% {
-        transform: translate(70%, 10%);
-        mix-blend-mode:screen;
-    }
-    25%,35% {
-        transform: translate(-100%, 12%);
-        mix-blend-mode: hue;
-    }
-    36% {
-        visibility: hidden;
-        mix-blend-mode:overlay;
-    }
-    45% {
-        transform: translate(0%);
-    }
-}
-@keyframes bubbles-background {
-    0% {
-        transform: translate(0%);
-    }
-    7%,10% {
-        transform: translate(70%, 10%);
-    }
-    25%,35% {
-        transform: translate(-100%, 12%);
-    }
-    45% {
-        transform: translate(0%);
     }
 }
