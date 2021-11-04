@@ -3,7 +3,8 @@
 @use "./../../colors" as color;
 
 .block-editor-block-list__layout .wp-block-latest-posts,
-.#{skin.$skin-name} .wp-block-latest-posts {
+.#{skin.$skin-name} .wp-block-latest-posts,
+.#{skin.$skin-name} .wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts {
     &.wp-block-latest-posts__list {
         .wp-block-latest-posts__post-date,
         .wp-block-latest-posts__post-author {
@@ -30,10 +31,24 @@
     .#{skin.$skin-name} .wp-block-latest-posts {
         &.wp-block-latest-posts__list {
             > li {
-                // no-image
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: left;
+                margin-top: 2em;
+                margin-bottom: 0;
+
+                a{
+                    color: #{color.$Samurai-Body-500};
+                    font-size: 24px;
+                }
                 &::before {
-                    background-color: #fff;
-                    background-image: svg-load("../../../../build/images/icons/logo--margined.svg");
+                    display: none;
+                }
+
+                .wp-block-latest-posts__post-date{
+                    font-size: 24px;
+                    line-height: var(--global--line-height-heading);
+                    width: 18%;
                 }
             }
         }

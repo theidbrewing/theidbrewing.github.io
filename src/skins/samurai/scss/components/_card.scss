@@ -7,8 +7,23 @@
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
     .wp-block-column.is-style-card {
-        color: var(--global--color-background);
-        background-color: var(--global--color-body);
+        color: var(--global--color-body);
+        background-color: #fff;
+
+        //左上の三角スタイル
+        position: relative;
+        &::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 50px 50px 0 0;
+            border-color: #{tt1color.$Samurai-Primary-500} transparent transparent transparent;
+        }
+
         // カラーパレットでの変更を有効にする
         @include func.palletColors;
         .is-style-subtitle {
@@ -31,31 +46,46 @@
                 table {
                     th,
                     td {
-                        border-color: #{tt1color.$color-accent-03-600};
+                        border-color: #{tt1color.$Samurai-Accent-700};
                     }
                 }
             }
         }
     }
     .wp-block-column.is-style-card--member {
-        border: 4px solid var(--global--color-body);
-        background-color: #fff;
+        padding-bottom: 32px;
+        background-image: svg-load("../../../../build/images/icons/card-bg.svg");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: cover;
+        
+
+
+        background-color: var(--global--color-primary-dark);
         // カラーパレットでの変更を有効にする
         @include func.palletBackgroundColors;
         .wp-block-image.is-style-rounded {
             img {
-                border: 4px solid var(--global--color-body);
+                border: 3px solid var(--global--color-primary-dark);
             }
         }
-        .area-texts {
-            background-color: var(--global--color-body);
-            // カラーパレットでの変更を有効にする
-            @include func.palletBackgroundColors;
-        }
         h3 {
-            color: var(--color-accent-03);
+            position: relative;
+            font-weight: 700;
+            color: #fff;
             // カラーパレットでの変更を有効にする
             @include func.palletTextColors;
+
+            &::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{tt1color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -20px;
+                left: calc(50% - 35px)
+            }
         }
     }
 }

@@ -88,7 +88,8 @@
         text-decoration-thickness:4px;
     }
     .site .primary-navigation a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
-        text-decoration-color:#{color.$Samurai-Primary-400};
+        text-decoration-color:#{color.$Samurai-Primary-200};
+        text-decoration-style: solid;
         text-decoration-thickness:4px;
         background: #fff;
         color: #000;

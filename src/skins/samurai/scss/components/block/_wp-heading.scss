@@ -1,4 +1,6 @@
 @use "./../../skin_config" as skin;
+@use "./../../colors" as tt1color;
+@use "./../../functions" as func;
 
 .block-editor-block-list__layout h2,
 .block-editor-block-list__layout h3,
@@ -6,10 +8,16 @@
 .#{skin.$skin-name} h3 {
     &.is-style-section-title {
         font-weight: 700;
-        margin-bottom: 0;
+        margin-bottom: 1em;
+        margin-top: 2em;
         position: relative;
         word-break: break-all;
-        line-height: 0.9;
+        line-height: 1;
+        
+        // カラーパレットでの変更を有効にする
+        @include func.palletTextColors;
+        color: #{tt1color.$Samurai-Primary-700};
+
         & + * {
             margin-top: 0;
             padding-top: 0;
@@ -26,46 +34,15 @@
 .block-editor-block-list__layout h2,
 .#{skin.$skin-name} h2 {
     font-size: min(6.55vw, 38px);
-    letter-spacing: -0.06em;
     &.is-style-section-title {
-        font-size: min(12vw, 120px);
+        font-size: min(7vw, 42px);
     }
 }
 
 .block-editor-block-list__layout h3,
 .#{skin.$skin-name} h3 {
     &.is-style-section-title {
-        font-size: min(9vw, 64px);
+        font-size: min(6.55vw, 38px);
     }
 }
 
-// frontのみz-index調整とバブルを反映
-.#{skin.$skin-name} {
-    h2,
-    h3 {
-        &.is-style-section-title {
-            z-index: -1;
-            overflow: hidden;
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                top: max(-25vw, -300px);
-                display: flex;
-                width: min(50vw, 600px);
-                height: min(50vw, 600px);
-            }
-            &::after {
-                mix-blend-mode: screen;
-                background-size: contain;
-                background-image: svg-load("../../../../build/images/icons/bubble.svg");
-                opacity: 0.5;
-            }
-            &::before {
-                z-index: -1;
-                position: absolute;
-                background-color: var(--global--color-background);
-            }
-        }
-    }
-}

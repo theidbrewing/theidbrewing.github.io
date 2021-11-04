@@ -1,4 +1,5 @@
 @use "./skin_config" as skin;
+@use "./colors" as color;
 
 .#{skin.$skin-name} {
     // page title
@@ -8,6 +9,64 @@
         position: relative;
         font-size: min(12vw, 48px);
         font-weight: 700;
+    }
+
+    // 固定ページと投稿アーカイブのタイトル
+    &.page .site-main,
+    &.blog .site-main{
+        padding-top:0;
+    }
+    &.page{
+        .entry-header {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            margin-bottom: 2em;
+            max-width: 100%;
+            background-image: svg-load("../../../../build/images/icons/BG-primary-600.svg");
+            background-position: center;
+            background-size: cover;
+            .entry-title{
+                color: #FFF;
+                text-align: center;
+                position: relative;
+            }
+            .entry-title::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -30px;
+                left: calc(50% - 35px)
+            }
+        }
+    }
+    &.blog{
+        .page-header {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            margin-bottom: 2em;
+            max-width: 100%;
+            background-image: svg-load("../../../../build/images/icons/BG-primary-600.svg");
+            background-position: center;
+            background-size: cover;
+            .page-title{
+                color: #FFF;
+                text-align: center;
+                position: relative;
+            }
+            .page-title::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -30px;
+                left: calc(50% - 35px)
+            }
+        }
     }
 }
 
