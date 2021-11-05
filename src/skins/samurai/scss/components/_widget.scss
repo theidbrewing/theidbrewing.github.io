@@ -23,8 +23,25 @@
                         z-index: 9999;
                     }
 
+                    .tt1-widget-title{
+                        opacity: 1;
+                    }
+
                     h3{
                         margin: 1.5em 0 1em 0;
+                        position: relative;
+                        color: #{tt1color.$Samurai-Primary-600} ;
+                        &::after{
+                            content: '';
+                            width: 70px;
+                            height: 4px;
+                            display: inline-block;
+                            background-color: #{tt1color.$Samurai-Accent-500} ;
+                            position: absolute;
+                            bottom: -15px;
+                            left: calc(50% - 35px)
+                        }
+
                     }
                 }
             }
