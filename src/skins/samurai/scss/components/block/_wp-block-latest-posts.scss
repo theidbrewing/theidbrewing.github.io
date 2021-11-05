@@ -1,8 +1,10 @@
 @use './../../../../../common/variables/common' as cmn;
 @use './../../skin_config' as skin;
 @use "./../../colors" as color;
+@use "./../../functions" as func;
 
 .block-editor-block-list__layout .wp-block-latest-posts,
+.block-editor-block-list__block .wp-block-latest-posts,
 .#{skin.$skin-name} .wp-block-latest-posts,
 .#{skin.$skin-name} .wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts {
     &.wp-block-latest-posts__list {
@@ -20,15 +22,49 @@
             }
             .wp-block-latest-posts__featured-image {
                 > a {
-                    border: 2px solid var(--global--color-body);
+                    border: 1px solid var(--global--color-primary);
                 }
             }
         }
     }
+    &.is-grid{
+        &.wp-block-latest-posts__list {
+
+            > li {
+                padding: var(--base--margin);
+                background: #fff;
+
+                a.more-link{font-size: 18px;}
+            }
+            
+            &.is-style-default .wp-block-latest-posts__post-date{
+                font-size: var(--global--font-size-caption);
+                width: 100%;
+            }
+        }
+        //画像の左上の三角スタイル
+        .wp-block-latest-posts__featured-image{
+            position: relative;
+            &::before{
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 50px 50px 0 0;
+                border-color: #{color.$Samurai-Primary-500} transparent transparent transparent;
+                z-index: 9999;
+            }
+
+        }
+
+    }
 }
 
 @media only screen and (min-width: #{cmn.$breakpoint_md}) {
-    .block-editor-block-list__layout .is-style-default.wp-block-latest-posts,
+    .block-editor-block-list__block .wp-block-latest-posts,
     .#{skin.$skin-name} .wp-block-latest-posts {
         &.wp-block-latest-posts__list {
             > li {

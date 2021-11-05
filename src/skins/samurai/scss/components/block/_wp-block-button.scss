@@ -7,10 +7,11 @@
         // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
         .wp-block-button__link,
         &.is-style-outline .wp-block-button__link {
+            box-shadow: 4px 4px 10px 0px #09276633;
+
             &:not(:hover):not(:active):not(.has-text-color) {
                 color: var(--global--color-primary);
                 background-color: #fff;
-                box-shadow: 4px 4px 10px 0px #09276633;
                 transition: all .3s ease 0s;
             }
             &:hover {
@@ -18,6 +19,7 @@
                 background-color: #fff !important;
                 border-color: var(--global--color-primary) !important;
                 transform: translateY(2px);
+                box-shadow: none;
             }
         }
         &.is-style-fill {
@@ -37,7 +39,7 @@
                 &:hover {
                     transform: translateY(2px);
                     color: #fff !important;
-                    background-color: #{color.$Samurai-Primary-400} !important;
+                    background-color: #{color.$Samurai-Primary-600} !important;
                 }
             }
         }
@@ -46,9 +48,9 @@
         &.is-style-outline {
             .wp-block-button__link {
                 &:not(:hover):not(:active):not(.has-text-color) {
-                    background-color: rgba(0,0,0,0.2);
+                    background-color: #fff;
                     border-color: var(--global--color-primary);
-                    color: #{color.$Samurai-Primary-100};
+                    color: var(--global--color-primary);
                 }
             }
         }
