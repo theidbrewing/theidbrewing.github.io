@@ -71,15 +71,6 @@
             }
         }
     }
-
-    .wp-block-table.is-style-regular td, 
-    .wp-block-table.is-style-regular th{
-        border-top-color:  #{color.$Samurai-Primary-300} ;
-        border-right-color:   #{color.$Samurai-Primary-300} ;
-        border-bottom-color: #{color.$Samurai-Primary-300} ;
-        border-left-color: #{color.$Samurai-Primary-300} ;
-        background: #fff;
-        }
 }
 
 @media only screen and (min-width: 1500px) {
