@@ -83,26 +83,8 @@
 }
 
 @media only screen and (min-width: 1500px) {
-    // Homeのみサイドに縦フリになるスタイルをh2.is-style-section-titleに設定
-    .tt1skin-special h2,
-    .#{skin.$skin-name}.home h2 {
-        &.is-style-section-title,
-        &.is-style-section-title.alignwide {
-            font-size: min(12vw, 80px);
-        }
-    }
-}
-
-@media not all and (min-resolution:.001dpcm) { 
-    @supports (-webkit-appearance:none) {
-        .#{skin.$skin-name} h2 {
-            &.is-style-section-title,
-            &.is-style-section-title.alignwide {
-                &::before,
-                &::after {
-                    animation: none;
-                }
-            }
-        }
+    //全幅を指定しても1920pxまでとする
+    .#{skin.$skin-name} .alignfull{
+        max-width: 1920px;
     }
 }

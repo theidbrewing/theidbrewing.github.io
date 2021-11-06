@@ -62,11 +62,6 @@
             }
             .menu-item-description{line-height: 1em;}
         }
-        > div > .menu-wrapper > li:last-child:hover{
-            background-color: #{color.$Samurai-Primary-600};
-            transform: translateY(2px);
-        }
-
     }
 
     // active、hover、focus時のアンダーライン
@@ -93,7 +88,23 @@
         text-decoration-thickness:4px;
         background: #fff;
         color: #000;
+        z-index: 1;
     }
 
 }
 
+
+@media only screen and (min-width: 1500px) {
+    // PC表示の際にはグロナビ一番右端の電話番号のリンクを無効に
+    .#{skin.$skin-name} {
+        .primary-navigation {
+   
+            //最後のメニューは電話アクション用ボタンスタイルに
+            > div > .menu-wrapper > li:last-child{
+                a[href^="tel:"] {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
