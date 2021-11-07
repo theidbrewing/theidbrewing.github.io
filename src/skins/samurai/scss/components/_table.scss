@@ -5,6 +5,7 @@
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
 
+    &.single,
     &.page{
         .wp-block-table,
         .wp-block-table.is-style-regular{
