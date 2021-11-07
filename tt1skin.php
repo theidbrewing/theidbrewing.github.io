@@ -18,9 +18,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-//サムライスキン開発中だけ
-define( 'TT1_SKIN_NAME', 'samurai' );
-
 define( 'TT1SKIN_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'TT1SKIN_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
