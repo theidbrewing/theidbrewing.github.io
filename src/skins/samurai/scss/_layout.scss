@@ -1,0 +1,15 @@
+@use "./skin_config" as skin;
+@use "./colors" as color;
+
+@media only screen and (min-width: 1500px) {
+    //全幅を1920pxまでとする
+    body.#{skin.$skin-name} {
+        background-color: #{color.$Samurai-Primary-50} !important;
+        .site{
+            background-color: #f8f8f8;
+            max-width: 1920px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

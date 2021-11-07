@@ -1,12 +1,97 @@
 @use "./../skin_config" as skin;
 @use "./../colors" as color;
 
+.block-editor-block-list__layout,
+.block-editor-block-list__block,
 .#{skin.$skin-name} {
     // page title
-    // entry header title
-    .entry {
+    // archive title
+
+    &.archive .page-header .page-title,
+    &.blog .page-title,
+    &.page .entry .entry-header .entry-title {
+        position: relative;
+        font-size: min(12vw, 48px);
+        font-weight: 700;
+    }
+
+    // ヘッダー部分との余白をゼロに
+    &.page .site-main,
+    &.blog .site-main,
+    &.archive .site-main,
+    &.single .site-main {
+        padding-top:0;
+    }
+
+    //page title
+    &.page{
         .entry-header {
-            padding-bottom: 0px;
+            padding-top: 120px;
+            padding-bottom: 120px;
+            margin-bottom: 2em;
+            max-width: 100%;
+            background-image: svg-load("../../../../build/images/icons/BG-primary-600.svg");
+            background-position: center;
+            background-size: cover;
+            .entry-title{
+                color: #FFF;
+                text-align: center;
+                position: relative;
+            }
+            .entry-title::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -30px;
+                left: calc(50% - 35px)
+            }
+        }
+    }
+
+    // archive title
+    // category title
+    &.blog,
+    &.archive{
+        header.page-header {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            margin-bottom: 2em;
+            max-width: 100%;
+            background-image: svg-load("../../../../build/images/icons/BG-primary-600.svg");
+            background-position: center;
+            background-size: cover;
+            .page-title{
+                color: #FFF;
+                text-align: center;
+                position: relative;
+            }
+            .page-title::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -30px;
+                left: calc(50% - 35px)
+            }
+        }
+    }
+
+    &.archive{
+        header.page-header {
+            .page-title{
+                span{
+                    position: relative;
+                    margin-left: -5.5em;
+                }
+            }
+            .page-title::after{
+                visibility: visible;
+            }
         }
     }
 }
