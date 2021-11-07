@@ -94,4 +94,33 @@
             }
         }
     }
+
+    // single title
+    &.single{
+        header.category-header {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            margin-bottom: 2em;
+            max-width: 100%;
+            background-image: svg-load("../../../../build/images/icons/BG-primary-600.svg");
+            background-position: center;
+            background-size: cover;
+            .page-title{
+                color: #FFF;
+                text-align: center;
+                position: relative;
+                font-weight: 700;
+            }
+            .page-title::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -30px;
+                left: calc(50% - 35px)
+            }
+        }
+    }
 }
