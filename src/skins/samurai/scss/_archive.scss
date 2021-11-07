@@ -1,0 +1,14 @@
+@use "./skin_config" as skin;
+@use "./colors" as color;
+@use "./mixin" as mix;
+
+.#{skin.$skin-name}.archive{
+    .post.type-post{
+        padding: 3rem;
+        background-color: #fff;
+        overflow: hidden;
+
+        ///左上の三角スタイル
+        @include mix.samurai_blue_corner;
+    }
+}

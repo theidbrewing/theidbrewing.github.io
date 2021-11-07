@@ -2,6 +2,7 @@
 @use './../../skin_config' as skin;
 @use "./../../colors" as color;
 @use "./../../functions" as func;
+@use "./../../mixin" as mix;
 
 .block-editor-block-list__layout .wp-block-latest-posts,
 .block-editor-block-list__block .wp-block-latest-posts,
@@ -42,22 +43,9 @@
                 width: 100%;
             }
         }
-        //画像の左上の三角スタイル
         .wp-block-latest-posts__featured-image{
-            position: relative;
-            &::before{
-                position: absolute;
-                content: "";
-                left: 0;
-                top: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 50px 50px 0 0;
-                border-color: #{color.$Samurai-Primary-500} transparent transparent transparent;
-                z-index: 9999;
-            }
-
+            ///左上の三角スタイル
+            @include mix.samurai_blue_corner;
         }
 
     }

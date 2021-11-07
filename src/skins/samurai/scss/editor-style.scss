@@ -34,6 +34,9 @@
 @forward "./page";
 @forward "./single";
 
+@forward './mixin';
+@forward "./layout";
+
 // ----------- Editor only
 // TT1側のバグだと思われる ソーシャルアイコンの色を指定している場合に色を上書きしないように修正
 .wp-block-social-links.has-icon-color.is-style-twentytwentyone-social-icons-color {
