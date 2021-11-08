@@ -1,12 +1,1 @@
-<svg width="1920" height="1365" viewBox="0 0 1920 1365" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1920" height="1365" fill="#054085"/>
-<mask id="mask0_618:1236" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1365">
-<rect width="1920" height="1365" fill="#054085"/>
-</mask>
-<g mask="url(#mask0_618:1236)">
-<rect x="829" y="1556.64" width="1685.24" height="810" transform="rotate(-45 829 1556.64)" fill="#4E8ECF" fill-opacity="0.1"/>
-<rect x="-686" y="440.516" width="1757.18" height="810" transform="rotate(-45 -686 440.516)" fill="#4E8ECF" fill-opacity="0.1"/>
-<rect x="-624" y="866.515" width="810" height="1586.38" transform="rotate(-45 -624 866.515)" fill="#4E8ECF" fill-opacity="0.1"/>
-<rect x="785.391" y="-115.095" width="810" height="1699.74" transform="rotate(-45 785.391 -115.095)" fill="#4E8ECF" fill-opacity="0.1"/>
-</g>
-</svg>
+<svg width="1920" height="1365" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#054085" d="M0 0h1920v1365H0z"/><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1365"><path fill="#054085" d="M0 0h1920v1365H0z"/></mask><g mask="url(#a)" fill="#4E8ECF" fill-opacity=".1"><path d="M829 1556.64 2020.645 364.995 2593.4 937.752 1401.756 2129.396zM-686 440.516 556.514-801.998 1129.27-229.24-113.244 1013.272z"/><path d="m-624 866.515 572.756-572.756 1121.74 1121.74-572.756 572.756zM785.391-115.095l572.756-572.756L2560.045 514.046l-572.756 572.757z"/></g></svg>
