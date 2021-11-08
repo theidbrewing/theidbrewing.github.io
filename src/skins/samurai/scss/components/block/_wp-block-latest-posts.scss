@@ -11,7 +11,7 @@
     &.wp-block-latest-posts__list {
         .wp-block-latest-posts__post-date,
         .wp-block-latest-posts__post-author {
-            color: #{color.$color-body-400};
+            color: #{color.$Samurai-Body-500};
         }
         > li {
             // post title
@@ -19,6 +19,12 @@
                 color: var(--global--color-body);
                 &:hover {
                     text-decoration-color: var(--global--color-primary);
+                }
+                &:focus{
+                    background-color: #fff;
+                    color:  #{color.$Samurai-Primary-400};
+                    text-underline-offset: 0.1em;
+                    text-decoration-thickness: 4px;
                 }
             }
             .wp-block-latest-posts__featured-image {
