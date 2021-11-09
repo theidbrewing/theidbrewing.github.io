@@ -44,19 +44,3 @@ TT1skin_Block_Pattern::init();
 // TT1 Skin Customizer Colors.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-customizer-colors.php';
 TT1skin_Customizer_Colors::register_hooks();
-
-// シングルページでカテゴリ名を表示(Samurai Skinの時だけにしたい)
-// if (  'twentytwentyone' === wp_get_theme() ) だとNULLになってしまったのですが
-// if (  'twentytwentyone' === get_template() ) でもいいのかな？
-function samurai_add_catname(){
-	if (  'twentytwentyone' === wp_get_theme() -> get('TextDomain') ) {
-			$category = get_the_category();
-			$cat_name = $category[0]->cat_name;
-			?>
-				<header class="category-header alignwide">
-				<p class="page-title"><?php echo $cat_name ; ?></p>
-				</header>
-		<?php
-	}
-}
-add_action('get_template_part_template-parts/content/content-single','samurai_add_catname');
