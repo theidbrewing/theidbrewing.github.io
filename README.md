@@ -55,6 +55,7 @@ $ npm run list:skin
 
 ```
 $ npm run dist:theidbrewing
+$ npm run dist:samurai
 ```
 
 ### Dist All (include `Build Skins`)
