@@ -3,12 +3,26 @@
 
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
+    .wp-block-buttons {
+        // コアのスタイルを打ち消し
+        > .wp-block-button {
+            margin-bottom: 0;
+        }
+        // 縦バリエーションの時にgapを指定する
+        &.is-vertical {
+            gap: calc(0.666 * var(--global--spacing-vertical));
+        }
+
+    }
     .wp-block-button {
         // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
         .wp-block-button__link,
+        &:not(.is-style-outline) .wp-block-button__link,
         &.is-style-outline .wp-block-button__link {
             &:not(:hover):not(:active):not(.has-text-color) {
                 color: var(--global--color-body);
+                background-color: transparent;
+                border-color: var(--global--color-body);
             }
             &:hover {
                 color: var(--global--color-body) !important;
@@ -16,27 +30,42 @@
                 border-color: var(--global--color-primary) !important;
             }
         }
+        // 塗りつぶし
         &.is-style-fill {
             .wp-block-button__link {
                 &:not(:hover):not(:active):not(.has-text-color) {
                     color: #fff;
+                    background-color: var(--global--color-primary);
+                    border: 0;
                 }
                 &:hover {
                     color: #fff !important;
                     background-color: #{color.$color-primary-600} !important;
-                    border-color: #{color.$color-primary-600} !important;
+                    border: 0;
                 }
             }
         }
     }
+    // 背景色が指定されているブロック内でのボタンブロック輪郭スタイルを調整
     .has-background .wp-block-button {
         &.is-style-outline {
             .wp-block-button__link {
                 &:not(:hover):not(:active):not(.has-text-color) {
-                    background-color: rgba(0,0,0,0.2);
+                    background-color: rgba(0, 0, 0, 0.2);
                     border-color: var(--global--color-primary);
                     color: #{color.$color-primary-100};
                 }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 482px) {
+    .block-editor-block-list__layout,
+    .#{skin.$skin-name} {
+        .wp-block-buttons {
+            // 縦バリエーションの時にgapを指定する
+            &.is-vertical {
+                gap: var(--global--spacing-vertical);
             }
         }
     }
