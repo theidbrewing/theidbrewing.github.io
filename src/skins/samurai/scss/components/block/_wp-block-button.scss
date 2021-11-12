@@ -1,5 +1,5 @@
 @use "./../../skin_config" as skin;
-@use "./../../colors" as color;
+@use "./../../colors" as tt1color;
 
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
@@ -34,12 +34,12 @@
  
                 &:not(:hover):not(:active):not(.has-text-color) {
  
-                    background-color: #{color.$Samurai-Primary-500} !important;
+                    background-color: #{tt1color.$Samurai-Primary-500} !important;
                 }
                 &:hover {
                     transform: translateY(2px);
                     color: #fff !important;
-                    background-color: #{color.$Samurai-Primary-600} !important;
+                    background-color: #{tt1color.$Samurai-Primary-600} !important;
                 }
             }
         }

@@ -1,5 +1,4 @@
 @use "./skin_config" as skin;
-@use "./colors" as color;
 @use "./mixin" as mix;
 
 .#{skin.$skin-name}.archive{

@@ -1,5 +1,4 @@
 @use './../../skin_config' as skin;
-@use "./../../colors" as color;
 
 .block-editor-block-list__layout .wp-block-group,
 .#{skin.$skin-name} .wp-block-group {
@@ -7,32 +6,6 @@
         position: relative;
         h2 + .wp-block-buttons {
             margin-top: 2em;
-        }
-    }
-}
-// 背景画像のカスタムはフロントだけに限定
-.#{skin.$skin-name} .wp-block-group {
-    &.is-style-section-mission {
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            display: flex;
-            width: min(15vw, 180px);
-            height: min(15vw, 180px);
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        &::before {
-            top: max(-7vw, -90px);
-            left: max(-7vw, -90px);
-            background-image: svg-load("../../../../build/images/icons/bottles.svg", fill=#{color.$color-accent-01-500});
-        }
-        &::after {
-            bottom: min(7vw, 90px);
-            right: max(-7vw, -90px);
-            transform: rotate(-60deg);
-            background-image: svg-load("../../../../build/images/icons/bottles.svg", fill=#{color.$color-accent-02-500});
         }
     }
 }

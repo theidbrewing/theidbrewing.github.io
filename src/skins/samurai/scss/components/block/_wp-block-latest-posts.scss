@@ -1,6 +1,6 @@
 @use './../../../../../common/variables/common' as cmn;
 @use './../../skin_config' as skin;
-@use "./../../colors" as color;
+@use "./../../colors" as tt1color;
 @use "./../../functions" as func;
 @use "./../../mixin" as mix;
 
@@ -11,7 +11,7 @@
     &.wp-block-latest-posts__list {
         .wp-block-latest-posts__post-date,
         .wp-block-latest-posts__post-author {
-            color: #{color.$Samurai-Body-500};
+            color: #{tt1color.$Samurai-Body-500};
         }
         > li {
             // post title
@@ -22,7 +22,7 @@
                 }
                 &:focus{
                     background-color: #fff;
-                    color:  #{color.$Samurai-Primary-400};
+                    color:  #{tt1color.$Samurai-Primary-400};
                     text-underline-offset: 0.1em;
                     text-decoration-thickness: 4px;
                 }
@@ -69,7 +69,7 @@
                 margin-bottom: 0;
 
                 a{
-                    color: #{color.$Samurai-Body-500};
+                    color: #{tt1color.$Samurai-Body-500};
                     font-size: 24px;
                 }
                 &::before {
