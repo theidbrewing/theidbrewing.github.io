@@ -27,6 +27,7 @@
 }
 
 @media only screen and (min-width: #{cmn.$breakpoint_md}) {
+    .block-editor-block-list__layout .wp-block-latest-posts,
     .#{skin.$skin-name} .wp-block-latest-posts {
         &.wp-block-latest-posts__list {
             > li {
