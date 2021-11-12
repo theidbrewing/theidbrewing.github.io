@@ -17,6 +17,7 @@
 
 // スキン独自スタイル
 @forward "./colors";
+@forward './samurai-common';
 
 @forward "./components/block/wp-heading";
 @forward "./components/block/wp-block-button";
@@ -62,4 +63,11 @@
             justify-content: center;
         }
     }
+}
+
+
+// エディター画面フォント指定
+.block-editor-block-list__layout{
+    --global--font-primary: "Noto Serif JP", serif !important;
+    --heading--font-family: "Noto Serif JP", serif !important;
 }

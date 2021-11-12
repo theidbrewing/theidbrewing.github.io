@@ -48,7 +48,7 @@
                 transition: all .3s ease 0s;
  
                 &:not(:hover):not(:active):not(.has-text-color) {
-                    background-color: #{tt1color.$Samurai-Primary-500};
+                    background-color: #{tt1color.$Samurai-Primary-500}!important;
                 }
                 &:hover {
                     transform: translateY(2px);
