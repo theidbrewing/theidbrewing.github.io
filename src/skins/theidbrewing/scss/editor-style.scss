@@ -8,6 +8,7 @@
 @forward "../../../common/components/logo";
 @forward "../../../common/components/navigation";
 
+@forward "../../../common/components/block/wp-block-latest-posts";
 @forward "../../../common/components/block/wp-block-button";
 
 @forward "../../../common/components/card";
@@ -54,6 +55,17 @@
         .components-resizable-box__container {
             display: flex;
             justify-content: center;
+        }
+    }
+}
+
+// 最新の投稿ブロックが3カラム化しないバグを修正
+.block-editor-block-list__layout .wp-block-latest-posts {
+    &.wp-block-latest-posts__list.is-grid {
+        &.columns-3 {
+            > li {
+                width: calc((100% / 3) - 5rem);
+            }
         }
     }
 }
