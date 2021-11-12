@@ -1,7 +1,7 @@
 @use "./skin_config" as skin;
-@use "./colors" as color;
+@use "./colors" as tt1color;
 
 .#{skin.$skin-name}.has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
     background: none;
-    color: #{color.$Samurai-Body-500};
+    color: #{tt1color.$Samurai-Body-500};
 }

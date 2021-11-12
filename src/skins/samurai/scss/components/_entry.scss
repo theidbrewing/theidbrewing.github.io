@@ -1,5 +1,5 @@
 @use "./../skin_config" as skin;
-@use "./../colors" as color;
+@use "./../colors" as tt1color;
 
 .block-editor-block-list__layout,
 .block-editor-block-list__block,
@@ -43,7 +43,7 @@
                 width: 70px;
                 height: 4px;
                 display: inline-block;
-                background-color: #{color.$Samurai-Accent-500} ;
+                background-color: #{tt1color.$Samurai-Accent-500} ;
                 position: absolute;
                 bottom: -30px;
                 left: calc(50% - 35px)
@@ -73,7 +73,7 @@
                 width: 70px;
                 height: 4px;
                 display: inline-block;
-                background-color: #{color.$Samurai-Accent-500} ;
+                background-color: #{tt1color.$Samurai-Accent-500} ;
                 position: absolute;
                 bottom: -30px;
                 left: calc(50% - 35px)
@@ -116,7 +116,7 @@
                 width: 70px;
                 height: 4px;
                 display: inline-block;
-                background-color: #{color.$Samurai-Accent-500} ;
+                background-color: #{tt1color.$Samurai-Accent-500} ;
                 position: absolute;
                 bottom: -30px;
                 left: calc(50% - 35px)

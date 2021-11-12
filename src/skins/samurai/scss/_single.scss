@@ -1,5 +1,5 @@
 @use "./skin_config" as skin;
-@use "./colors" as color;
+@use "./colors" as tt1color;
 
 .block-editor-block-list__layout,
 .block-editor-block-list__block,
@@ -7,15 +7,15 @@
 
     &.has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
         background: #fff;
-        color: #{color.$Samurai-Primary-400};
+        color: #{tt1color.$Samurai-Primary-400};
 
-        .meta-nav{color: #{color.$Samurai-Primary-400};}
+        .meta-nav{color: #{tt1color.$Samurai-Primary-400};}
 
     }
 
     .entry-title{
         font-weight: 700;
-        color: #{color.$Samurai-Primary-800};
+        color: #{tt1color.$Samurai-Primary-800};
         margin-top: 60px;
     }
 
@@ -36,7 +36,7 @@
 
     .entry-footer.default-max-width{
         margin-top: -220px; 
-        border-top: 1px solid #{color.$Samurai-Accent-600};
+        border-top: 1px solid #{tt1color.$Samurai-Accent-600};
         margin-bottom: 160px;
     }
 
