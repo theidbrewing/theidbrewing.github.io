@@ -1,5 +1,5 @@
 @use "./../skin_config" as skin;
-@use "./../colors" as color;
+@use "./../colors" as tt1color;
 
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
@@ -34,7 +34,7 @@
         }
         .dropdown-icon {
             &.open::before {
-                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{color.$Samurai-Body-700});
+                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{tt1color.$Samurai-Body-700});
             }
         }
 
@@ -47,8 +47,8 @@
         }
 
         //最後のメニューは電話アクション用ボタンスタイルに
-        > div > .menu-wrapper > li:last-child{
-            background-color: #{color.$Samurai-Primary-500};
+        > div > .menu-wrapper > li.tel-btn{
+            background-color: #{tt1color.$Samurai-Primary-500};
             transition: all .3s ease 0s;
             border-radius: 8px;
             a{
@@ -56,7 +56,7 @@
                 font-size: 22px;
                 text-decoration: none;
                 &:focus{
-                    background-color: #{color.$Samurai-Primary-400};
+                    background-color: #{tt1color.$Samurai-Primary-400};
                     border-radius: 8px;
                 }
             }
@@ -72,18 +72,18 @@
     }
     .primary-navigation .current-menu-item > a:first-child, 
     .primary-navigation .current_page_item > a:first-child{
-        text-decoration-color:#{color.$Samurai-Primary-500};
+        text-decoration-color:#{tt1color.$Samurai-Primary-500};
         text-decoration-thickness:4px;
     }
     .primary-navigation .current-menu-item > a:first-child:hover,
     .primary-navigation .current_page_item > a:first-child:hover,
     .primary-navigation a:hover{
-        text-decoration-color:#{color.$Samurai-Primary-500};
+        text-decoration-color:#{tt1color.$Samurai-Primary-500};
         text-decoration-style: solid;
         text-decoration-thickness:4px;
     }
     .site .primary-navigation a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
-        text-decoration-color:#{color.$Samurai-Primary-200};
+        text-decoration-color:#{tt1color.$Samurai-Primary-200};
         text-decoration-style: solid;
         text-decoration-thickness:4px;
         background: #fff;
