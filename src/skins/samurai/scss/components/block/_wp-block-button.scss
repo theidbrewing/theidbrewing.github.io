@@ -20,11 +20,11 @@
         &:not(.is-style-outline) .wp-block-button__link,
         &.is-style-outline .wp-block-button__link {
             box-shadow: 4px 4px 10px 0px #09276633;
+            transition: all .3s ease 0s;
 
             &:not(:hover):not(:active):not(.has-text-color) {
                 color: var(--global--color-primary);
                 background-color: #fff;
-                transition: all .3s ease 0s;
                 border-color: var(--global--color-primary);
             }
             &:hover {
@@ -45,6 +45,7 @@
                 background-size: contain;
                 border: 0;
                 color: #fff !important;
+                transition: all .3s ease 0s;
  
                 &:not(:hover):not(:active):not(.has-text-color) {
                     background-color: #{tt1color.$Samurai-Primary-500};
@@ -61,15 +62,17 @@
     .has-background .wp-block-button {
         &.is-style-outline {
             .wp-block-button__link {
+                transition: all .3s ease 0s;
+
                 &:not(:hover):not(:active):not(.has-text-color) {
                     background-color: #fff;
                     border-color: var(--global--color-primary);
-                    color: var(--global--color-primary);
-                    transition: all .3s ease 0s;
+                    color: var(--global--color-primary);    
                 }
                 &:hover {
                     background-color: #fff !important;
                     color: var(--global--color-primary-dark) !important;
+                    transform: translateY(2px);
                 }
             }
         }
