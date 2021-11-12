@@ -30,7 +30,7 @@ if ( ! class_exists( 'TT1skin_Block_Style' ) ) {
 			register_block_style(
 				'core/heading',
 				array(
-					'name'  => 'section-title',
+					'name'  => __( 'section-title', 'tt1skin' ),
 					'label' => 'section title',
 				)
 			);
@@ -40,7 +40,7 @@ if ( ! class_exists( 'TT1skin_Block_Style' ) ) {
 			register_block_style(
 				'core/cover',
 				array(
-					'name'  => 'special',
+					'name'  => __( 'special', 'tt1skin' ),
 					'label' => 'special',
 				)
 			);

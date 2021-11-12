@@ -32,6 +32,9 @@ if ( ! class_exists( 'TT1skin' ) ) {
 
 			// Set Color Pallete.
 			add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_colors' ), 11 );
+
+			// Set translate dir.
+			add_action( 'plugin_loaded', array( get_called_class(), 'set_translate_dir' ) );
 		}
 
 		/**
@@ -118,6 +121,13 @@ if ( ! class_exists( 'TT1skin' ) ) {
 			$skins_dir      = TT1SKIN_PATH . '/src/skins';
 			$skins_name_arr = array_diff( scandir( $skins_dir ), array( '..', '.' ) );
 			return $skins_name_arr;
+		}
+
+		/**
+		 * Set translate files
+		 */
+		public static function set_translate_dir() {
+			load_plugin_textdomain( 'tt1skin', false, TT1SKIN_PATH . '/languages' );
 		}
 	}
 }
