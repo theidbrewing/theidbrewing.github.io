@@ -46,8 +46,8 @@
             padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
         }
 
-        //最後のメニューは電話アクション用ボタンスタイルに
-        > div > .menu-wrapper > li.tel-btn{
+        //.tt1skin-tel-btn で電話アクション用ボタンスタイルに
+        > div > .menu-wrapper > li.tt1skin-tel-btn{
             background-color: #{tt1color.$Samurai-Primary-500};
             transition: all .3s ease 0s;
             border-radius: 8px;
@@ -95,12 +95,11 @@
 
 
 @media only screen and (min-width: 1500px) {
-    // PC表示の際にはグロナビ一番右端の電話番号のリンクを無効に
+    // PC表示の際には電話番号のリンクを無効に
     .#{skin.$skin-name} {
         .primary-navigation {
-   
-            //最後のメニューは電話アクション用ボタンスタイルに
-            > div > .menu-wrapper > li:last-child{
+            //電話アクション用ボタンスタイル
+            > div > .menu-wrapper > li.tt1skin-tel-btn{
                 a[href^="tel:"] {
                     pointer-events: none;
                 }
