@@ -3,9 +3,21 @@
 
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
+    .wp-block-buttons {
+        // コアのスタイルを打ち消し
+        > .wp-block-button {
+            margin-bottom: 0;
+        }
+        // 縦バリエーションの時にgapを指定する
+        &.is-vertical {
+            gap: calc(0.666 * var(--global--spacing-vertical));
+        }
+
+    }
     .wp-block-button {
         // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
         .wp-block-button__link,
+        &:not(.is-style-outline) .wp-block-button__link,
         &.is-style-outline .wp-block-button__link {
             box-shadow: 4px 4px 10px 0px #09276633;
 
@@ -13,28 +25,29 @@
                 color: var(--global--color-primary);
                 background-color: #fff;
                 transition: all .3s ease 0s;
+                border-color: var(--global--color-primary);
             }
             &:hover {
                 color: var(--global--color-primary-dark) !important;
                 background-color: #fff !important;
-                border-color: var(--global--color-primary) !important;
+                border-color: var(--global--color-primary-dark) !important;
                 transform: translateY(2px);
                 box-shadow: none;
             }
         }
+
+        // 塗りつぶし
         &.is-style-fill {
             .wp-block-button__link {
-
                 background-image: svg-load("../../../../build/images/icons/btn-bg.svg");
                 background-repeat: no-repeat;
                 background-position: right center;
                 background-size: contain;
-                border: none;
+                border: 0;
                 color: #fff !important;
  
                 &:not(:hover):not(:active):not(.has-text-color) {
- 
-                    background-color: #{tt1color.$Samurai-Primary-500} !important;
+                    background-color: #{tt1color.$Samurai-Primary-500};
                 }
                 &:hover {
                     transform: translateY(2px);
@@ -44,6 +57,7 @@
             }
         }
     }
+    // 背景色が指定されているブロック内でのボタンブロック輪郭スタイルを調整
     .has-background .wp-block-button {
         &.is-style-outline {
             .wp-block-button__link {
@@ -51,6 +65,11 @@
                     background-color: #fff;
                     border-color: var(--global--color-primary);
                     color: var(--global--color-primary);
+                    transition: all .3s ease 0s;
+                }
+                &:hover {
+                    background-color: #fff !important;
+                    color: var(--global--color-primary-dark) !important;
                 }
             }
         }
