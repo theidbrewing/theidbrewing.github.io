@@ -40,6 +40,7 @@
             }
         }
         &.is-grid {
+            justify-content: space-between;
             > li {
                 margin: 0 0 1.25em 0;
                 // post title
@@ -76,6 +77,7 @@
 }
 
 @media only screen and (min-width: #{cmn.$breakpoint_md}) {
+    .block-editor-block-list__layout .wp-block-latest-posts,
     .#{cmn.$prefix-skin--common} .wp-block-latest-posts {
         &.wp-block-latest-posts__list {
             > li {
@@ -133,7 +135,7 @@
                     }
                     // title
                     > a {
-                        margin-top: calc( min(24vw, 240px) + 0.4em );
+                        margin-top: calc(min(24vw, 240px) + 0.4em);
                     }
                     .wp-block-latest-posts__featured-image {
                         margin-right: 0;
