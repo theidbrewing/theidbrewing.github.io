@@ -1,0 +1,35 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+@use "./../mixin" as mix;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .widget-area {
+        .wp-block-group.tt1skin-widget-columns {
+            > .wp-block-group__inner-container {                
+                > .wp-block-group {
+                    ///左上の三角スタイル
+                    @include mix.samurai_blue_corner;
+
+                    .tt1-widget-title{
+                        opacity: 1;
+                        margin: 1.5em 0 1em 0;
+                        position: relative;
+                        color: #{tt1color.$Samurai-Primary-600} ;
+                        &::after{
+                            content: '';
+                            width: 70px;
+                            height: 4px;
+                            display: inline-block;
+                            background-color: #{tt1color.$Samurai-Accent-500} ;
+                            position: absolute;
+                            bottom: -15px;
+                            left: calc(50% - 35px)
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

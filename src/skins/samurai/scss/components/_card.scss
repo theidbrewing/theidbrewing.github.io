@@ -1,0 +1,83 @@
+@use "sass:color";
+
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+@use "./../functions" as func;
+@use "./../mixin" as mix;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .wp-block-column.is-style-card {
+        color: var(--global--color-body);
+        background-color: #fff;
+
+        //左上の三角スタイル
+        @include mix.samurai_blue_corner;
+
+        // カラーパレットでの変更を有効にする
+        @include func.palletColors;
+        .is-style-subtitle {
+            color: #{tt1color.$color-base-600};
+            font-family: var(--heading--font-family);
+            // カラーパレットでの変更を有効にする
+            @include func.palletTextColors;
+        }
+        .wp-block-table {
+            table {
+                th,
+                td {
+                    border-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+        // デフォルトカラーではイエローベースのボーダー色にする
+        &:not(.has-background) {
+            .wp-block-table {
+                table {
+                    th,
+                    td {
+                        border-color: #{tt1color.$Samurai-Accent-700};
+                    }
+                }
+            }
+        }
+    }
+    
+
+    .wp-block-column.is-style-card--member {
+        padding-bottom: 32px;
+        background-image: svg-load("../../../../build/images/icons/card-bg.svg");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: cover;
+
+        background-color: var(--global--color-primary-dark);
+        // カラーパレットでの変更を有効にする
+        @include func.palletBackgroundColors;
+        .wp-block-image.is-style-rounded {
+            img {
+                border: 3px solid var(--global--color-primary-dark);
+            }
+        }
+        h3 {
+            position: relative;
+            font-weight: 700;
+            color: #fff;
+            // カラーパレットでの変更を有効にする
+            @include func.palletTextColors;
+
+            &::after{
+                content: '';
+                width: 70px;
+                height: 4px;
+                display: inline-block;
+                background-color: #{tt1color.$Samurai-Accent-500} ;
+                position: absolute;
+                bottom: -20px;
+                left: calc(50% - 35px);
+                top: auto;
+                border-radius: 0;
+            }
+        }
+    }
+}

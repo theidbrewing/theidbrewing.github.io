@@ -1,0 +1,32 @@
+@use "./colors" as tt1color;
+@use "./skin_config" as skin;
+
+body.block-editor-block-preview__container,
+body.block-editor-writing-flow,
+.#{skin.$skin-name} {
+    // font-family
+    --font-headings: "Noto Serif JP", serif;
+    --heading--font-family: "Noto Serif JP", serif;
+    --skin--list--font-family: "Noto Serif JP", serif;
+    --skin--ja--font-family: "Noto Serif JP", serif;
+    --footer--font-family: "Noto Serif JP", serif;
+    --entry-content--font-family: "Noto Serif JP", serif;
+    --global--font-primary: "Noto Serif JP", serif;
+    --pagination--font-family: "Noto Serif JP", serif;
+
+    // color
+    --global--color-primary: #{tt1color.$Samurai-Primary-500};
+    --global--color-primary-dark: #{tt1color.$Samurai-Primary-700};
+    --global--color-secondary: #{tt1color.$Samurai-Accent-500};
+    --global--color-body: #{tt1color.$Samurai-Body-600};
+    --global--color-background: #{tt1color.$Samurai-base-500};
+    --global--color-border: #{tt1color.$Samurai-Primary-500};
+
+    // font size
+    --primary-nav--font-size: 18px;
+    --global--font-size-xs:14px;
+
+    // body color を上書き
+    color: var(--global--color-body);
+    background-color: var(--global--color-background);
+}

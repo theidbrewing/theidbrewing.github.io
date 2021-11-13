@@ -1,0 +1,32 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+
+.#{skin.$skin-name} {
+	.site-branding{
+		width: 100%;
+		display: block;
+		background-color: #fff;
+		text-align: center;
+		padding: 40px 0;
+	}
+
+	.site-branding .site-title {
+		color: #{tt1color.$Samurai-Primary-700};
+		font-family: "Noto Serif JP";
+		font-weight: 700;
+		font-size: 40px;
+		a{font-weight: 700; text-decoration: none;}
+		a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+			background: none;
+			color: #{tt1color.$Samurai-Primary-500};
+		}
+	}
+	.site-description{
+		display: none;
+	}
+	.site-footer > .site-info .site-name{
+		color: #fff;
+		font-family: Noto Serif jP;
+		font-weight: 700;
+	}
+}

@@ -32,6 +32,10 @@ if ( ! class_exists( 'TT1skin' ) ) {
 
 			// Set Color Pallete.
 			add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_colors' ), 11 );
+
+			// require functions.php.
+			add_action( 'after_setup_theme', array( get_called_class(), 'load_functions' ), 10 );
+
 		}
 
 		/**
@@ -108,6 +112,18 @@ if ( ! class_exists( 'TT1skin' ) ) {
 			if ( isset( $skin_data['settings']['color']['palette'] ) ) {
 				$colors_array = $skin_data['settings']['color']['palette'];
 				add_theme_support( 'editor-color-palette', $colors_array );
+			}
+		}
+
+		/**
+		 * Load functions.php
+		 */
+		public static function load_functions() {
+			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
+			if ( isset( $skin_data['name'] ) ) {
+				if ( is_file( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/functions.php' ) ) {
+					require_once TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/functions.php';
+				}
 			}
 		}
 

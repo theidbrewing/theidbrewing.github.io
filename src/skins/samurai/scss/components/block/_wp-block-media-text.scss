@@ -1,0 +1,10 @@
+@use "./../../skin_config" as skin;
+@use "./../../mixin" as mix;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .wp-block-media-text {
+        ///左上の三角スタイル
+        @include mix.samurai_blue_corner;
+    }
+}

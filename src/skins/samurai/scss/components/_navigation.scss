@@ -1,0 +1,109 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .navigation {
+        color: var(--global--color-body);
+        a {
+            color: var(--global--color-body);
+        }
+    }
+    .primary-navigation {
+        width: 100%;
+        max-width: var(--responsive--alignwide-width);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        line-height: 2em;
+
+        > div > .menu-wrapper{
+            justify-content: space-around;
+        }
+
+        .menu-item {
+            > a {
+                font-family: var(--skin--list--font-family);
+                text-underline-offset:6px;
+                padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
+                .menu-item-description {
+                    font-family: var(--skin--ja--font-family);
+                }
+            }
+        }
+        .dropdown-icon {
+            &.open::before {
+                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{tt1color.$Samurai-Body-700});
+            }
+        }
+
+        > div > .menu-wrapper .sub-menu-toggle{
+            height: calc(2 * var(--primary-nav--padding) + 2.15em + 1px);
+        }
+
+        .sub-menu .menu-item > a {
+            padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
+        }
+
+        //.tt1skin-tel-btn で電話アクション用ボタンスタイルに
+        > div > .menu-wrapper > li.tt1skin-tel-btn{
+            background-color: #{tt1color.$Samurai-Primary-500};
+            transition: all .3s ease 0s;
+            border-radius: 8px;
+            a{
+                color: #fff;
+                font-size: 22px;
+                text-decoration: none;
+                &:focus{
+                    background-color: #{tt1color.$Samurai-Primary-400};
+                    border-radius: 8px;
+                }
+            }
+            .menu-item-description{line-height: 1em;}
+        }
+    }
+
+    // active、hover、focus時のアンダーライン
+    .primary-navigation a{
+        transition: all .3s ease 0s;
+        text-decoration-color:#FFF;
+        text-decoration-thickness:4px;
+    }
+    .primary-navigation .current-menu-item > a:first-child, 
+    .primary-navigation .current_page_item > a:first-child{
+        text-decoration-color:#{tt1color.$Samurai-Primary-500};
+        text-decoration-thickness:4px;
+    }
+    .primary-navigation .current-menu-item > a:first-child:hover,
+    .primary-navigation .current_page_item > a:first-child:hover,
+    .primary-navigation a:hover{
+        text-decoration-color:#{tt1color.$Samurai-Primary-500};
+        text-decoration-style: solid;
+        text-decoration-thickness:4px;
+    }
+    .site .primary-navigation a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
+        text-decoration-color:#{tt1color.$Samurai-Primary-200};
+        text-decoration-style: solid;
+        text-decoration-thickness:4px;
+        background: #fff;
+        color: #000;
+        z-index: 1;
+    }
+
+}
+
+
+@media only screen and (min-width: 1500px) {
+    // PC表示の際には電話番号のリンクを無効に
+    .#{skin.$skin-name} {
+        .primary-navigation {
+            //電話アクション用ボタンスタイル
+            > div > .menu-wrapper > li.tt1skin-tel-btn{
+                a[href^="tel:"] {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
