@@ -74,7 +74,9 @@
                 background-color: #{tt1color.$Samurai-Accent-500} ;
                 position: absolute;
                 bottom: -20px;
-                left: calc(50% - 35px)
+                left: calc(50% - 35px);
+                top: auto;
+                border-radius: 0;
             }
         }
     }
