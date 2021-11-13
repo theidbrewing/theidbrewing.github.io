@@ -1,0 +1,71 @@
+/*! tt1skin editor-style.css */
+
+// CSS 変数
+@forward "../../../common/css_variable";
+@forward "./css_variable";
+
+// スキン共通スタイル　コンポーネント
+@forward "../../../common/components/logo";
+@forward "../../../common/components/navigation";
+
+@forward "../../../common/components/block/wp-block-latest-posts";
+@forward "../../../common/components/block/wp-block-button";
+
+@forward "../../../common/components/card";
+
+// スキン共通スタイル　グローバル
+@forward "../../../common/global";
+
+// スキン独自スタイル
+@forward "./colors";
+
+@forward "./components/block/wp-heading";
+@forward "./components/block/wp-block-button";
+@forward "./components/block/wp-block-group";
+@forward "./components/block/wp-block-latest-posts";
+
+@forward "./components/card";
+@forward "./components/navigation";
+@forward "./components/entry";
+@forward "./components/widget";
+
+@forward "./global";
+@forward "./page";
+
+// ----------- Editor only
+// TT1側のバグだと思われる ソーシャルアイコンの色を指定している場合に色を上書きしないように修正
+.wp-block-social-links.has-icon-color.is-style-twentytwentyone-social-icons-color {
+    button {
+        color: inherit;
+    }
+}
+
+// タイトル下にボーダーが入るのを上書き
+.wp-block.editor-post-title__block {
+    border-bottom: 0;
+    .editor-post-title__input {
+        color: var(--global--color-body);
+    }
+}
+
+// メンバーカード　表示調整
+.block-editor-block-list__layout .is-style-card--member {
+    .wp-block-image.is-style-rounded {
+        z-index: 1;
+        .components-resizable-box__container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+// 最新の投稿ブロックが3カラム化しないバグを修正
+.block-editor-block-list__layout .wp-block-latest-posts {
+    &.wp-block-latest-posts__list.is-grid {
+        &.columns-3 {
+            > li {
+                width: calc((100% / 3) - 5rem);
+            }
+        }
+    }
+}
