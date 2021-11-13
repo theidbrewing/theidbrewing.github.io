@@ -5,7 +5,6 @@
 @use "./../../mixin" as mix;
 
 .block-editor-block-list__layout .wp-block-latest-posts,
-.block-editor-block-list__block .wp-block-latest-posts,
 .#{skin.$skin-name} .wp-block-latest-posts,
 .#{skin.$skin-name} .wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts {
     &.wp-block-latest-posts__list {
@@ -58,7 +57,7 @@
 }
 
 @media only screen and (min-width: #{cmn.$breakpoint_md}) {
-    .block-editor-block-list__block .wp-block-latest-posts,
+    .block-editor-block-list__layout .wp-block-latest-posts,
     .#{skin.$skin-name} .wp-block-latest-posts {
         &.wp-block-latest-posts__list {
             > li {
