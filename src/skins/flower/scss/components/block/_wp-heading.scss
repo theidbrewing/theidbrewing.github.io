@@ -39,33 +39,3 @@
     }
 }
 
-// frontのみz-index調整とバブルを反映
-.#{skin.$skin-name} {
-    h2,
-    h3 {
-        &.is-style-section-title {
-            z-index: -1;
-            overflow: hidden;
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                top: max(-25vw, -300px);
-                display: flex;
-                width: min(50vw, 600px);
-                height: min(50vw, 600px);
-            }
-            &::after {
-                mix-blend-mode: screen;
-                background-size: contain;
-                background-image: svg-load("../../../../build/images/icons/bubble.svg");
-                opacity: 0.5;
-            }
-            &::before {
-                z-index: -1;
-                position: absolute;
-                background-color: var(--global--color-background);
-            }
-        }
-    }
-}

@@ -1,22 +1,27 @@
-@use "./colors" as color;
+@use "./colors" as tt1color;
 @use "./skin_config" as skin;
 
 body.block-editor-block-preview__container,
 body.block-editor-writing-flow,
 .#{skin.$skin-name} {
     // font-family
-    --font-headings: "Space Mono";
-    --heading--font-family: "Space Mono", "Noto Sans JP", sans-serif;
+    --font-headings: "PT Sans Narrow";
+    --heading--font-family: "PT Sans Narrow", "M PLUS 1p", sans-serif;
     --skin--list--font-family: Lato,"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
         Cantarell, "Helvetica Neue", sans-serif;
-    --skin--ja--font-family: "Noto Sans JP", sans-serif;
+    --skin--ja--font-family: "M PLUS 1p", sans-serif;
 
     // color
-    --global--color-primary: #{color.$color-primary-500};
-    --global--color-secondary: #{color.$color-accent-01-500};
-    --global--color-body: #{color.$color-body-500};
-    --global--color-background: #{color.$color-base-500};
-    --global--color-border: #{color.$color-body-400};
+    --global--color-primary: #{tt1color.$flower-primary-500};
+    --global--color-secondary: #{tt1color.$flower-secondary-500};
+    --global--color-body: #{tt1color.$flower-body-500};
+    --global--color-background: #{tt1color.$flower-base-500};
+    --global--color-border: #{tt1color.$flower-body-500};
+
+    // primary navigation
+    --primary-nav--color-link-hover:#{tt1color.$flower-secondary-500};
+    --primary-nav--font-size: 26px;
+    --global--font-size-xs:14px;
 
     // body color を上書き
     color: var(--global--color-body);

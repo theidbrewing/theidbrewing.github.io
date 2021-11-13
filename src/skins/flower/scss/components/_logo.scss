@@ -43,14 +43,21 @@
 	}
 
 	// Footer logo
-	.site-footer > .site-info .site-name {
-		&::after {
-			margin-left: auto;
-			margin-right: auto;
-			width: min(60vw, var(--logo-width--square));
-			height: min(60vw, var(--logo-width--square));
-			background-image: svg-load("../../../../build/images/icons/logo--knockout.svg");
+	.site-footer > .site-info {
+		margin-bottom: -170px;
+
+		.site-name {
+		.site-logo{
+			img{
+				background: #fff;
+				border: 15px solid #fff;
+				border-radius: 50px;
+				height: 100px;
+		    	width: auto;
+				margin-bottom: 20px;
+			}
 		}
+	}
 	}
 }
 
