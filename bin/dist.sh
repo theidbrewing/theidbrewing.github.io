@@ -66,6 +66,11 @@ cp -r build/skins/$SKIN_NAME $SKIN_DIST_BUILD_DIR/skins/
 cp tt1skin.php $SKIN_DIST_DIR/tt1skin.php
 cp -r inc/ $SKIN_DIST_DIR/inc/
 
+# copy
+if [ -d languages ]; then
+    cp -r languages/ $SKIN_DIST_DIR/languages/
+fi
+
 # change plugin name & description
 cd $SKIN_DIST_DIR
 sed -i "" "s|Plugin Name:       TT1 Skin - the_ID Brewing Styles|Plugin Name:       TT1 Skin (${SKIN_NAME})|" tt1skin.php
