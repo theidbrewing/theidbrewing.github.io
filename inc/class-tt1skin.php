@@ -142,7 +142,7 @@ if ( ! class_exists( 'TT1skin' ) ) {
 		 * Set translate files
 		 */
 		public static function set_translate_dir() {
-			load_plugin_textdomain( 'tt1skin', false, TT1SKIN_PATH . '/languages' );
+			load_plugin_textdomain( 'tt1skin', false, plugin_basename( dirname( __DIR__ ) ) . '/languages' );
 		}
 	}
 }
