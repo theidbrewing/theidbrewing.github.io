@@ -36,7 +36,7 @@ if ( ! class_exists( 'TT1skin_Block_Pattern' ) ) {
 		 */
 		public static function register_block_pattern_category() {
 			register_block_pattern_category(
-				'tt1skin',
+				__( 'tt1skin', 'tt1skin' ),
 				array( 'label' => 'TT1skin' )
 			);
 		}

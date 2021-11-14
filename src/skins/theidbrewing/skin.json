@@ -6,32 +6,32 @@
         "color": {
             "palette": [
                 {
-                    "name": "Primary",
+                    "name": "プライマリー",
                     "slug": "primary",
                     "color": "#540CED"
                 },
                 {
-                    "name": "Body",
+                    "name": "文字色",
                     "slug": "body",
                     "color": "#1C0120"
                 },
                 {
-                    "name": "Base",
+                    "name": "背景色",
                     "slug": "base",
                     "color": "#FBFBFB"
                 },
                 {
-                    "name": "Accent 01",
+                    "name": "アクセント1",
                     "slug": "accent-01",
                     "color": "#B900D8"
                 },
                 {
-                    "name": "Accent 02",
+                    "name": "アクセント2",
                     "slug": "accent-02",
                     "color": "#ED2455"
                 },
                 {
-                    "name": "Accent 03",
+                    "name": "アクセント3",
                     "slug": "accent-03",
                     "color": "#EDE12F"
                 }

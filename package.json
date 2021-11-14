@@ -6,6 +6,7 @@
     "init:skin": "node convert_to_scss.js",
     "lint-css": "wp-scripts lint-style './src/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
+    "lint:php": "composer format && composer phpcs",
     "exsc:sass": "npx sass --no-source-map ./src/skins/$npm_config_skin/",
     "exsc:postcss": "npx postcss ./src/skins/$npm_config_skin/scss/style.css --replace --no-map & npx postcss ./src/skins/$npm_config_skin/scss/editor-style.css --replace --no-map",
     "exsc:mv": "move-cli ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin/style.css --mkdirp & move-cli ./src/skins/$npm_config_skin/scss/editor-style.css ./build/skins/$npm_config_skin/editor-style.css --mkdirp",
@@ -18,6 +19,7 @@
     "dist:theidbrewing": "sh bin/dist.sh theidbrewing",
     "dist:samurai": "sh bin/dist.sh samurai",
     "dist:all": "chmod +x bin/*.sh && sh bin/dist-all.sh",
+    "makepot": "npx wp-env run cli wp i18n make-pot wp-content/plugins/theidbrewing.github.io wp-content/plugins/theidbrewing.github.io/languages/tt1skin.pot  --domain=tt1skin",
     "test": "exsc test"
   },
   "exsc": {

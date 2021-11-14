@@ -73,6 +73,12 @@ else
 fi
 
 # change plugin headers
+# copy
+if [ -d languages ]; then
+    cp -r languages/ $SKIN_DIST_DIR/languages/
+fi
+
+# change plugin name & description
 cd $SKIN_DIST_DIR
 sed -i "" "s|Plugin Name:       TT1 Skin - the_ID Brewing Styles|Plugin Name: TT1 Skin (${SKIN_NAME})|" tt1skin.php
 sed -i "" "s|Version:|Version: ${SKIN_VERSION}|" tt1skin.php
