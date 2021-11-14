@@ -1,0 +1,32 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+
+    &.single,
+    &.page{
+        .wp-block-table,
+        .wp-block-table.is-style-regular{
+            table{
+                th,
+                td {
+                    border-top-color: #{tt1color.$Samurai-Body-300} ;
+                    border-right-color: #{tt1color.$Samurai-Body-300} ;
+                    border-bottom-color: #{tt1color.$Samurai-Body-300} ;
+                    border-left-color: #{tt1color.$Samurai-Body-300} ;
+                    }
+                }
+            }
+
+        .wp-block-table.is-style-stripes{
+            table{
+                th,
+                td {
+                    border: none;
+                    background: none;
+                   }
+                }
+            }
+        }
+}

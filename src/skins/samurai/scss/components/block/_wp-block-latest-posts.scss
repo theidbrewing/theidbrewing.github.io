@@ -1,0 +1,85 @@
+@use './../../../../../common/variables/common' as cmn;
+@use './../../skin_config' as skin;
+@use "./../../colors" as tt1color;
+@use "./../../functions" as func;
+@use "./../../mixin" as mix;
+
+.block-editor-block-list__layout .wp-block-latest-posts,
+.#{skin.$skin-name} .wp-block-latest-posts,
+.#{skin.$skin-name} .wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts {
+    &.wp-block-latest-posts__list {
+        .wp-block-latest-posts__post-date,
+        .wp-block-latest-posts__post-author {
+            color: #{tt1color.$Samurai-Body-500};
+        }
+        > li {
+            // post title
+            > a {
+                color: var(--global--color-body);
+                &:hover {
+                    text-decoration-color: var(--global--color-primary);
+                }
+                &:focus{
+                    background-color: #fff;
+                    color:  #{tt1color.$Samurai-Primary-400};
+                    text-underline-offset: 0.1em;
+                    text-decoration-thickness: 4px;
+                }
+            }
+            .wp-block-latest-posts__featured-image {
+                > a {
+                    border: 1px solid var(--global--color-primary);
+                }
+            }
+        }
+    }
+    &.is-grid{
+        &.wp-block-latest-posts__list {
+
+            > li {
+                padding: var(--base--margin);
+                background: #fff;
+
+                a.more-link{font-size: 18px;}
+            }
+            
+            &.is-style-default .wp-block-latest-posts__post-date{
+                font-size: var(--global--font-size-caption);
+                width: 100%;
+            }
+        }
+        .wp-block-latest-posts__featured-image{
+            ///左上の三角スタイル
+            @include mix.samurai_blue_corner;
+        }
+
+    }
+}
+
+@media only screen and (min-width: #{cmn.$breakpoint_md}) {
+    .block-editor-block-list__layout .wp-block-latest-posts,
+    .#{skin.$skin-name} .wp-block-latest-posts {
+        &.wp-block-latest-posts__list {
+            > li {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: left;
+                margin-top: 2em;
+                margin-bottom: 0;
+
+                a{
+                    color: #{tt1color.$Samurai-Body-500};
+                    font-size: 24px;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+            &.is-style-default .wp-block-latest-posts__post-date{
+                font-size: 24px;
+                line-height: var(--global--line-height-heading);
+                width: 18%;
+            }
+        }
+    }
+}

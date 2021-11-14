@@ -1,0 +1,48 @@
+@use "./../../skin_config" as skin;
+@use "./../../colors" as tt1color;
+@use "./../../functions" as func;
+
+.block-editor-block-list__layout h2,
+.block-editor-block-list__layout h3,
+.#{skin.$skin-name} h2,
+.#{skin.$skin-name} h3 {
+    &.is-style-section-title {
+        font-weight: 700;
+        margin-bottom: 1em;
+        margin-top: 2em;
+        position: relative;
+        word-break: break-all;
+        line-height: 1;
+        
+        // カラーパレットでの変更を有効にする
+        @include func.palletTextColors;
+        color: #{tt1color.$Samurai-Primary-700};
+
+        & + * {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        &.has-text-align-right {
+            &::before,
+            &::after {
+                right: 0;
+            }
+        }
+    }
+}
+
+.block-editor-block-list__layout h2,
+.#{skin.$skin-name} h2 {
+    font-size: min(6.55vw, 38px);
+    &.is-style-section-title {
+        font-size: min(7vw, 42px);
+    }
+}
+
+.block-editor-block-list__layout h3,
+.#{skin.$skin-name} h3 {
+    &.is-style-section-title {
+        font-size: min(6.55vw, 38px);
+    }
+}
+
