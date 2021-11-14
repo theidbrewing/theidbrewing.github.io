@@ -28,7 +28,7 @@ if ( ! class_exists( 'TT1skin_Customizer_Colors' ) ) {
 			if ( 'd1e4dd' !== strtolower( $background_color ) ) {
 				$override_css  = '.wp-admin .editor-styles-wrapper.block-editor-writing-flow {';
 				$override_css .= 'background-color: #' . $background_color . ';}';
-				wp_register_style( 'tt1skin-for-tt1-customizer-color', false );
+				wp_register_style( 'tt1skin-for-tt1-customizer-color', false, array(), filectime( __FILE__ ) );
 				wp_enqueue_style( 'tt1skin-for-tt1-customizer-color' );
 				wp_add_inline_style( 'tt1skin-for-tt1-customizer-color', $override_css );
 			}
