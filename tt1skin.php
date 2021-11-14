@@ -45,3 +45,7 @@ TT1skin_Block_Pattern::init();
 // TT1 Skin Customizer Colors.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-customizer-colors.php';
 TT1skin_Customizer_Colors::register_hooks();
+
+// TT1 Skin Updater.
+require_once TT1SKIN_PATH . '/inc/class-tt1skin-updater.php';
+TT1skin_Updater::init();
