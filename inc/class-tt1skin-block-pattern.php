@@ -46,14 +46,21 @@ if ( ! class_exists( 'TT1skin_Block_Pattern' ) ) {
 		 */
 		public static function register_block_patterns() {
 			$skin_data = TT1skin_Skin_Data::get_instance()->get_skin_data();
-			register_block_pattern(
-				'tt1skin/card',
-				TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/block_pattern/card.json' )
-			);
-			register_block_pattern(
-				'tt1skin/card--member',
-				TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/block_pattern/card--member.json' )
-			);
+			if ( ! is_array( $skin_data ) ) {
+				return;
+			}
+			if ( ! array_key_exists( 'block_pattern', $skin_data ) || ! is_array( $skin_data['block_pattern'] ) ) {
+				return;
+			}
+			foreach ( $skin_data['block_pattern'] as $pattern ) {
+				if ( ! file_exists( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . '/block_pattern/' . $pattern . '.json' ) ) {
+					continue;
+				}
+				register_block_pattern(
+					"tt1skin/{$pattern}",
+					TT1skin_Json_Controller::get_json_data( TT1SKIN_PATH . '/src/skins/' . $skin_data['name'] . "/block_pattern/{$pattern}.json" )
+				);
+			}
 		}
 	}
 }
