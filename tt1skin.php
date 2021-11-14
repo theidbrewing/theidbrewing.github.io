@@ -4,7 +4,7 @@
  * Description:       CSS styles for the_ID Brewing demo sites
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:
+ * Version: 0.0.1
  * Author:            theidbrewing
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,3 +45,7 @@ TT1skin_Block_Pattern::init();
 // TT1 Skin Customizer Colors.
 require_once TT1SKIN_PATH . '/inc/class-tt1skin-customizer-colors.php';
 TT1skin_Customizer_Colors::register_hooks();
+
+// TT1 Skin Updater.
+require_once TT1SKIN_PATH . '/inc/class-tt1skin-updater.php';
+TT1skin_Updater::init();
