@@ -66,10 +66,10 @@ cp -r build/skins/$SKIN_NAME $SKIN_DIST_BUILD_DIR/skins/
 cp tt1skin.php $SKIN_DIST_DIR/tt1skin.php
 cp -r inc/ $SKIN_DIST_DIR/inc/
 
-# change plugin name & description
+# change plugin headers
 cd $SKIN_DIST_DIR
-sed -i "" "s|Plugin Name:       TT1 Skin - the_ID Brewing Styles|Plugin Name:       TT1 Skin (${SKIN_NAME})|" tt1skin.php
-sed -i "" "s|Description:       CSS styles for the_ID Brewing demo sites|Description:       サイト[${SKIN_NAME}]のためのスタイル調整プラグイン|" tt1skin.php
+sed -i "" "s|Plugin Name:       TT1 Skin - the_ID Brewing Styles|Plugin Name: TT1 Skin (${SKIN_NAME})|" tt1skin.php
+sed -i "" "s|Update URI:|Update URI: https://theidbrewing.github.io/dist/tt1skin-${SKIN_NAME}.zip|" tt1skin.php
 
 # put config file
 echo "<?php 
