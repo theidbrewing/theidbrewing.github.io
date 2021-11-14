@@ -16,20 +16,11 @@ if ( ! class_exists( 'TT1skin_Block_Pattern' ) ) {
 		 * construct
 		 */
 		public static function init() {
-			// TT1のデフォルトのパターンカテゴリを外す.
-			// add_action( 'init', array( get_called_class(), 'unregister_tt1_pattern_category' ));
 			// 独自カテゴリーを追加.
 			add_action( 'init', array( get_called_class(), 'register_block_pattern_category' ) );
 			// 独自パターンを追加.
 			add_action( 'init', array( get_called_class(), 'register_block_patterns' ) );
 		}
-
-		/**
-		 * Remove TT1 block patterns
-		 */
-		// public static function unregister_tt1_pattern_category() {
-		// unregister_block_pattern_category( 'twentytwentyone' );
-		// }
 
 		/**
 		 * Register custom block pattern category
