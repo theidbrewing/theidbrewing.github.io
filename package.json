@@ -20,7 +20,8 @@
     "dist:samurai": "sh bin/dist.sh samurai",
     "dist:all": "chmod +x bin/*.sh && sh bin/dist-all.sh",
     "makepot": "npx wp-env run cli wp i18n make-pot wp-content/plugins/theidbrewing.github.io wp-content/plugins/theidbrewing.github.io/languages/tt1skin.pot  --domain=tt1skin",
-    "test": "exsc test"
+    "test": "exsc test",
+    "test:e2e": "node ./tests/e2e/run-tests.js"
   },
   "exsc": {
     "sass": {
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "@ixkaito/imagemin": "^0.1.0",
+    "@wordpress/e2e-test-utils": "^5.4.8",
     "@wordpress/scripts": "^18.0.0",
     "css-select": "^4.1.3",
     "css-what": "^5.0.1",
