@@ -37,8 +37,8 @@ class Block_Pattern {
 	 */
 	public static function register_block_pattern_category() {
 		register_block_pattern_category(
-			__( 'tt1skin', 'tt1skin' ),
-			array( 'label' => 'TT1skin' )
+			'tt1skin',
+			array( 'label' => __( 'TT1skin', 'tt1skin' ) )
 		);
 	}
 
