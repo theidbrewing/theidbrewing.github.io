@@ -22,8 +22,8 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'THEIDBREWING_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'THEIDBREWING_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
-if ( is_file( 'tt1skin.config.php' ) ) {
-	require_once 'tt1skin.config.php';
+if ( file_exists( __DIR__  . '/tt1skin.config.php'  ) ) {
+	require_once __DIR__  . '/tt1skin.config.php';
 }
 // Json Controller.
 // require_once THEIDBREWING_PATH . '/inc/class-tt1skin-json-controller.php';
@@ -43,3 +43,6 @@ if ( class_exists( '\theidbrewing\TT1_Skin\Core' ) ) {
 
 // TT1 Skin Customizer Colors.
 \theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
+
+// TT1 Skin Updater.
+TT1skin_Updater::init();
