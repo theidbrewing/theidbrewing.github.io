@@ -26,21 +26,22 @@ if ( file_exists( __DIR__ . '/tt1skin.config.php' ) ) {
 	require_once __DIR__ . '/tt1skin.config.php';
 }
 
-if ( is_file( __DIR__ . '/vendor/autoload.php' ) ) {
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
+
+	// TT1 Skin Main Class.
+	\theidbrewing\TT1_Skin\Core::init();
+
+	// TT1 Skin Block Style.
+	\theidbrewing\TT1_Skin\Block_Style::init();
+
+	// TT1 Skin Block Pattern.
+	\theidbrewing\TT1_Skin\Block_Pattern::init();
+
+	// TT1 Skin Customizer Colors.
+	\theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
+
+	// TT1 Skin Updater.
+	\theidbrewing\TT1_Skin\Updater::init();
+
 }
-
-// TT1 Skin Main Class.
-\theidbrewing\TT1_Skin\Core::init();
-
-// TT1 Skin Block Style.
-\theidbrewing\TT1_Skin\Block_Style::init();
-
-// TT1 Skin Block Pattern.
-\theidbrewing\TT1_Skin\Block_Pattern::init();
-
-// TT1 Skin Customizer Colors.
-\theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
-
-// TT1 Skin Updater.
-\theidbrewing\TT1_Skin\Updater::init();
