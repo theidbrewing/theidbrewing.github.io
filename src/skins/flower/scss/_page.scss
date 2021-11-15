@@ -2,22 +2,9 @@
 
 .#{skin.$skin-name} {
     // page title
-    // archive title
-    &.archive .page-header .page-title,
-    &.page .entry .entry-header .entry-title {
-        position: relative;
-        font-size: min(12vw, 72px);
-        font-weight: 700;
-        z-index: -1;
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            visibility: visible;
-            top: max(-25vw, -300px);
-            display: flex;
-            width: min(50vw, 600px);
-            height: min(50vw, 600px);
+    &.page {
+        .site-main{
+            padding-top: 0px;
         }
     }
 }

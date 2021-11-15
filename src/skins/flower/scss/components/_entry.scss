@@ -1,4 +1,5 @@
 @use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
 
 .#{skin.$skin-name} {
     // page title
@@ -6,6 +7,41 @@
     .entry {
         .entry-header {
             padding-bottom: 0;
+        }
+    }
+
+    &.page .entry {
+        .entry-header {
+            &.alignwide{
+                position: relative;
+                .entry-title{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    color: #FFF;
+                    font-size: 28px;
+                    z-index: 100;
+                    background-color:#{tt1color.$flower-secondary-500};
+                    padding: 20px 28px;
+                    border-radius: 46px;
+                    letter-spacing: 0.1em;
+                }
+                .post-thumbnail{
+                    width: var(--responsive--alignwide-width);
+                    max-width: var(--responsive--alignfull-width);
+                    margin-top: 0;
+                    .wp-post-image{
+                        margin-top: 0;
+                    }
+                    img{
+                        max-height: 60vh;
+                        -o-object-fit: cover;
+                        object-fit: cover;
+                    }
+                }
+            }
+            
         }
     }
 }
