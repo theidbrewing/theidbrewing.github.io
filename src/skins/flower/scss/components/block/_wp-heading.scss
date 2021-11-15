@@ -26,9 +26,27 @@
 .block-editor-block-list__layout h2,
 .#{skin.$skin-name} h2 {
     font-size: min(6.55vw, 38px);
-    letter-spacing: -0.06em;
     &.is-style-section-title {
-        font-size: min(12vw, 120px);
+        font-size: min(6.55vw, 58px);
+        text-align: center;
+        font-weight: 700;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        position: relative;
+        text-shadow: 0 0 2px white;
+        line-height: 1.4em;
+        padding-bottom: 20px;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+        	left: 50%;
+	        transform: translateX(-50%);
+        	width: 14px;
+        	height: 14px;
+            background-color:var(--global--color-secondary);
+        	border-radius: 7px;
+        }
     }
 }
 

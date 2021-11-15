@@ -1,12 +1,12 @@
 @use "./skin_config" as skin;
 
 .#{skin.$skin-name} {
-    // page title
     &.page {
         .site-main{
             padding-top: 0px;
         }
     }
+
 }
 
 
