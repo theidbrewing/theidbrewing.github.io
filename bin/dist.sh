@@ -32,6 +32,15 @@ if [ -d $SKIN_DIST_DIR ]; then
 fi
 mkdir -p $SKIN_DIST_DIR
 
+# clean up composer
+if [ ! -d ./vendor ]; then
+    rm -rf ./vendor
+fi
+composer install --no-dev
+
+# copy composer vendor dir
+cp -r ./vendor $SKIN_DIST_DIR/vendor
+
 # skin buid dir
 SKIN_DIST_BUILD_DIR=$SKIN_DIST_DIR/build
 if [ ! -d $SKIN_DIST_BUILD_DIR ]; then
