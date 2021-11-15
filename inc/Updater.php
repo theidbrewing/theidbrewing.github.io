@@ -32,7 +32,7 @@ class Updater {
 		$plugin_data    = get_plugin_data( plugin_dir_path( dirname( __FILE__ ) ) . 'tt1skin.php' );
 		$plugin_version = $plugin_data['Version'];
 		if ( empty( trim( $plugin_version ) ) ) {
-			$plugin_version = '0.0.1';
+			return $transient;
 		}
 
 		// read new version from theidbrewing.github.io
