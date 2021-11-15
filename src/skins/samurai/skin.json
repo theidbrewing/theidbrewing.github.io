@@ -47,5 +47,9 @@
                 }
             ]
         }
-    }
+    },
+    "block_pattern" : [
+        "card--member",
+        "card"
+    ]
 }
