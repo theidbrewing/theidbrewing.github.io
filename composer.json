@@ -27,9 +27,14 @@
       "squizlabs/php_codesniffer": "*",
       "dealerdirect/phpcodesniffer-composer-installer": "*",
       "phpcompatibility/phpcompatibility-wp": "*",
-      "wp-coding-standards/wpcs": "*"
+      "wp-coding-standards/wpcs": "*",
+      "wp-phpunit/wp-phpunit": "^5.4",
+      "phpunit/phpunit": "^5.7|^6",
+      "yoast/phpunit-polyfills": "^1.0"
     },
     "scripts": {
+      "setup-phpunit": "bash tests/phpunit/install-wp-tests.sh tests-wordpress root password tests-mysql '' true true",
+      "phpunit": "wp-env run phpunit 'IS_WP_ENV=1 phpunit -c /var/www/html/wp-content/plugins/theidbrewing.github.io/tests/phpunit/phpunit.xml.dist --verbose'",
       "format": "phpcbf --standard=./.phpcs.xml.dist --report-summary --report-source",
       "phpcs": "phpcs"
     }
