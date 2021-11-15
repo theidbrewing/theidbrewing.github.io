@@ -30,11 +30,6 @@ if ( is_file( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
-// Json Controller.
-// require_once THEIDBREWING_PATH . '/inc/class-tt1skin-json-controller.php';
-// TT1 Skin data.
-// require_once THEIDBREWING_PATH . '/inc/class-tt1skin-skin-data.php';
-
 // TT1 Skin Main Class.
 \theidbrewing\TT1_Skin\Core::init();
 
