@@ -19,29 +19,54 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'THEIDBREWING_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
-define( 'THEIDBREWING_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+if ( ! class_exists( '\theidbrewing\TT1_Skin\Core' ) ) :
 
-if ( file_exists( __DIR__ . '/tt1skin.config.php' ) ) {
-	require_once __DIR__ . '/tt1skin.config.php';
-}
+	define( 'THEIDBREWING_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
+	define( 'THEIDBREWING_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+	
+	if ( file_exists( __DIR__ . '/tt1skin.config.php' ) ) {
+		require_once __DIR__ . '/tt1skin.config.php';
+	}
 
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
+	if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+		require_once __DIR__ . '/vendor/autoload.php';
+	
+		// TT1 Skin Main Class.
+		\theidbrewing\TT1_Skin\Core::init();
+	
+		// TT1 Skin Block Style.
+		\theidbrewing\TT1_Skin\Block_Style::init();
+	
+		// TT1 Skin Block Pattern.
+		\theidbrewing\TT1_Skin\Block_Pattern::init();
+	
+		// TT1 Skin Customizer Colors.
+		\theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
+	
+		// TT1 Skin Updater.
+		\theidbrewing\TT1_Skin\Updater::init();
+	
+	}
 
-	// TT1 Skin Main Class.
-	\theidbrewing\TT1_Skin\Core::init();
+endif;
 
-	// TT1 Skin Block Style.
-	\theidbrewing\TT1_Skin\Block_Style::init();
+register_activation_hook( __FILE__, function() {
 
-	// TT1 Skin Block Pattern.
-	\theidbrewing\TT1_Skin\Block_Pattern::init();
+	$skins = [
+		'theidbrewing.github.io',
+		'theidbrewing',
+		'samurai',
+		'flower',
+	];
 
-	// TT1 Skin Customizer Colors.
-	\theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
+	foreach ( $skins as $skin ) {
 
-	// TT1 Skin Updater.
-	\theidbrewing\TT1_Skin\Updater::init();
+		if ( 0 === strpos( plugin_basename( __FILE__ ), $skin ) ) {
+			continue;
+		}
+		if ( is_plugin_active( "$skin/tt1skin.php" ) ) {
+			deactivate_plugins( "$skin/tt1skin.php" );
+		}
+	}
 
-}
+});
