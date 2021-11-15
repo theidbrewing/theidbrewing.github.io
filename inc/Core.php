@@ -9,8 +9,6 @@
 
 namespace theidbrewing\TT1_Skin;
 
-use theidbrewing\TT1_Skin\Skin_Data;
-
 /**
  * TT1_Skin Core
  */
@@ -53,7 +51,7 @@ class Core {
 				// Enqueue CSS.
 				wp_enqueue_style(
 					$skin_data['name'],
-					TT1SKIN_URL . '/build/skins/' . $skin_data['name'] . '/style.css',
+					THEIDBREWING_URL . '/build/skins/' . $skin_data['name'] . '/style.css',
 					array(),
 					filectime( THEIDBREWING_PATH . '/build/skins/' . $skin_data['name'] . '/style.css' )
 				);

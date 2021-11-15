@@ -22,18 +22,21 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'THEIDBREWING_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'THEIDBREWING_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
-if ( file_exists( __DIR__  . '/tt1skin.config.php'  ) ) {
-	require_once __DIR__  . '/tt1skin.config.php';
+if ( file_exists( __DIR__ . '/tt1skin.config.php' ) ) {
+	require_once __DIR__ . '/tt1skin.config.php';
 }
+
+if ( is_file( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
+
 // Json Controller.
 // require_once THEIDBREWING_PATH . '/inc/class-tt1skin-json-controller.php';
 // TT1 Skin data.
 // require_once THEIDBREWING_PATH . '/inc/class-tt1skin-skin-data.php';
 
 // TT1 Skin Main Class.
-if ( class_exists( '\theidbrewing\TT1_Skin\Core' ) ) {
-	\theidbrewing\TT1_Skin\Core::init();
-}
+\theidbrewing\TT1_Skin\Core::init();
 
 // TT1 Skin Block Style.
 \theidbrewing\TT1_Skin\Block_Style::init();
@@ -45,4 +48,4 @@ if ( class_exists( '\theidbrewing\TT1_Skin\Core' ) ) {
 \theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
 
 // TT1 Skin Updater.
-TT1skin_Updater::init();
+\theidbrewing\TT1_Skin\Updater::init();

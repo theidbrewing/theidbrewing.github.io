@@ -69,4 +69,3 @@ class Skin_Data {
 		}
 	}
 }
-
