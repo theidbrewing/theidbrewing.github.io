@@ -1,12 +1,141 @@
 @use "./skin_config" as skin;
+@use "./colors" as tt1color;
 
+.block-editor-block-list__layout,
 .#{skin.$skin-name} {
     &.page {
         .site-main{
             padding-top: 0px;
         }
     }
-
 }
 
+
+    //Homeのみ
+.#{skin.$skin-name}.home {
+    .tt1flower-top-intro,
+    .tt1flower-top-left{
+        .wp-block-media-text{
+        width: 66%;
+        border-top-right-radius: 350px;
+        border-bottom-right-radius: 350px;
+        color: #fff;
+        margin-right: 0;
+        font-size: 0.8em;
+        }
+    }
+    .tt1flower-top-right{
+        .wp-block-media-text{
+        width: 66%;
+        border-top-left-radius: 350px;
+        border-bottom-left-radius: 350px;
+        color: #fff;
+        margin-left: 0;
+        font-size: 0.8em;
+        }
+    }
+
+    .tt1flower-top-intro{
+        .wp-block-media-text{
+            .wp-block-media-text__media {
+                width:600px;
+                height:600px;
+                object-fit:cover;
+                border-radius:50%;
+                margin-left: -300px;
+            }
+            .wp-block-media-text__content{
+                margin-left: -230px;
+                width: 100%;
+                height: 500px;
+                overflow-y: auto;
+                scrollbar-color: #{tt1color.$flower-secondary-500} #F2EEE9;
+               
+                h2{
+                    font-family: var(--skin--ja--font-family);
+                    color: var(--global--color-secondary);
+                    background: #fff;
+                    border-radius: 0.8em;
+                    line-height: 1.6em;
+                    text-align: center;
+                }
+                h3{
+                    display: block;
+                    font-family: var(--skin--ja--font-family);
+                    color: var(--global--color-secondary);
+                    background: #fff;
+                    border-radius: 0.8em;
+                    line-height: 1.6em;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 40%;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+
+    .tt1flower-top-left,
+    .tt1flower-top-right{
+        .wp-block-media-text{
+            position: relative;
+            .wp-block-media-text__media {
+                width:360px;
+                height:360px;
+                object-fit:cover;
+                border-radius:50%;
+                }
+            }
+            .wp-block-media-text__content{
+                width: 100%;
+                height: 280px;
+                overflow-y: auto;
+                scrollbar-color: #{tt1color.$flower-secondary-500} #F2EEE9;
+                h2{
+                    font-family: var(--skin--ja--font-family);
+                    color: var(--global--color-secondary);
+                    background: #fff;
+                    border-radius: 0.8em;
+                    line-height: 1.6em;
+                    text-align: center;
+                    padding: 0 1em;
+                }
+            }
+        }
+    }
+
+    .tt1flower-top-left{
+        .wp-block-media-text{
+            .wp-block-media-text__media {
+                margin-left: -180px;
+            }
+            .wp-block-media-text__content{
+                margin-left: -360px;
+                h2{
+                    position: absolute;
+                    right: 80px;
+                    top:50%;
+                    transform: translate(0%, -50%);
+                }
+            }
+        }
+    }
+
+    .tt1flower-top-right{
+        .wp-block-media-text{
+            .wp-block-media-text__media {
+                margin-left: 360px;
+            }
+            .wp-block-media-text__content{
+                margin-left: 380px;
+                h2{
+                    position: absolute;
+                    left: 80px;
+                    top:50%;
+                    transform: translate(0%, -50%);
+                }
+            }
+        }
+    }
 
