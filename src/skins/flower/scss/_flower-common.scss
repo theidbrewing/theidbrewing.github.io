@@ -2,7 +2,7 @@
 
 body.#{skin.$skin-name} {
 
-    &.home .site-content{
+    &.home {
         background-image: url("./../../../build/images/icons/tt1flower-bg.jpg");
         background-size: cover;
     }
