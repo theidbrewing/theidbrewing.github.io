@@ -11,7 +11,7 @@
 }
 
 
-    //Homeのみ
+//Homeのみ
 .#{skin.$skin-name}.home {
     .tt1flower-top-intro,
     .tt1flower-top-left{
@@ -103,7 +103,6 @@
                 }
             }
         }
-    }
 
     .tt1flower-top-left{
         .wp-block-media-text{
@@ -138,4 +137,15 @@
             }
         }
     }
+
+    // Gallery 6 columns 画像間の隙間を削除
+    .wp-block-gallery{
+        .blocks-gallery-item{
+            margin: 0;
+        }
+        &.columns-6 .blocks-gallery-item{
+            margin-right: 0;
+        }
+    } 
+}
 
