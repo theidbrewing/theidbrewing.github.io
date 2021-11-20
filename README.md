@@ -35,8 +35,8 @@ Set config file
 #### 1. For wp-env
 
 ```
-# rename sample file
-$ mv .wp-env.override.json.sample .wp-env.override.json
+# copy sample file
+$ cp .wp-env.override.json.sample .wp-env.override.json
 ```
 
 edit `.wp-env.override.json`
@@ -58,8 +58,8 @@ $ wp-env start --update
 #### 2. For other local env
 
 ```
-#rename sample file
-$ mv tt1skin.config.php.sample tt1skin.config.php
+#copy sample file
+$ cp tt1skin.config.php.sample tt1skin.config.php
 ```
 
 edit `tt1skin.config.php`
