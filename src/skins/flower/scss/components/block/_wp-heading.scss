@@ -1,0 +1,41 @@
+@use "./../../skin_config" as skin;
+
+.block-editor-block-list__layout h2,
+.block-editor-block-list__layout h3,
+.#{skin.$skin-name} h2,
+.#{skin.$skin-name} h3 {
+    &.is-style-section-title {
+        font-weight: 700;
+        margin-bottom: 0;
+        position: relative;
+        word-break: break-all;
+        line-height: 0.9;
+        & + * {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        &.has-text-align-right {
+            &::before,
+            &::after {
+                right: 0;
+            }
+        }
+    }
+}
+
+.block-editor-block-list__layout h2,
+.#{skin.$skin-name} h2 {
+    font-size: min(6.55vw, 38px);
+    letter-spacing: -0.06em;
+    &.is-style-section-title {
+        font-size: min(12vw, 120px);
+    }
+}
+
+.block-editor-block-list__layout h3,
+.#{skin.$skin-name} h3 {
+    &.is-style-section-title {
+        font-size: min(9vw, 64px);
+    }
+}
+

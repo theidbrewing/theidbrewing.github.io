@@ -1,0 +1,36 @@
+{
+    "name": "flower",
+    "version": "0.0.1",
+    "settings": {
+        "google_fonts_url": "https://fonts.googleapis.com/css2?family=Clicker+Script&family=Lato:wght@300;400;700&family=PT+Sans+Narrow:wght@400;700&family=M+PLUS+1p:wght@400;500;700&family=Open+Sans:wght@600&family=Space+Mono:wght@400;700&display=swap",
+        "color": {
+            "palette": [
+                {
+                    "name": "Primary",
+                    "slug": "primary",
+                    "color": "#BF0A36"
+                },
+                {
+                    "name": "Secondary",
+                    "slug": "secondary",
+                    "color": "rgba(191, 10, 54, 0.65)"
+                },
+                {
+                    "name": "Body",
+                    "slug": "body",
+                    "color": "#1C0120"
+                },
+                {
+                    "name": "Base",
+                    "slug": "base",
+                    "color": "#F2EEE9"
+                },
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "#FFFFFF"
+                }
+            ]
+        }
+    }
+}

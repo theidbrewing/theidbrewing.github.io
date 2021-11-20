@@ -1,0 +1,44 @@
+@use "./../skin_config" as skin;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .widget-area {
+        .wp-block-group.tt1skin-widget-columns {
+            > .wp-block-group__inner-container {
+                > .wp-block-group {
+                    .wp-block-cover {
+                        overflow: hidden;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: flex;
+                            top: min(10vw, 80px);
+                            right: max(-10vw, -100px);
+                            width: min(100vw, 600px);
+                            height: min(100vw, 600px);
+                            mix-blend-mode: screen;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-image: svg-load("../../../../build/images/icons/bubble.svg");
+                            opacity: 1;
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        .wp-block-cover::after {
+                            top: max(-10vw, -100px);
+                            left: max(-10vw, -100px);
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        .wp-block-cover::after {
+                            top: max(-60vw, -500px);
+                            right: max(-30vw, -200px);
+                            width: min(120vw, 1000px);
+                            height: min(120vw, 1000px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

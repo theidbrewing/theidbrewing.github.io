@@ -1,0 +1,37 @@
+@use "./../skin_config" as skin;
+@use "./../colors" as tt1color;
+
+.block-editor-block-list__layout,
+.#{skin.$skin-name} {
+    .navigation {
+        color: var(--global--color-secondary);
+        a {
+            color: var(--global--color-secondary);
+        }
+    }
+    .primary-navigation {
+        .menu-item {
+            > a {
+                font-family: var(--skin--list--font-family);
+                font-weight: 300;
+                text-underline-offset: 6px;
+                line-height: 1.5;
+                .menu-item-description {
+                    font-family: var(--skin--ja--font-family);
+                    padding-top: 6px;
+                }
+            }
+        }
+        .dropdown-icon {
+            &.open::before {
+                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{tt1color.$flower-primary-500});
+            }
+        }
+    }
+
+    // focus時の背景色
+    .site .primary-navigation a:focus:not(.wp-block-button__link):not(.wp-block-file__button){
+        background: #{tt1color.$flower-secondary-500};
+    }
+}
+
