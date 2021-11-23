@@ -7,6 +7,10 @@
         max-width: 100%;
         background-color:var(--global--color-background);
         padding: 0 28px ;
+        &::before,
+        &::after{
+            display: none;
+        }
     }
 
     // Site Footer
@@ -69,7 +73,8 @@
         }
 
         .site .site-header{
-            justify-content: center;
+            justify-content: space-between;
+            max-width: 1920px;
             .primary-navigation{
                 right: inherit;
                 margin-left: 100px;
