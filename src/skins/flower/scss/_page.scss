@@ -21,7 +21,7 @@
             display: block;
             max-width: 65vw !important;
             height: 2.6vw;
-            margin-top: -38px;
+            margin-top: -34px;
             margin-right: 10vw !important;
             .blocks-gallery-item{
                 figure{
@@ -116,7 +116,7 @@
             border-radius: 50vw;
             grid-template-columns: 23.3vw calc(100% - 23.3vw);
             max-width: 1723px;
-            float: left;
+            float: right;
 
             &::after{
                 content: "";
@@ -154,6 +154,7 @@
 
             &.has-media-on-the-right{
                 grid-template-columns: calc(100% - 23.3vw) 23.3vw ;
+                float: left;
                 .wp-block-media-text__content{
                     padding: 40px;
                     .wp-block-columns{
