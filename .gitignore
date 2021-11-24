@@ -5,3 +5,4 @@ node_modules
 .vscode/
 build/skins/
 tests/phpunit/tmp
+tt1skin.config.php

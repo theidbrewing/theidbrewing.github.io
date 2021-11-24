@@ -28,6 +28,46 @@ $ npm -g i @wordpress/env
 $ wp-env start
 ```
 
+### Switch Skin
+
+Set config file
+
+#### 1. For wp-env
+
+```
+# copy sample file
+$ cp .wp-env.override.json.sample .wp-env.override.json
+```
+
+edit `.wp-env.override.json`
+
+```
+{
+    "config" : {
+        "TT1_SKIN_NAME" : "{{SKIN_NAME}}"
+    }
+}
+```
+
+```
+# apply
+$ wp-env start --update
+```
+
+
+#### 2. For other local env
+
+```
+#copy sample file
+$ cp tt1skin.config.php.sample tt1skin.config.php
+```
+
+edit `tt1skin.config.php`
+
+```
+define( 'TT1_SKIN_NAME', '{{SKIN_NAME}}' );
+```
+
 ### Init Skin
 
 Convert the skin settings set in `skin.json` to SCSS.
