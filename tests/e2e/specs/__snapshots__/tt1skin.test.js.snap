@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TT1 Skin should have the heading block custom style 1`] = `
+"<!-- wp:heading {\\"className\\":\\"is-style-section-title\\"} -->
+<h2 class=\\"is-style-section-title\\" id=\\"2\\">2</h2>
+<!-- /wp:heading -->"
+`;
