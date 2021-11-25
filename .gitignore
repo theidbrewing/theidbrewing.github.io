@@ -7,3 +7,4 @@ node_modules
 build/skins/
 tests/phpunit/tmp
 tt1skin.config.php
+tests/e2e/specs/__snapshots__/*

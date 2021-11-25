@@ -2,11 +2,6 @@ import { visitAdminPage, createNewPost, clickBlockAppender, getEditedPostContent
 
 describe('TT1 Skin', () => {
 
-    // it('Sample Test', async () => {
-    //     await visitAdminPage( '/' );
-    //     expect(true).toEqual(true);
-    // });
-
     beforeEach(async () => {
         await activateTheme('twentytwentyone');
         await createNewPost();
