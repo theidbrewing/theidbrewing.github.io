@@ -22,7 +22,7 @@
             max-width: 65vw !important;
             height: 2.6vw;
             margin-top: -34px;
-            margin-right: 10vw !important;
+            margin-right: 11.5vw !important;
             .blocks-gallery-item{
                 figure{
                     display: block;
@@ -62,13 +62,12 @@
             .wp-block-column{
                 color: #fff;
                 flex-basis: inherit;
-
                 
                 &:first-child{
                     height: 36vw;
                     padding-bottom: 3vw;
                     margin-top: 3vw;
-                    width: 65vw;
+                    width: 54.5vw;
                     display:flex;
                     flex-direction: column;
                     flex-wrap: wrap;
@@ -82,10 +81,10 @@
                     }
                 }
                 &:last-child{
-                width:50vw;
-                height:50vw;
+                width:48.5vw;
+                height:48.5vw;
                 border-radius:50%;
-                margin-left: -15vw;
+                margin-left: -3vw;
                 position: relative;
                 z-index: -1;
 
@@ -103,6 +102,13 @@
                     text-shadow: 0px 0px 6px rgba(191, 10, 54, 0.65);
                 }
                 }
+
+                // デフォルトカラーではピンク背景の白地にする
+                &:not(.has-background) {
+                    background-color:rgba(191, 10, 54, 0.65);
+                    color: #fff;
+                }
+
             }
         }
 
@@ -122,6 +128,12 @@
                 content: "";
                 display: block;
                 clear: both;
+            }
+
+            // デフォルトカラーではピンク背景の白地にする
+            &:not(.has-background) {
+                background-color:rgba(191, 10, 54, 0.65);
+                color: #fff;
             }
 
             .wp-block-media-text__content{
