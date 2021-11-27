@@ -35,6 +35,13 @@
                     "slug": "accent-03",
                     "color": "#EDE12F"
                 }
+            ],
+            "gradients": [
+                {
+                    "slug": "shadow01",
+                    "gradient": "linear-gradient(97deg, rgba(0, 0, 0, 0.7) 24%, rgba(0, 0, 0, 0) 62%)",
+                    "name": "シャドウ01"
+                }
             ]
         }
     },
