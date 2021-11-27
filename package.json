@@ -18,6 +18,7 @@
     "count:skin": "skins_count=(`ls -1 ./src/skins`) && echo ${#skins_count[@]}",
     "dist:theidbrewing": "sh bin/dist.sh theidbrewing",
     "dist:samurai": "sh bin/dist.sh samurai",
+    "dist:flower": "sh bin/dist.sh flower",
     "dist:all": "chmod +x bin/*.sh && sh bin/dist-all.sh",
     "makepot": "npx wp-env run cli wp i18n make-pot wp-content/plugins/theidbrewing.github.io wp-content/plugins/theidbrewing.github.io/languages/tt1skin.pot  --domain=tt1skin",
     "test": "exsc test",
