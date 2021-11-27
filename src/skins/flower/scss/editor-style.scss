@@ -33,7 +33,7 @@
 @forward "./components/widget";
 
 @forward "./global";
-@forward "./page";
+
 
 // ----------- Editor only
 // TT1側のバグだと思われる ソーシャルアイコンの色を指定している場合に色を上書きしないように修正
@@ -73,7 +73,7 @@
     }
 }
 
-//footer totated text @ widget area
+//flower footer rotated text @ widget area
 .block-editor-block-list__layout
 .tt1flower-text{
     font-family: 'Clicker Script', cursive !important;
@@ -85,4 +85,38 @@
     transform: rotate(-18.05deg);
     width: 390px;
     margin: 70px auto;
+}
+
+
+.block-editor-block-list__layout{
+
+    //flower home visual
+    .ttlflower-top-visual{
+        .wp-block-columns{
+            .wp-block-column{
+
+                // デフォルトカラーではピンク背景の白地にする
+                &:not(.has-background) {
+                    background-color:rgba(191, 10, 54, 0.65);
+                    color: #fff;
+                }
+
+            }
+        }
+    }
+
+    //flower home intro
+    .tt1flower-home-intro{
+        .wp-block-media-text{
+
+            // デフォルトカラーではピンク背景の白地にする
+            &:not(.has-background) {
+                background-color:rgba(191, 10, 54, 0.65);
+                color: #fff;
+            }
+            
+        }
+
+    }
+    
 }

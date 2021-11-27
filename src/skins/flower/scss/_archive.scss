@@ -1,0 +1,34 @@
+@use "./skin_config" as skin;
+
+.#{skin.$skin-name} {
+    &.archive { 
+         // archive page ttl
+        .page-title > span {
+            font-size: 1.3em;
+            letter-spacing: 0.1em;
+            color: var(--global--color-secondary);
+        }
+
+        .post .entry-header h2.entry-title {
+            letter-spacing: 0.05em;
+        }
+
+        .has-post-thumbnail{
+            .post-thumbnail-inner{
+                img{
+                    border: 14px solid var(--global--color-secondary);
+                    border-radius: 20px;
+                }
+            }
+        }
+
+        .entry-footer .posted-on{
+            background: var(--global--color-secondary);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 16px;
+        }
+    }
+}
+
+

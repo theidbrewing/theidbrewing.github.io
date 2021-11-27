@@ -2,6 +2,17 @@
 @use "./colors" as tt1color;
 
 .#{skin.$skin-name} {
+    // Site Header
+    .site .site-header{
+        max-width: 100%;
+        background-color:var(--global--color-background);
+        padding: 0 28px ;
+        &::before,
+        &::after{
+            display: none;
+        }
+    }
+
     // Site Footer
     .site-footer {
         color: var(--global--color-background);
@@ -39,7 +50,7 @@
         opacity: 0.7;
     }
 
-    //footer totated text
+    //footer rotated text
     position: relative;
     .tt1flower-text{
         font-family: 'Clicker Script', cursive !important;
@@ -60,5 +71,15 @@
         .tt1flower-text{
     		right: calc(50% - 750px)
         }
+
+        .site .site-header{
+            justify-content: space-between;
+            max-width: 1920px;
+            .primary-navigation{
+                right: inherit;
+                margin-left: 100px;
+            }
+        }
 	}
+   
 }
