@@ -21,6 +21,8 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'TT1SKIN_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 define( 'TT1SKIN_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
+define( 'TT1_SKIN_NAME', 'flower'  );
+
 if ( is_file( 'tt1skin.config.php' ) ) {
 	require_once 'tt1skin.config.php';
 }
