@@ -92,6 +92,16 @@
 
     //flower home visual
     .ttlflower-top-visual{
+
+        .wp-block-gallery.columns-3.is-cropped{
+            .blocks-gallery-item img{
+                height: 190px;
+                width: 190px;
+                border-radius: 50%;
+            }
+
+        }
+
         .wp-block-columns{
             .wp-block-column{
 
@@ -100,6 +110,19 @@
                     background-color:rgba(191, 10, 54, 0.65);
                     color: #fff;
                 }
+                &:first-child{
+                    padding-bottom: 3vw;
+                    display:flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                }
+                &:last-child{
+                    
+                    p{
+                        font-family: 'Clicker Script', cursive !important;
+                    }
+                    }
 
             }
         }
@@ -114,7 +137,31 @@
                 background-color:rgba(191, 10, 54, 0.65);
                 color: #fff;
             }
-            
+
+            .wp-block-media-text__content{
+                h2 {
+                    font-family: var(--skin--ja--font-family);
+                    color: var(--global--color-secondary);
+                    background: #fff;
+                    border-radius: 50vw;
+                    display: table;
+                    margin: 0 auto;
+                    padding: 8px 40px;
+                    width: 100%;
+                    text-align: center;
+                }
+                h3{
+                    font-family: var(--skin--ja--font-family);
+                    color: var(--global--color-secondary);
+                    background: #fff;
+                    border-radius: 50vw;
+                    font-size: 1em;
+                    display: table;
+                    margin: 0 auto;
+                    padding: 8px 40px;
+                }
+            }
+
         }
 
     }
