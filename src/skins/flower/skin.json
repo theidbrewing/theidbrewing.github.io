@@ -32,5 +32,9 @@
                 }
             ]
         }
-    }
+    },
+    "block_pattern" : [
+        "top-key-visual",
+        "top-introduction"
+    ]
 }
