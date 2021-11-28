@@ -34,6 +34,9 @@ class Core {
 		// Set Color Pallete.
 		add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_colors' ), 11 );
 
+		// Set Gradient Pallete.
+		add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_gradients' ), 11 );
+
 		// Set translate dir.
 		add_action( 'plugin_loaded', array( get_called_class(), 'set_translate_dir' ) );
 
@@ -115,6 +118,17 @@ class Core {
 		if ( isset( $skin_data['settings']['color']['palette'] ) ) {
 			$colors_array = $skin_data['settings']['color']['palette'];
 			add_theme_support( 'editor-color-palette', $colors_array );
+		}
+	}
+
+	/**
+	 * Set custom gradient
+	 */
+	public static function set_custom_gradients() {
+		$skin_data = Skin_Data::get_instance()->get_skin_data();
+		if ( isset( $skin_data['settings']['color']['gradients'] ) ) {
+			$gradient_array = $skin_data['settings']['color']['gradients'];
+			add_theme_support( 'editor-gradient-presets', $gradient_array );
 		}
 	}
 

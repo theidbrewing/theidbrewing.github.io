@@ -17,6 +17,12 @@
             background-color: var(--color-#{$key});
         }
     }
+    // グラデーションを書き出し
+    @each $key, $gradient-var in skin.$skin-gradients {
+        .has-background-dim.has-#{$key}-gradient-background {
+            background: #{$gradient-var};
+        }
+    }
 }
 
 // --- Colors
