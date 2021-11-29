@@ -8,10 +8,14 @@ body.block-editor-writing-flow,
 .#{cmn.$prefix-skin--common} {
     --heading--font-size-h1: min(8vw, 64px);
     --global--font-size-page-title: min(8vw, 2.5rem);
-    --heading--font-size-h2: min(5.5vw, 2rem);
-    --heading--font-size-h3: min(5vw, 1.8rem);
-    --global--font-size-body: min(3.8vw, 1.15rem);
-    --global--font-size-caption: min(3.5vw, 0.9rem);
+
+    --heading--font-size-h2: calc(1rem + 1.2vw);
+    --heading--font-size-h3: calc(1rem + 1vw);
+    --heading--font-size-h4: calc(1rem + 0.7vw);
+    --heading--font-size-h5: calc(1rem + 0.5vw);
+    --heading--font-size-h6: calc(1rem + 0.2vw);
+    --global--font-size-body: calc(1rem + 0.1vw);
+    --global--font-size-caption: calc(1rem - 0.1vw);
 
     --button--font-size: min(5vw, 1.2rem);
     --button--padding-vertical: min(3vw, 0.8em);
