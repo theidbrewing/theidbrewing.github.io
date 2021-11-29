@@ -12,7 +12,7 @@
                             content: "";
                             position: absolute;
                             display: flex;
-                            top: min(10vw, 80px);
+                            top: min(15vw, 220px);
                             right: max(-10vw, -100px);
                             width: min(100vw, 600px);
                             height: min(100vw, 600px);
@@ -20,7 +20,7 @@
                             background-size: contain;
                             background-repeat: no-repeat;
                             background-image: svg-load("../../../../build/images/icons/bubble.svg");
-                            opacity: 1;
+                            opacity: 0.6;
                         }
                     }
                     &:nth-of-type(2) {
