@@ -31,8 +31,8 @@ class Block_Style {
 		register_block_style(
 			'core/heading',
 			array(
-				'name'  => __( 'section-title', 'tt1skin' ),
-				'label' => 'section title',
+				'name'  => 'section-title',
+				'label' => __( 'section title', 'tt1skin' ),
 			)
 		);
 		/**
@@ -41,8 +41,8 @@ class Block_Style {
 		register_block_style(
 			'core/cover',
 			array(
-				'name'  => __( 'special', 'tt1skin' ),
-				'label' => 'special',
+				'name'  => 'special',
+				'label' => __( 'special', 'tt1skin' ),
 			)
 		);
 	}
