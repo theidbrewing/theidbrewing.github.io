@@ -1,6 +1,6 @@
 {
     "name": "flower",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "settings": {
         "google_fonts_url": "https://fonts.googleapis.com/css2?family=Clicker+Script&family=Lato:wght@300;400;700&family=PT+Sans+Narrow:wght@400;700&family=M+PLUS+1p:wght@400;500;700&family=Open+Sans:wght@600&family=Space+Mono:wght@400;700&display=swap",
         "color": {
