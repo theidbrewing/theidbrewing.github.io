@@ -35,6 +35,7 @@
 
 @media only screen and (min-width: 1500px) {
     // Homeのみサイドに縦フリになるスタイルをh2.is-style-section-titleに設定
+    .entry-content > h2:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
     .tt1skin-special h2,
     .#{skin.$skin-name}.home h2 {
         &.is-style-section-title,

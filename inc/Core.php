@@ -37,6 +37,9 @@ class Core {
 		// Set Gradient Pallete.
 		add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_gradients' ), 11 );
 
+		// Set Font Size.
+		add_action( 'after_setup_theme', array( get_called_class(), 'set_custom_font_sizes' ), 11 );
+
 		// Set translate dir.
 		add_action( 'plugin_loaded', array( get_called_class(), 'set_translate_dir' ) );
 
@@ -129,6 +132,17 @@ class Core {
 		if ( isset( $skin_data['settings']['color']['gradients'] ) ) {
 			$gradient_array = $skin_data['settings']['color']['gradients'];
 			add_theme_support( 'editor-gradient-presets', $gradient_array );
+		}
+	}
+
+	/**
+	 * Set custom font size
+	 */
+	public static function set_custom_font_sizes() {
+		$skin_data = Skin_Data::get_instance()->get_skin_data();
+		if ( isset( $skin_data['settings']['fontSizes'] ) ) {
+			$font_size_array = $skin_data['settings']['fontSizes'];
+			add_theme_support( 'editor-font-sizes', $font_size_array );
 		}
 	}
 
