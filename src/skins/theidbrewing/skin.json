@@ -48,7 +48,30 @@
                     "name": "シャドウ02"
                 }
             ]
-        }
+        },
+        "fontSizes": [
+            {
+                "slug": "small",
+                "size": "calc(0.75rem + 0.1vw)"
+            },
+            {
+                "slug": "default",
+                "size": "calc(1.05rem + 0.1vw)",
+                "name": "標準"
+            },
+            {
+                "slug": "medium",
+                "size": "calc(1.8rem + 0.1vw)"
+            },
+            {
+                "slug": "large",
+                "size": "calc(3.2rem + 0.1vw)"
+            },
+            {
+                "slug": "x-large",
+                "size": "calc(5rem + 0.1vw)"
+            }
+        ]
     },
     "block_pattern" : [
         "card--member",
