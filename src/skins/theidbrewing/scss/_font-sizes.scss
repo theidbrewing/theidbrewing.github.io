@@ -5,7 +5,7 @@
     // フォントサイズを変数として書き出し
     @each $key, $font-size in skin.$skin-font-sizes {
         .has-#{$key}-font-size {
-            font-size: #{$font-size};
+            font-size: #{$font-size} !important;
         }
     }
 }
