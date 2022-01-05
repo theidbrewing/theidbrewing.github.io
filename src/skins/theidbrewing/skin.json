@@ -80,5 +80,6 @@
     "block_pattern" : [
         "card--member",
         "card"
-    ]
+    ],
+    "js": true
 }

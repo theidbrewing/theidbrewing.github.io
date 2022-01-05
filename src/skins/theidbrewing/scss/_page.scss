@@ -31,11 +31,42 @@
             background-color: var(--global--color-background);
         }
     }
+    // Loading animation
+    &.home.is-loaded {
+        .wp-block-cover {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                visibility: visible;
+                display: flex;
+                mix-blend-mode: screen;
+                background-image: svg-load("../../../../build/images/icons/bubble.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                bottom: -50vw;
+                animation: heroBubbles 2s cubic-bezier(0.55, 0, 1, 0.45) 2s;
+                z-index: -1;
+                opacity: 0.9;
+            }
+            &::before {
+                left: max(-10vw, -50px);
+                width: min(110vw, 1400px);
+                height: min(110vw, 1400px);
+            }
+            &::after {
+                right: -10vw;
+                width: min(60vw, 800px);
+                height: min(60vw, 800px);
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1500px) {
     // Homeのみサイドに縦フリになるスタイルをh2.is-style-section-titleに設定
-    .entry-content > h2:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
+    .entry-content
+        > h2:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
     .tt1skin-special h2,
     .#{skin.$skin-name}.home h2 {
         &.is-style-section-title,
@@ -72,8 +103,9 @@
     }
 }
 
-@media not all and (min-resolution:.001dpcm) { 
-    @supports (-webkit-appearance:none) {
+// Safari only
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
         .#{skin.$skin-name} h2 {
             &.is-style-section-title,
             &.is-style-section-title.alignwide {
@@ -91,17 +123,19 @@
         transform: translate(0%);
         visibility: visible;
     }
-    7%,10% {
+    7%,
+    10% {
         transform: translate(70%, 10%);
-        mix-blend-mode:screen;
+        mix-blend-mode: screen;
     }
-    25%,35% {
+    25%,
+    35% {
         transform: translate(-100%, 12%);
         mix-blend-mode: hue;
     }
     36% {
         visibility: hidden;
-        mix-blend-mode:overlay;
+        mix-blend-mode: overlay;
     }
     45% {
         transform: translate(0%);
@@ -111,13 +145,35 @@
     0% {
         transform: translate(0%);
     }
-    7%,10% {
+    7%,
+    10% {
         transform: translate(70%, 10%);
     }
-    25%,35% {
+    25%,
+    35% {
         transform: translate(-100%, 12%);
     }
     45% {
         transform: translate(0%);
+    }
+}
+
+@keyframes heroBubbles {
+    0% {
+        z-index: 1;
+        opacity: 0;
+    }
+    5% {
+        bottom: -40vw;
+    }
+    10% {
+        opacity: 1;
+    }
+    99.99% {
+        opacity: 0;
+    }
+    100% {
+        bottom: 300vw;
+        z-index: -1;
     }
 }
