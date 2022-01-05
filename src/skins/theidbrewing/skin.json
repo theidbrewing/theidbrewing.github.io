@@ -51,25 +51,29 @@
         },
         "fontSizes": [
             {
-                "slug": "small",
-                "size": "calc(0.75rem + 0.1vw)"
+                "slug": "x-small",
+                "size": "calc(1rem + 0.1vw)",
+                "name": "極小"
             },
             {
-                "slug": "default",
+                "slug": "small",
                 "size": "calc(1.05rem + 0.1vw)",
+                "name": "小"
+            },
+            {
+                "slug": "normal",
+                "size": "calc(1.15rem + 0.1vw)",
                 "name": "標準"
             },
             {
-                "slug": "medium",
-                "size": "calc(1.8rem + 0.1vw)"
+                "slug": "extra-large",
+                "size": "calc(3.2rem + 0.1vw)",
+                "name": "特大"
             },
             {
-                "slug": "large",
-                "size": "calc(3.2rem + 0.1vw)"
-            },
-            {
-                "slug": "x-large",
-                "size": "calc(5rem + 0.1vw)"
+                "slug": "huge",
+                "size": "calc(5.9rem + 0.1vw)",
+                "name": "超特大"
             }
         ]
     },
