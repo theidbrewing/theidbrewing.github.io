@@ -95,6 +95,7 @@ $ npm run list:skin
 
 ```
 $ npm run dist:theidbrewing
+$ npm run dist:flower
 $ npm run dist:samurai
 ```
 
