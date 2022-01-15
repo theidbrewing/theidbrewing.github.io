@@ -51,7 +51,7 @@
         },
         "fontSizes": [
             {
-                "slug": "x-small",
+                "slug": "extra-small",
                 "size": "calc(1rem + 0.1vw)",
                 "name": "極小"
             },
@@ -61,9 +61,9 @@
                 "name": "小"
             },
             {
-                "slug": "normal",
-                "size": "calc(1.15rem + 0.1vw)",
-                "name": "標準"
+                "slug": "large",
+                "size": "calc(3.2rem + 0.1vw)",
+                "name": "大"
             },
             {
                 "slug": "extra-large",
@@ -74,6 +74,11 @@
                 "slug": "huge",
                 "size": "calc(5.9rem + 0.1vw)",
                 "name": "超特大"
+            },
+            {
+                "slug": "gigantic",
+                "size": "calc(6.4rem + 0.1vw)",
+                "name": "巨大"
             }
         ]
     },
