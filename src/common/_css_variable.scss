@@ -9,11 +9,12 @@ body.block-editor-writing-flow,
     --heading--font-size-h1: min(8vw, 64px);
     --global--font-size-page-title: min(8vw, 2.5rem);
 
-    --heading--font-size-h2: calc(1rem + 1.2vw);
-    --heading--font-size-h3: calc(1rem + 1vw);
-    --heading--font-size-h4: calc(1rem + 0.7vw);
-    --heading--font-size-h5: calc(1rem + 0.5vw);
-    --heading--font-size-h6: calc(1rem + 0.2vw);
+    --heading--font-size-h2: clamp(2rem, 3vw, 3.2rem);
+    --heading--font-size-h3: clamp(1.6rem, 2.6vw, 1.8rem);
+    --heading--font-size-h4: clamp(1.4rem, 1.7vw, 1.7rem);
+    --heading--font-size-h5: clamp(1.25rem, 1.25vw, 1.5rem);
+    --heading--font-size-h6: calc(1rem + 0.1vw);
+    --global--font-size-base: calc(1rem + 0.1vw);
     --global--font-size-body: calc(1rem + 0.1vw);
     --global--font-size-caption: calc(1rem - 0.1vw);
 

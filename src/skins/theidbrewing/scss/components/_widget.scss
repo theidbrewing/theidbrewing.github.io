@@ -40,5 +40,9 @@
                 }
             }
         }
+        // 小さい画面サイズで文字が大きくなりすぎないように調整
+        .tt1-widget-title {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+        }
     }
 }
