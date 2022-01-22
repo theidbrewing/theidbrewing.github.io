@@ -8,3 +8,13 @@ $skin-colors: ("primary" : #540CED,
 "accent-02" : #ED2455,
 "accent-03" : #EDE12F,
 );
+$skin-gradients: ("shadow01" : linear-gradient(104deg,rgb(0,0,0) 0%,rgba(255,255,255,0) 90%),
+"shadow02" : radial-gradient(rgba(0,0,0,0.18) 0%,rgb(0,0,0) 100%),
+);
+$skin-font-sizes: ("x-small" : clamp(0.65rem, 0.9vw, 0.9rem),
+"small" : clamp(0.9rem, 1vw, 1.05rem),
+"large" : clamp(1.25rem, 2vw, 1.5rem),
+"extra-large" : clamp(2rem, 3vw, 3.2rem),
+"huge" : clamp(2.8rem, 4.5vw, 5.8rem),
+"gigantic" : clamp(3.5rem, 6.5vw, 7.8rem),
+);

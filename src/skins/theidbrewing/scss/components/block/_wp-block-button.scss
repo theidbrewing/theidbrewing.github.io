@@ -12,7 +12,6 @@
         &.is-vertical {
             gap: calc(0.666 * var(--global--spacing-vertical));
         }
-
     }
     .wp-block-button {
         // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
@@ -36,12 +35,11 @@
                 &:not(:hover):not(:active):not(.has-text-color) {
                     color: #fff;
                     background-color: var(--global--color-primary);
-                    border: 0;
+                    border-color: var(--global--color-primary);
                 }
                 &:hover {
                     color: #fff !important;
                     background-color: #{color.$color-primary-600} !important;
-                    border: 0;
                 }
             }
         }

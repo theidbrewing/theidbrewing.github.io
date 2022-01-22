@@ -1,6 +1,9 @@
+artifacts/
 node_modules
 /vendor/*
 .wp-env.override.json
 .DS_Store
 .vscode/
 build/skins/
+tests/phpunit/tmp
+tt1skin.config.php

@@ -90,6 +90,7 @@
 
 .block-editor-block-list__layout{
 
+
     //flower home visual
     .ttlflower-top-visual{
 
@@ -126,6 +127,7 @@
 
             }
         }
+
     }
 
     //flower home intro
@@ -137,7 +139,7 @@
                 background-color:rgba(191, 10, 54, 0.65);
                 color: #fff;
             }
-
+          
             .wp-block-media-text__content{
                 h2 {
                     font-family: var(--skin--ja--font-family);
@@ -161,9 +163,10 @@
                     padding: 8px 40px;
                 }
             }
-
         }
 
     }
+
+}
     
 }

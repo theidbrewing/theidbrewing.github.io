@@ -32,6 +32,15 @@ if [ -d $SKIN_DIST_DIR ]; then
 fi
 mkdir -p $SKIN_DIST_DIR
 
+# clean up composer
+if [ ! -d ./vendor ]; then
+    rm -rf ./vendor
+fi
+composer install --no-dev
+
+# copy composer vendor dir
+cp -r ./vendor $SKIN_DIST_DIR/vendor
+
 # skin buid dir
 SKIN_DIST_BUILD_DIR=$SKIN_DIST_DIR/build
 if [ ! -d $SKIN_DIST_BUILD_DIR ]; then
@@ -66,10 +75,23 @@ cp -r build/skins/$SKIN_NAME $SKIN_DIST_BUILD_DIR/skins/
 cp tt1skin.php $SKIN_DIST_DIR/tt1skin.php
 cp -r inc/ $SKIN_DIST_DIR/inc/
 
+if [ -f src/skins/$SKIN_NAME/skin.json ]; then
+    SKIN_VERSION=`awk -F\" '/"version"/{print $4}' src/skins/$SKIN_NAME/skin.json`
+else
+    SKIN_VERSION='0.0.1'
+fi
+
+# change plugin headers
+# copy
+if [ -d languages ]; then
+    cp -r languages/ $SKIN_DIST_DIR/languages/
+fi
+
 # change plugin name & description
 cd $SKIN_DIST_DIR
-sed -i "" "s|Plugin Name:       TT1 Skin - the_ID Brewing Styles|Plugin Name:       TT1 Skin (${SKIN_NAME})|" tt1skin.php
-sed -i "" "s|Description:       CSS styles for the_ID Brewing demo sites|Description:       サイト[${SKIN_NAME}]のためのスタイル調整プラグイン|" tt1skin.php
+sed -i "" "s|Plugin Name:       TT1 Skin - the_ID Brewing Styles|Plugin Name: TT1 Skin (${SKIN_NAME})|" tt1skin.php
+sed -i "" "s|Version:|Version: ${SKIN_VERSION}|" tt1skin.php
+sed -i "" "s|Update URI:|Update URI: https://theidbrewing.github.io/dist/tt1skin-${SKIN_NAME}.zip|" tt1skin.php
 
 # put config file
 echo "<?php 

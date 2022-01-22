@@ -37,6 +37,7 @@
             }
             .widget.widget_block {
                 margin: 0;
+                // ウィジェットエリアを3カラム化する
                 .wp-block-group.tt1skin-widget-columns {
                     max-width: var(--widget-width);
                     > .wp-block-group__inner-container {
@@ -54,6 +55,9 @@
                                 margin-left: 0;
                                 margin-right: 0;
                                 width: 100%;
+                                .tt1skin-widget-contents {
+                                    padding-bottom: var(--global--spacing-vertical);
+                                }
                             }
                         }
                     }

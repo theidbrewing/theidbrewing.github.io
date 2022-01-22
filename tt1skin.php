@@ -4,11 +4,12 @@
  * Description:       CSS styles for the_ID Brewing demo sites
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.0.5
+ * Version:
  * Author:            theidbrewing
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       tt1skin
+ * Update URI:
  *
  * @package           tt1skin
  */
@@ -18,31 +19,57 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'TT1SKIN_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
-define( 'TT1SKIN_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+if ( ! class_exists( '\theidbrewing\TT1_Skin\Core' ) ) :
 
-define( 'TT1_SKIN_NAME', 'flower'  );
+	define( 'THEIDBREWING_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
+	define( 'THEIDBREWING_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 
-if ( is_file( 'tt1skin.config.php' ) ) {
-	require_once 'tt1skin.config.php';
-}
-// Json Controller.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin-json-controller.php';
-// TT1 Skin data.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin-skin-data.php';
+	if ( file_exists( __DIR__ . '/tt1skin.config.php' ) ) {
+		require_once __DIR__ . '/tt1skin.config.php';
+	}
 
-// TT1 Skin Main Class.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin.php';
-TT1skin::init();
+	if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+		require_once __DIR__ . '/vendor/autoload.php';
 
-// TT1 Skin Block Style.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin-block-style.php';
-TT1skin_Block_Style::init();
+		// TT1 Skin Main Class.
+		\theidbrewing\TT1_Skin\Core::init();
 
-// TT1 Skin Block Pattern.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin-block-pattern.php';
-TT1skin_Block_Pattern::init();
+		// TT1 Skin Block Style.
+		\theidbrewing\TT1_Skin\Block_Style::init();
 
-// TT1 Skin Customizer Colors.
-require_once TT1SKIN_PATH . '/inc/class-tt1skin-customizer-colors.php';
-TT1skin_Customizer_Colors::register_hooks();
+		// TT1 Skin Block Pattern.
+		\theidbrewing\TT1_Skin\Block_Pattern::init();
+
+		// TT1 Skin Customizer Colors.
+		\theidbrewing\TT1_Skin\Customizer_Colors::register_hooks();
+
+		// TT1 Skin Updater.
+		\theidbrewing\TT1_Skin\Updater::init();
+
+	}
+
+endif;
+
+register_activation_hook(
+	__FILE__,
+	function() {
+
+		$skins = array(
+			'theidbrewing.github.io',
+			'theidbrewing',
+			'samurai',
+			'flower',
+		);
+
+		foreach ( $skins as $skin ) {
+
+			if ( 0 === strpos( plugin_basename( __FILE__ ), $skin ) ) {
+				continue;
+			}
+			if ( is_plugin_active( "$skin/tt1skin.php" ) ) {
+				deactivate_plugins( "$skin/tt1skin.php" );
+			}
+		}
+
+	}
+);
