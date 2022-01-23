@@ -1,4 +1,7 @@
 /*! tt1skin style.css */
+@use './skin_config' as skin;
+@use './functions' as func;
+
 
 // CSS 変数
 @forward '../../../common/css_variable';
@@ -23,6 +26,7 @@
 
 // スキン独自スタイル
 @forward './colors';
+@forward './font-sizes';
 @forward './flower-common';
 
 @forward './components/block/wp-heading';
