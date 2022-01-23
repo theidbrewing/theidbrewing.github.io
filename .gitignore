@@ -5,5 +5,8 @@ node_modules
 .DS_Store
 .vscode/
 build/skins/
+dist/theidbrewing
+dist/samurai
+dist/flower
 tests/phpunit/tmp
 tt1skin.config.php
