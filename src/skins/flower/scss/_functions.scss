@@ -40,3 +40,12 @@
         }
     }
 }
+
+// フォントサイズを書き出し
+@mixin fontSizes {
+    @each $key, $font-size in skin.$skin-font-sizes {
+        &.has-#{$key}-font-size {
+            font-size: #{$font-size};
+        }
+    }
+}

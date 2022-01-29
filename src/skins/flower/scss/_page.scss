@@ -1,63 +1,62 @@
 @use "./skin_config" as skin;
 @use "./colors" as tt1color;
 
-//Homeのみ 
-.#{skin.$skin-name}.home {
 
-    //背景カバーブロックの横幅とinnerを調整
+.#{skin.$skin-name} {
+
+    //背景カバーブロックの余白をゼロにしてinnerコンテナの横幅を100%に調整
     .wp-block-cover{
         padding: 0;
         .wp-block-cover__inner-container{
             width: 100%;
         }
     }
-    //ファーストビュービジュアル
+    //ファーストビューのタイトルビジュアル
     .ttlflower-top-visual{
-        .blocks-gallery-grid{
-            display: block;
-            position: relative;
-        }
-        .wp-block-gallery.columns-3.is-cropped{
+
+        // キービジュアル３枚画像が入ったカラム
+        .wp-block-gallery.has-nested-images.columns-default.is-cropped{
             display: block;
             max-width: 65vw !important;
             height: 2.6vw;
             margin-top: -34px;
             margin-right: 11.5vw !important;
-            .blocks-gallery-item{
-                figure{
-                    display: block;
-                }
-                display: block;
-                width: auto;
-            }
-            .blocks-gallery-item:first-child img{
-                width:29vw;
-                height:29vw;
-                object-fit:cover;
-                border-radius:50%;
-                position: absolute;
-                top: 50px;
-            }
-            .blocks-gallery-item:nth-child(2) img{
-                width:40vw;
-                height:40vw;
-                object-fit:cover;
-                border-radius:50%;
-                position: absolute;
-                top:0;
-                right: 0;
-            }
-            .blocks-gallery-item:last-child img{
-                width:20vw;
-                height:20vw;
-                object-fit:cover;
-                border-radius:50%;
-                position: absolute;
-                top: 28.9vw;
-                left: calc(50% - 10vw);
-            }
+            position: relative;
 
+            // ３枚のキービジュアル画像
+            .wp-block-image{
+                &:not(#individual-image){
+                    width: auto;
+                    height: auto;
+                    object-fit:cover;
+                    border-radius:50%;
+                    position: absolute;
+
+                    // 1枚目キービジュアル画像
+                    &:first-child{
+                    width:29vw;
+                    height:29vw;
+                    top: 50px;
+                    }
+                    // 2枚目キービジュアル画像
+                    &:nth-child(2){
+                        width:40vw;
+                        height:40vw;
+                        top: 0;
+                        right: 0;
+                    }
+                    // 3枚目キービジュアル画像
+                    &:last-child{
+                        width:20vw;
+                        height:20vw;
+                        top: 28.9vw;
+                        left: calc(50% - 10vw);
+                    }
+
+                }
+            }
         }
+        //サイトタイトルと英文フレーズ
         .wp-block-columns{
             .wp-block-column{
                 color: #fff;
@@ -111,10 +110,7 @@
 
             }
         }
-
-
     }
-
 
     // イントログループ ブロック
     .tt1flower-home-intro{
@@ -227,47 +223,51 @@
     .ttlflower-top-visual + .tt1flower-home-intro{
         margin-top: 3vw;
     }
-
-
  
-    // Gallery 6 columns 画像間の隙間を削除
-    .wp-block-gallery{
-        .blocks-gallery-item{
-            margin: 0;
-        }
-        &.columns-6 .blocks-gallery-item{
+    // トップページのみGallery 画像間の隙間を削除
+    &.home .wp-block-gallery.has-nested-images{ 
+        .wp-block-image:not(#individual-image){
             margin-right: 0;
         }
-    } 
-
-
-
+    }
 }
 
-//Homeのみ 1920以上
+// 1920以上
 @media only screen and (min-width: 1919px) {
-    .#{skin.$skin-name}.home {
-        //ファーストビュービジュアル
+    .#{skin.$skin-name} {
+
+        //ファーストビューのタイトルビジュアル
         .ttlflower-top-visual{
-            .wp-block-gallery.columns-3.is-cropped{
+
+            // キービジュアル３枚画像が入ったカラム
+            .wp-block-gallery.has-nested-images.columns-default.is-cropped{
                 max-width: 1280px !important;
                 margin-right: 210px !important;
-                .blocks-gallery-item:first-child img{
-                    max-width:603px;
-                    max-height:603px;
-                    top: 50px;
-                }
-                .blocks-gallery-item:nth-child(2) img{
-                    max-width:822px;
-                    max-height:822px;
-                }
-                .blocks-gallery-item:last-child img{
-                    max-width:420px;
-                    max-height:420px;
-                    top: 581px;
-                    left: calc(50% - 210px);
-                }
+
+                // ３枚のキービジュアル画像
+                .wp-block-image{
+                    &:not(#individual-image){
     
+                        // 1枚目キービジュアル画像
+                        &:first-child{
+                        width: 603px;
+                        height: 603px;
+                        }
+                        // 2枚目キービジュアル画像
+                        &:nth-child(2){
+                            width: 822px;
+                            height: 822px;
+                        }
+                        // 3枚目キービジュアル画像
+                        &:last-child{
+                            width: 420px;
+                            height: 420px;
+                            top: 581px;
+                            left: calc(50% - 210px);
+                        }
+    
+                    }
+                }
             }
             .wp-block-columns{
                 .wp-block-column{

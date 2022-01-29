@@ -2,9 +2,11 @@
 @use "./../skin_config" as skin;
 
 .#{skin.$skin-name} {
-	--logo-width: 280px;
-	--logo-height: 112px;
-	--logo-width--square: 394px;
+	--logo-width: 384px;
+	--logo-height: 96px;
+	--footer-logo-width: 418px;
+	--footer-logo-height: 130px;
+
 	.site-branding {
 		width: min(50vw, var(--logo-width));
 		height: min(18vw, var(--logo-height));
@@ -19,6 +21,7 @@
 		content: "";
 		display: flex;
 		background-size: cover;
+	
 	}
 	.site-footer > .site-info .site-name,
 	.site-description,
@@ -31,26 +34,29 @@
 		visibility: visible;
 		opacity: 0;
 		display: flex;
-		width: min(50vw, var(--logo-width));
-		height: min(18vw, var(--logo-height));
+		width: min(58vw, var(--logo-width));
+		height: min(21vw, var(--logo-height));
+	}
+	.site-branding {
+		&::before {
+			width: min(58vw, var(--logo-width));
+			height: min(21vw, var(--logo-height));
+			background-image: svg-load("../../../../build/images/icons/logo--main.svg");
+		}
 	}
 
 	// Footer logo
 	.site-footer > .site-info {
-		margin-bottom: -170px;
-
 		.site-name {
-		.site-logo{
-			img{
-				background: #fff;
-				border: 15px solid #fff;
-				border-radius: 50px;
-				height: 100px;
-		    	width: auto;
-				margin-bottom: 20px;
+			&::after {
+				margin-left: auto;
+				margin-right: auto;
+				width: min(58vw, var(--footer-logo-width));
+				height: min(21vw, var(--footer-logo-height));
+				background-image: svg-load("../../../../build/images/icons/logo--stroked.svg");
 			}
 		}
-	}
+
 	}
 }
 
