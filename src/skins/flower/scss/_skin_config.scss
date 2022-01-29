@@ -8,4 +8,10 @@ $skin-colors: ("primary" : #BF0A36,
 "white" : #FFFFFF,
 );
 $skin-gradients: ();
-$skin-font-sizes: ();
+$skin-font-sizes: ("x-small" : clamp(0.65rem, 0.9vw, 0.9rem),
+"small" : clamp(0.9rem, 1vw, 1.05rem),
+"large" : clamp(1.25rem, 2vw, 1.5rem),
+"extra-large" : clamp(2rem, 3vw, 3.2rem),
+"huge" : clamp(2.8rem, 4.5vw, 5.8rem),
+"gigantic" : clamp(3.5rem, 6.5vw, 7.8rem),
+);
