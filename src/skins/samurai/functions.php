@@ -21,3 +21,5 @@ add_action(
 		}
 	}
 );
+
+add_filter( 'privacy_policy_url', '__return_empty_string' );
