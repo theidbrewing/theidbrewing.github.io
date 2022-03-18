@@ -23,19 +23,29 @@
                 padding: 0;
             }
         }
-        .dropdown-icon {
-            visibility: hidden;
-            position: relative;
-            width: var(--icon-size, 44px);
-            height: var(--icon-size, 44px);
-            overflow: hidden;
-            &.open::before {
-                visibility: visible;
-                position: absolute;
-                content: "";
-                display: flex;
+        #primary-mobile-menu {
+            .dropdown-icon {
+                visibility: hidden;
+                position: relative;
+                font-size: 0;
                 width: var(--icon-size, 44px);
                 height: var(--icon-size, 44px);
+                overflow: hidden;
+                &.open::before {
+                    visibility: visible;
+                    position: absolute;
+                    content: "";
+                    display: flex;
+                    width: var(--icon-size, 44px);
+                    height: var(--icon-size, 44px);
+                }
+                &.close {
+                    svg.svg-icon {
+                        visibility: visible;
+                        flex: 1 0 auto;
+                        margin-left: 0;
+                    }
+                }
             }
         }
     }

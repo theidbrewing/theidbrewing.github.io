@@ -6,9 +6,9 @@
 	--logo-height: 112px;
 	--logo-width--square: 394px;
 	.site-branding {
-		width: min(50vw, var(--logo-width));
-		height: min(18vw, var(--logo-height));
-		margin-left: -1.5rem;
+		width: clamp(calc(var(--logo-width) / 2), 50vw, var(--logo-width));
+		height: clamp(calc(var(--logo-height) / 2), 18vw, var(--logo-height));
+		margin-left: -3vw;
 	}
 	.site-branding::before {
 		position: absolute;
