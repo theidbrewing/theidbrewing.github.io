@@ -4,14 +4,15 @@
 .block-editor-block-list__layout,
 .#{skin.$skin-name} {
     .wp-block-buttons {
+        gap: 1em;
         // コアのスタイルを打ち消し
         > .wp-block-button {
             margin-bottom: 0;
         }
         // 縦バリエーションの時にgapを指定する
-        &.is-vertical {
-            gap: calc(0.666 * var(--global--spacing-vertical));
-        }
+        // &.is-vertical {
+        //     gap: calc(0.666 * var(--global--spacing-vertical));
+        // }
     }
     .wp-block-button {
         // ボタンのスタイルを明示的に選択しない場合はoutlineと同じとする
@@ -57,13 +58,26 @@
         }
     }
 }
-@media only screen and (min-width: 482px) {
-    .block-editor-block-list__layout,
-    .#{skin.$skin-name} {
-        .wp-block-buttons {
-            // 縦バリエーションの時にgapを指定する
-            &.is-vertical {
-                gap: var(--global--spacing-vertical);
+// @media only screen and (min-width: 482px) {
+//     .block-editor-block-list__layout,
+//     .#{skin.$skin-name} {
+//         .wp-block-buttons {
+//             // 縦バリエーションの時にgapを指定する
+//             &.is-vertical {
+//                 gap: var(--global--spacing-vertical);
+//             }
+//         }
+//     }
+// }
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (not (translate: none)) {
+        // Safari 14.0.x だけに適用される CSS
+        .block-editor-block-list__layout,
+        .#{skin.$skin-name} {
+            .wp-block-buttons {
+                > .wp-block-button {
+                    margin: 0.5em;
+                }
             }
         }
     }

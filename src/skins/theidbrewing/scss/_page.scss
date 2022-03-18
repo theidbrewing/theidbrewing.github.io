@@ -31,22 +31,22 @@
             background-color: var(--global--color-background);
         }
     }
-    // Loading animation
+    // Loading animation home
     &.home {
-        .entry-content > .wp-block-cover {
+        .entry-content > .wp-block-cover.alignfull {
             img {
                 opacity: 0;
             }
         }
         &.is-loading {
-            .entry-content > .wp-block-cover {
+            .entry-content > .wp-block-cover.alignfull {
                 img {
                     opacity: 0;
                 }
             }
         }
         &.is-loaded {
-            .entry-content > .wp-block-cover {
+            .entry-content > .wp-block-cover.alignfull {
                 img {
                     animation-fill-mode: forwards;
                     animation: heroImage 2s cubic-bezier(0.55, 0, 1, 0.45);
@@ -81,6 +81,7 @@
             }
         }
     }
+    // Loading animation special page
     &.page-child {
         .wp-block-cover.is-style-special {
             .wp-block-cover__inner-container .wp-block-image img,
@@ -119,7 +120,6 @@
             }
         }
     }
-
 }
 
 @media only screen and (min-width: 1500px) {
