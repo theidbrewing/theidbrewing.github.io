@@ -11,6 +11,8 @@
     "exsc:postcss": "npx postcss ./src/skins/$npm_config_skin/scss/style.css --replace --no-map & npx postcss ./src/skins/$npm_config_skin/scss/editor-style.css --replace --no-map",
     "exsc:mv": "move-cli ./src/skins/$npm_config_skin/scss/style.css ./build/skins/$npm_config_skin/style.css --mkdirp & move-cli ./src/skins/$npm_config_skin/scss/editor-style.css ./build/skins/$npm_config_skin/editor-style.css --mkdirp",
     "build:css": "run-s exsc:{sass,postcss,mv}",
+    "build:js": "npx webpack --mode development",
+    "release:js": "npx webpack --mode production",
     "build:all": "chmod +x bin/*.sh && sh bin/build-skins.sh",
     "imageminsvgo": "node src/images/imagemin-svgo.js",
     "check-licenses": "wp-scripts check-licenses",

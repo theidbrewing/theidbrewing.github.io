@@ -61,6 +61,16 @@ class Core {
 					array(),
 					filectime( THEIDBREWING_PATH . '/build/skins/' . $skin_data['name'] . '/style.css' )
 				);
+				// Enqueue JS.
+				// もしJSが指定されていたら読み込む.
+				if( isset( $skin_data['js'] ) ) {
+					wp_enqueue_script(
+						$skin_data['name'],
+						THEIDBREWING_URL . '/build/skins/' . $skin_data['name'] . '/main.min.js',
+						array(),
+						filectime( THEIDBREWING_PATH . '/build/skins/' . $skin_data['name'] . '/main.min.js' )
+					);
+				}
 			}
 			// Enqueue Google fonts.
 			if ( isset( $skin_data['settings']['google_fonts_url'] ) ) {
