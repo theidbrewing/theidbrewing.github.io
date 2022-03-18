@@ -87,20 +87,26 @@
     margin: 70px auto;
 }
 
-
 .block-editor-block-list__layout{
-
 
     //flower home visual
     .ttlflower-top-visual{
 
-        .wp-block-gallery.columns-3.is-cropped{
-            .blocks-gallery-item img{
-                height: 190px;
-                width: 190px;
-                border-radius: 50%;
-            }
+        //３枚のキービジュアル画像を丸く表示
+        .wp-block-gallery.has-nested-images.is-cropped{
+            figure.wp-block-image:not(#individual-image) {
+                width: calc(15vw - 16px);
+                height: calc(15vw - 16px);
+                img{
+                    width: 15vw;
+                    height: 15vw;
+                    object-fit:cover;
+                    border-radius:50%;
+                    flex: none;
+                    margin: 0 auto;
+                }    
 
+            } 
         }
 
         .wp-block-columns{

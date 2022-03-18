@@ -1,6 +1,6 @@
 {
     "name": "flower",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "settings": {
         "google_fonts_url": "https://fonts.googleapis.com/css2?family=Clicker+Script&family=Lato:wght@300;400;700&family=PT+Sans+Narrow:wght@400;700&family=M+PLUS+1p:wght@400;500;700&family=Open+Sans:wght@600&family=Space+Mono:wght@400;700&display=swap",
         "color": {
@@ -31,7 +31,39 @@
                     "color": "#FFFFFF"
                 }
             ]
-        }
+        },
+        "fontSizes": [
+            {
+                "slug": "x-small",
+                "size": "clamp(0.65rem, 0.9vw, 0.9rem)",
+                "name": "極小"
+            },
+            {
+                "slug": "small",
+                "size": "clamp(0.9rem, 1vw, 1.05rem)",
+                "name": "小"
+            },
+            {
+                "slug": "large",
+                "size": "clamp(1.25rem, 2vw, 1.5rem)",
+                "name": "大"
+            },
+            {
+                "slug": "extra-large",
+                "size": "clamp(2rem, 3vw, 3.2rem)",
+                "name": "特大"
+            },
+            {
+                "slug": "huge",
+                "size": "clamp(2.8rem, 4.5vw, 5.8rem)",
+                "name": "超特大"
+            },
+            {
+                "slug": "gigantic",
+                "size": "clamp(3.5rem, 6.5vw, 7.8rem)",
+                "name": "巨大"
+            }
+        ]
     },
     "block_pattern" : [
         "top-key-visual",

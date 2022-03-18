@@ -162,7 +162,7 @@ class Core {
 	public static function load_functions() {
 		$skin_data = Skin_Data::get_instance()->get_skin_data();
 		if ( isset( $skin_data['name'] ) ) {
-			if ( is_file( THEIDBREWING_PATH . '/src/skins/' . $skin_data['name'] . '/functions.php' ) ) {
+			if ( file_exists( THEIDBREWING_PATH . '/src/skins/' . $skin_data['name'] . '/functions.php' ) ) {
 				require_once THEIDBREWING_PATH . '/src/skins/' . $skin_data['name'] . '/functions.php';
 			}
 		}

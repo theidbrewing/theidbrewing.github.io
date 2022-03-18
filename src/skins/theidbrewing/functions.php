@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions for flower skin
+ * Functions for samurai skin
  *
  * The file that defines the core plugin class
  *
