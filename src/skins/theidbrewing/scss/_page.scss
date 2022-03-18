@@ -33,20 +33,20 @@
     }
     // Loading animation
     &.home {
-        .wp-block-cover {
+        .entry-content > .wp-block-cover {
             img {
                 opacity: 0;
             }
         }
         &.is-loading {
-            .wp-block-cover {
+            .entry-content > .wp-block-cover {
                 img {
                     opacity: 0;
                 }
             }
         }
         &.is-loaded {
-            .wp-block-cover {
+            .entry-content > .wp-block-cover {
                 img {
                     animation-fill-mode: forwards;
                     animation: heroImage 2s cubic-bezier(0.55, 0, 1, 0.45);
@@ -82,7 +82,7 @@
         }
     }
     &.page-child {
-        .wp-block-cover {
+        .wp-block-cover.is-style-special {
             .wp-block-cover__inner-container .wp-block-image img,
             > img {
                 opacity: 0;
