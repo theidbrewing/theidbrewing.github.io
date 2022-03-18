@@ -72,6 +72,59 @@ define( 'TT1_SKIN_NAME', '{{SKIN_NAME}}' );
 
 Convert the skin settings set in `skin.json` to SCSS.
 
+#### Setup skin.json
+
+You can setup your skin styles in skin.json.
+`color.palette`, `color.gradients` can be set in the same format as [theme.json](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/#presets).
+
+`fontSizes` is also the same as `typography.fontSizes`.
+
+`google_fonts_url` is the original setting in the skin.json. Fill in the URL of the Google font you want to set.
+
+You can also setup your skin custom block pattern.
+Add your block pattern json files in `inc/skins/yourskinname/block-pattern`, and patten name list in skin.json `block_pattern`.
+
+Example:
+
+```
+{
+    "name": "yourskinname",
+    "version": "0.1.6",
+    "settings": {
+        "google_fonts_url": "https://fonts.googleapis.com/XXXXXXX",
+        "color": {
+            "palette": [
+                {
+                    "name": "Primary",
+                    "slug": "primary",
+                    "color": "#540CED"
+                }
+            ],
+            "gradients": [
+                {
+                    "slug": "shadow01",
+                    "gradient": "linear-gradient(104deg,rgb(0,0,0) 0%,rgba(255,255,255,0) 90%)",
+                    "name": "Shadow 01"
+                }
+            ]
+        },
+        "fontSizes": [
+            {
+                "slug": "x-small",
+                "size": "clamp(0.65rem, 0.9vw, 0.9rem)",
+                "name": "X Small"
+            }
+        ]
+    },
+    "block_pattern" : [
+        "card--member",
+        "card"
+    ]
+}
+```
+
+Then, init the skin.json.
+
 ```
 $ npm run init:skin
 ```
@@ -95,6 +148,7 @@ $ npm run list:skin
 
 ```
 $ npm run dist:theidbrewing
+$ npm run dist:flower
 $ npm run dist:samurai
 ```
 
