@@ -1,6 +1,12 @@
+@use "./../../../common/variables/common" as cmn;
 @use "./skin_config" as skin;
 
 .#{skin.$skin-name} {
+    &.page {
+        .site-content {
+            overflow: hidden;
+        }
+    }
     // page title
     // archive title
     &.archive .page-header .page-title,
@@ -31,22 +37,27 @@
             background-color: var(--global--color-background);
         }
     }
-    // Loading animation
+    // Loading animation home
     &.home {
-        .entry-content > .wp-block-cover {
+        .entry-content > .wp-block-cover.alignfull {
+            .has-background-gradient ~ .wp-block-cover__inner-container {
+                > h2 {
+                    text-shadow: 0px 2px 9px rgb(0 0 0 / 30%);
+                }
+            }
             img {
                 opacity: 0;
             }
         }
         &.is-loading {
-            .entry-content > .wp-block-cover {
+            .entry-content > .wp-block-cover.alignfull {
                 img {
                     opacity: 0;
                 }
             }
         }
         &.is-loaded {
-            .entry-content > .wp-block-cover {
+            .entry-content > .wp-block-cover.alignfull {
                 img {
                     animation-fill-mode: forwards;
                     animation: heroImage 2s cubic-bezier(0.55, 0, 1, 0.45);
@@ -81,6 +92,7 @@
             }
         }
     }
+    // Loading animation special page
     &.page-child {
         .wp-block-cover.is-style-special {
             .wp-block-cover__inner-container .wp-block-image img,
@@ -103,7 +115,7 @@
                     animation: heroImage 0.5s cubic-bezier(0, 0.55, 0.45, 1);
                     opacity: 1;
                 }
-                .wp-block-cover__inner-container .wp-block-image img{
+                .wp-block-cover__inner-container .wp-block-image img {
                     animation-fill-mode: forwards;
                     animation: specialBottle 1.5s cubic-bezier(0.25, 1, 0.5, 1);
                     opacity: 1;
@@ -119,7 +131,20 @@
             }
         }
     }
+}
 
+// tablet =<
+@media only screen and (max-width: #{cmn.$breakpoint_lg}) {
+    .#{skin.$skin-name} {
+        &.page-child {
+            .wp-block-cover.is-style-special {
+                .wp-block-image img {
+                    max-height: 45vh;
+                    width: auto;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1500px) {
@@ -241,7 +266,8 @@
     0% {
         transform: translateY(10%);
     }
-    0%, 70% {
+    0%,
+    70% {
         opacity: 0;
     }
     100% {
@@ -251,7 +277,8 @@
 }
 
 @keyframes specialBubbles {
-    0%,5% {
+    0%,
+    5% {
         opacity: 0;
         transform: translate(-50%, 100%);
     }
@@ -264,10 +291,12 @@
 }
 
 @keyframes specialBottle {
-    0%,70% {
+    0%,
+    70% {
         transform: translateY(-20%);
     }
-    0%, 70% {
+    0%,
+    70% {
         opacity: 0;
     }
     75% {

@@ -1,3 +1,4 @@
+@use "./../../../../common/variables/common" as cmn;
 @use "./../skin_config" as skin;
 @use "./../colors" as color;
 
@@ -19,10 +20,35 @@
             }
         }
         .dropdown-icon {
+            color: var(--global--color-primary);
             &.open::before {
                 background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{color.$color-primary-500});
+            }
+            &.close svg.svg-icon {
+                width:46px;
+                height: 46px;
             }
         }
     }
 }
 
+// mobile =<
+@media only screen and (max-width: #{cmn.$breakpoint_sm}) {
+    .#{skin.$skin-name} {
+        .primary-navigation {
+            .primary-menu-container {
+                .menu-wrapper {
+                    > .menu-item {
+                        border-bottom: 2px solid var(--global--color-primary);
+                        .sub-menu {
+                            border: 0;
+                            > .menu-item {
+                                border-top: 1px dashed var(--global--color-primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

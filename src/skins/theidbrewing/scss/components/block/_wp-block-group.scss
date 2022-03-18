@@ -5,6 +5,10 @@
 .#{skin.$skin-name} .wp-block-group {
     &.is-style-section-mission {
         position: relative;
+        h2 {
+            font-size: clamp(1.55rem, 2.8vw, 3.2rem);
+            letter-spacing: -0.08em;
+        }
         h2 + .wp-block-buttons {
             margin-top: 2em;
         }

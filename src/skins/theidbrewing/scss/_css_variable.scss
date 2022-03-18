@@ -1,3 +1,4 @@
+@use "./../../../common/variables/common" as cmn;
 @use "./colors" as color;
 @use "./skin_config" as skin;
 
@@ -21,4 +22,15 @@ body.block-editor-writing-flow,
     // body color を上書き
     color: var(--global--color-body);
     background-color: var(--global--color-background);
+
+    // spacing
+    --global--spacing-horizontal: 1rem;
+}
+
+// tablet =<
+@media only screen and (min-width: #{cmn.$breakpoint_md}) and ( max-width: #{cmn.$breakpoint_xxl}){
+	.#{skin.$skin-name} {
+		--global--spacing-horizontal: 1rem;
+        --responsive--alignwide-width: calc(100vw - 4 * var(--global--spacing-horizontal));
+	}
 }
