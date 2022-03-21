@@ -6,6 +6,7 @@
 .#{skin.$skin-name} {
     --gap: clamp(calc(var(--global--spacing-vertical) / 2), 3vw, var(--global--spacing-vertical));
     .wp-block-columns {
+        // gap
         gap: var(--gap);
         // coreスタイルの打ち消し
         .wp-block-column:not(:last-child) {
@@ -25,7 +26,6 @@
 }
 
 // gap 未対応のSafari 14.0.x系のためのスタイル
-/* autoprefixer: off */
 @media not all and (min-resolution: 0.001dpcm) {
     @supports (not (translate: none)) {
         // Safari 14.0.x だけに適用される CSS
@@ -37,6 +37,7 @@
         }
     }
 }
+/* autoprefixer: off */
 @include cmnbp.break-small() {
     @media not all and (min-resolution: 0.001dpcm) {
         @supports (not (translate: none)) {
@@ -58,6 +59,10 @@
                         }
                     }
                 }
+                .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child),
+                .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:nth-child(even) {
+                    margin-left: var(--gap);
+                }
             }
         }
     }
@@ -67,8 +72,10 @@
         @supports (not (translate: none)) {
             // Safari 14.0.x だけに適用される CSS
             .#{skin.$skin-name} {
-                .wp-block-columns {
-                    .wp-block-column:nth-child(3n) {
+                .wp-block-columns,
+                .wp-block-columns:not(.is-not-stacked-on-mobile) {
+                    .wp-block-column:nth-child(3n),
+                    > .wp-block-column:nth-child(3n) {
                         margin-top: 0;
                         margin-left: var(--gap);
                     }
@@ -77,4 +84,4 @@
         }
     }
 }
-/* autoprefixer: on */
+ /* autoprefixer: on */
