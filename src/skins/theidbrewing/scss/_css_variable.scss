@@ -1,4 +1,6 @@
 @use "./../../../common/variables/common" as cmn;
+@use "./../../../common/mixin_breakpoints" as cmnbp;
+
 @use "./colors" as color;
 @use "./skin_config" as skin;
 
@@ -28,10 +30,15 @@ body.block-editor-writing-flow,
     --global--spacing-vertical: 2rem;
 }
 
-// tablet only (theme を上書き)
-@media only screen and (min-width: #{cmn.$breakpoint_md}) and ( max-width: #{cmn.$breakpoint_xxl}){
-	.#{skin.$skin-name} {
-		--global--spacing-horizontal: var(--global--spacing-horizontal);
-        --responsive--alignwide-width: calc(100vw - 4 * var(--global--spacing-horizontal));
-	}
+// theme を上書き
+@include cmnbp.theme-break(mobile){
+    .#{skin.$skin-name} {
+        --responsive--alignwide-width: min( calc(100vw - 2 * var(--global--spacing-horizontal)), #{cmn.$max_content_width});
+        --responsive--aligndefault-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), #{cmn.$default_width});
+    }
+}
+@include cmnbp.theme-break(desktop){
+    .#{skin.$skin-name} {
+        --responsive--alignwide-width: min( calc(100vw - 4 * var(--global--spacing-horizontal)), #{cmn.$max_content_width});
+    }
 }

@@ -1,9 +1,11 @@
+@use "./variables/common" as cmn;
 @use "../../node_modules/@wordpress/base-styles/breakpoints" as bp;
 
 /**
  * Breakpoint mixins
  */
 
+// core breakpoints
 @mixin break-huge() {
 	@media (min-width: #{ (bp.$break-huge) }) {
 		@content;
@@ -49,5 +51,39 @@
 @mixin break-zoomed-in() {
 	@media (min-width: #{ (bp.$break-zoomed-in) }) {
 		@content;
+	}
+}
+
+// theme(TwentyTwentyOne) breakpints
+@mixin theme-break( $res ) {
+
+	@if mobile == $res {
+		@media only screen and (min-width: #{cmn.$breakpoint_sm}) {
+			@content;
+		}
+	}
+
+	@if tablet == $res {
+		@media only screen and (min-width: #{cmn.$breakpoint_md}) {
+			@content;
+		}
+	}
+
+	@if laptop == $res {
+		@media only screen and (min-width: #{cmn.$breakpoint_lg}) {
+			@content;
+		}
+	}
+
+	@if desktop == $res {
+		@media only screen and (min-width: #{cmn.$breakpoint_xl}) {
+			@content;
+		}
+	}
+
+	@if wide == $res {
+		@media only screen and (min-width: #{cmn.$breakpoint_xxl}) {
+			@content;
+		}
 	}
 }
