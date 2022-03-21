@@ -6,6 +6,7 @@
 .#{skin.$skin-name} {
     --gap: clamp(calc(var(--global--spacing-vertical) / 2), 3vw, var(--global--spacing-vertical));
     .wp-block-columns {
+        // gap
         gap: var(--gap);
         // coreスタイルの打ち消し
         .wp-block-column:not(:last-child) {
@@ -24,51 +25,69 @@
     }
 }
 
+// gap 未対応のSafari 14.0.x系のためのスタイル ↓
 @media not all and (min-resolution: 0.001dpcm) {
     @supports (not (translate: none)) {
         // Safari 14.0.x だけに適用される CSS
-        .wp-block-column + .wp-block-column {
-            margin-top: var(--gap);
-        }
-        .wp-block-column.is-style-card--member {
-            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
-        }
-    }
-}
-
-@include cmnbp.safari-break-small() {
-    @supports (not (translate: none)) {
-        // Safari 14.0.x だけに適用される CSS
         .#{skin.$skin-name} {
-            .wp-block-columns {
-                .wp-block-column + .wp-block-column {
-                    margin-top: 0;
-                    margin-left: var(--gap);
-                    &.is-style-card--member {
-                        margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
-                    }
-                }
-                .wp-block-column:nth-child(3n) {
-                    margin-top: var(--gap);
-                    margin-left: 0;
-                    &.is-style-card--member {
-                        margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
-                    }
-                }
+            .wp-block-column + .wp-block-column {
+                margin-top: var(--gap);
+            }
+            .wp-block-column.is-style-card--member {
+                margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
             }
         }
     }
 }
-@include cmnbp.safari-break-medium() {
-    @supports (not (translate: none)) {
-        // Safari 14.0.x だけに適用される CSS
-        .#{skin.$skin-name} {
-            .wp-block-columns {
-                .wp-block-column:nth-child(3n) {
-                    margin-top: 0;
+/* autoprefixer: off */
+@include cmnbp.break-small() {
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (not (translate: none)) {
+            // Safari 14.0.x だけに適用される CSS
+            .#{skin.$skin-name} {
+                .wp-block-columns {
+                    .wp-block-column + .wp-block-column {
+                        margin-top: 0;
+                        margin-left: var(--gap);
+                        &.is-style-card--member {
+                            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                        }
+                    }
+                    .wp-block-column:nth-child(3n) {
+                        margin-top: var(--gap);
+                        margin-left: 0;
+                        &.is-style-card--member {
+                            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                        }
+                    }
+                }
+                .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child),
+                .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:nth-child(even) {
                     margin-left: var(--gap);
                 }
             }
         }
     }
 }
+@include cmnbp.break-medium() {
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (not (translate: none)) {
+            // Safari 14.0.x だけに適用される CSS
+            .#{skin.$skin-name} {
+                .wp-block-columns,
+                .wp-block-columns:not(.is-not-stacked-on-mobile) {
+                    .wp-block-column:nth-child(3n),
+                    > .wp-block-column:nth-child(3n) {
+                        margin-top: 0;
+                        margin-left: var(--gap);
+                        &.is-style-card--member {
+                            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* autoprefixer: on */
+// gap 未対応のSafari 14.0.x系のためのスタイル ↑ここまで
