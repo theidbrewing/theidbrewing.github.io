@@ -4,7 +4,7 @@
  * Breakpoint mixins
  */
 
- @mixin break-huge() {
+@mixin break-huge() {
 	@media (min-width: #{ (bp.$break-huge) }) {
 		@content;
 	}
@@ -48,6 +48,25 @@
 
 @mixin break-zoomed-in() {
 	@media (min-width: #{ (bp.$break-zoomed-in) }) {
+		@content;
+	}
+}
+
+// Safari hack 用 mediaquery
+@mixin safari-break-medium() {
+	@media (min-width: #{ (bp.$break-medium) }) and ( not (min-resolution: 0.001dpcm)) {
+		@content;
+	}
+}
+
+@mixin safari-break-small() {
+	@media (min-width: #{ (bp.$break-small) }) and ( not (min-resolution: 0.001dpcm)) {
+		@content;
+	}
+}
+
+@mixin safari-break-mobile() {
+	@media (min-width: #{ (bp.$break-mobile) }) and ( not (min-resolution: 0.001dpcm)) {
 		@content;
 	}
 }
