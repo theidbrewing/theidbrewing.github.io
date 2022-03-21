@@ -2,15 +2,59 @@
 @use "./../../skin_config" as skin;
 
 .#{skin.$skin-name} {
+    --gap: clamp(calc(var(--global--spacing-vertical) / 2), 3vw, var(--global--spacing-vertical));
     .wp-block-columns {
-        gap: clamp( 1rem, 3vw, 2rem );
+        // gap: var(--gap);
+        .wp-block-column:not(:last-child) {
+            margin-bottom: 0;
+        }
+        .wp-block-column + .wp-block-column {
+            margin-top: var(--gap);
+        }
+    }
+}
+// tablet =<
+@media only screen and (min-width: #{cmn.$breakpoint_sm}) {
+    .#{skin.$skin-name} {
+        .wp-block-columns {
+            // gap: var(--gap);
+            .wp-block-column + .wp-block-column {
+                margin-top: 0;
+                margin-left: var(--gap);
+            }
+        }
+    }
+}
+// tablet only
+@include cmn.media(tablet-only) {
+    .#{skin.$skin-name} {
+        .wp-block-columns {
+            // gap: var(--gap);
+            .wp-block-column:nth-child(3n) {
+                margin-top: var(--gap);
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (not (translate: none)) {
+        // Safari 14.0.x だけに適用される CSS
+        .#{skin.$skin-name} {
+            .wp-block-columns {
+                .wp-block-column + .wp-block-column {
+                    margin-top: var(--gap);
+                }
+            }
+        }
     }
 }
 
 // tablet =<
 @media only screen and (min-width: #{cmn.$breakpoint_sm}) {
     .#{skin.$skin-name} {
-        .wp-block-columns .wp-block-column:not(:last-child) {
+        .wp-block-columns.wp-block-column:not(:last-child) {
             margin-bottom: 0;
         }
     }
@@ -19,7 +63,7 @@
 @media (min-width: #{cmn.$breakpoint_md}) {
     .#{skin.$skin-name} {
         .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
-            margin-left: 0;
+            // margin-left: 0;
         }
     }
 }
