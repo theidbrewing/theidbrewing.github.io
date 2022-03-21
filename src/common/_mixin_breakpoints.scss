@@ -1,0 +1,53 @@
+@use "../../node_modules/@wordpress/base-styles/breakpoints" as bp;
+
+/**
+ * Breakpoint mixins
+ */
+
+ @mixin break-huge() {
+	@media (min-width: #{ (bp.$break-huge) }) {
+		@content;
+	}
+}
+
+@mixin break-wide() {
+	@media (min-width: #{ (bp.$break-wide) }) {
+		@content;
+	}
+}
+
+@mixin break-xlarge() {
+	@media (min-width: #{ (bp.$break-xlarge) }) {
+		@content;
+	}
+}
+
+@mixin break-large() {
+	@media (min-width: #{ (bp.$break-large) }) {
+		@content;
+	}
+}
+
+@mixin break-medium() {
+	@media (min-width: #{ (bp.$break-medium) }) {
+		@content;
+	}
+}
+
+@mixin break-small() {
+	@media (min-width: #{ (bp.$break-small) }) {
+		@content;
+	}
+}
+
+@mixin break-mobile() {
+	@media (min-width: #{ (bp.$break-mobile) }) {
+		@content;
+	}
+}
+
+@mixin break-zoomed-in() {
+	@media (min-width: #{ (bp.$break-zoomed-in) }) {
+		@content;
+	}
+}

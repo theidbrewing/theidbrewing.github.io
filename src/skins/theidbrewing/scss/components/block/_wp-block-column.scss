@@ -1,4 +1,6 @@
 @use "./../../../../../common/variables/common" as cmn;
+@use "./../../../../../common/mixin_breakpoints" as cmnbp;
+
 @use "./../../skin_config" as skin;
 
 .#{skin.$skin-name} {
@@ -11,28 +13,38 @@
         .wp-block-column + .wp-block-column {
             margin-top: var(--gap);
         }
+        .wp-block-column.is-style-card--member {
+            margin-top: max( calc( 10% + var(--gap)), calc( 100px + var(--gap)) );
+        }
     }
 }
-// tablet =<
-@media only screen and (min-width: #{cmn.$breakpoint_sm}) {
+
+@include cmnbp.break-small() {
     .#{skin.$skin-name} {
         .wp-block-columns {
-            // gap: var(--gap);
             .wp-block-column + .wp-block-column {
                 margin-top: 0;
                 margin-left: var(--gap);
+                &.is-style-card--member {
+                    margin-top: max( calc( 10% + var(--gap)), calc( 100px + var(--gap)) );
+                }
+            }
+            .wp-block-column:nth-child(3n) {
+                margin-top: var(--gap);
+                margin-left: 0;
+                &.is-style-card--member {
+                    margin-top: max( calc( 10% + var(--gap)), calc( 100px + var(--gap)) );
+                }
             }
         }
     }
 }
-// tablet only
-@include cmn.media(tablet-only) {
+@include cmnbp.break-medium() {
     .#{skin.$skin-name} {
         .wp-block-columns {
-            // gap: var(--gap);
             .wp-block-column:nth-child(3n) {
-                margin-top: var(--gap);
-                margin-left: 0;
+                margin-top: 0;
+                margin-left: var(--gap);
             }
         }
     }

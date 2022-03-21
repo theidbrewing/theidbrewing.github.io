@@ -1,5 +1,7 @@
 @use "sass:color";
 
+@use "./../../../../common/mixin_breakpoints" as cmnbp;
+
 @use "./../skin_config" as skin;
 @use "./../colors" as tt1color;
 @use "./../functions" as func;
@@ -70,3 +72,4 @@
         }
     }
 }
+
