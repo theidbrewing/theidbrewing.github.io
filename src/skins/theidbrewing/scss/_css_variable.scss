@@ -28,10 +28,10 @@ body.block-editor-writing-flow,
     --global--spacing-vertical: 2rem;
 }
 
-// tablet =<
+// tablet only (theme を上書き)
 @media only screen and (min-width: #{cmn.$breakpoint_md}) and ( max-width: #{cmn.$breakpoint_xxl}){
 	.#{skin.$skin-name} {
-		--global--spacing-horizontal: 1rem;
+		--global--spacing-horizontal: var(--global--spacing-horizontal);
         --responsive--alignwide-width: calc(100vw - 4 * var(--global--spacing-horizontal));
 	}
 }

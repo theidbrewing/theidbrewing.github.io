@@ -25,15 +25,17 @@
     }
 }
 
-// gap 未対応のSafari 14.0.x系のためのスタイル
+// gap 未対応のSafari 14.0.x系のためのスタイル ↓
 @media not all and (min-resolution: 0.001dpcm) {
     @supports (not (translate: none)) {
         // Safari 14.0.x だけに適用される CSS
-        .wp-block-column + .wp-block-column {
-            margin-top: var(--gap);
-        }
-        .wp-block-column.is-style-card--member {
-            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+        .#{skin.$skin-name} {
+            .wp-block-column + .wp-block-column {
+                margin-top: var(--gap);
+            }
+            .wp-block-column.is-style-card--member {
+                margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+            }
         }
     }
 }
@@ -78,10 +80,14 @@
                     > .wp-block-column:nth-child(3n) {
                         margin-top: 0;
                         margin-left: var(--gap);
+                        &.is-style-card--member {
+                            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                        }
                     }
                 }
             }
         }
     }
 }
- /* autoprefixer: on */
+/* autoprefixer: on */
+// gap 未対応のSafari 14.0.x系のためのスタイル ↑ここまで
