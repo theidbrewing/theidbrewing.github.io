@@ -24,6 +24,8 @@
     }
 }
 
+// gap 未対応のSafari 14.0.x系のためのスタイル
+/* autoprefixer: off */
 @media not all and (min-resolution: 0.001dpcm) {
     @supports (not (translate: none)) {
         // Safari 14.0.x だけに適用される CSS
@@ -35,40 +37,44 @@
         }
     }
 }
-
-@include cmnbp.safari-break-small() {
-    @supports (not (translate: none)) {
-        // Safari 14.0.x だけに適用される CSS
-        .#{skin.$skin-name} {
-            .wp-block-columns {
-                .wp-block-column + .wp-block-column {
-                    margin-top: 0;
-                    margin-left: var(--gap);
-                    &.is-style-card--member {
-                        margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+@include cmnbp.break-small() {
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (not (translate: none)) {
+            // Safari 14.0.x だけに適用される CSS
+            .#{skin.$skin-name} {
+                .wp-block-columns {
+                    .wp-block-column + .wp-block-column {
+                        margin-top: 0;
+                        margin-left: var(--gap);
+                        &.is-style-card--member {
+                            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                        }
                     }
-                }
-                .wp-block-column:nth-child(3n) {
-                    margin-top: var(--gap);
-                    margin-left: 0;
-                    &.is-style-card--member {
-                        margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                    .wp-block-column:nth-child(3n) {
+                        margin-top: var(--gap);
+                        margin-left: 0;
+                        &.is-style-card--member {
+                            margin-top: max(calc(10% + var(--gap)), calc(100px + var(--gap)));
+                        }
                     }
                 }
             }
         }
     }
 }
-@include cmnbp.safari-break-medium() {
-    @supports (not (translate: none)) {
-        // Safari 14.0.x だけに適用される CSS
-        .#{skin.$skin-name} {
-            .wp-block-columns {
-                .wp-block-column:nth-child(3n) {
-                    margin-top: 0;
-                    margin-left: var(--gap);
+@include cmnbp.break-medium() {
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (not (translate: none)) {
+            // Safari 14.0.x だけに適用される CSS
+            .#{skin.$skin-name} {
+                .wp-block-columns {
+                    .wp-block-column:nth-child(3n) {
+                        margin-top: 0;
+                        margin-left: var(--gap);
+                    }
                 }
             }
         }
     }
 }
+/* autoprefixer: on */
