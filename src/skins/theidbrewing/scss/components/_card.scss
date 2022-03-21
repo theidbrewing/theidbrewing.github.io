@@ -1,5 +1,7 @@
 @use "sass:color";
 
+@use "./../../../../common/mixin_breakpoints" as cmnbp;
+
 @use "./../skin_config" as skin;
 @use "./../colors" as tt1color;
 @use "./../functions" as func;
@@ -59,3 +61,15 @@
         }
     }
 }
+
+// editor 側のみ調整
+.block-editor-block-list__layout {
+    .wp-block-column.is-style-card--member {
+        .wp-block-image.is-style-rounded {
+            // 画像をセンターに持ってくる
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
