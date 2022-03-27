@@ -3,10 +3,6 @@
 
 // 背景画像のカスタムはフロントだけに限定
 .#{skin.$skin-name} .wp-block-cover {
-    // テーマのスタイルを打ち消し
-    // .wp-block-cover__inner-container > *:last-child {
-    //     margin-bottom: 1em;
-    // }
     &.is-style-special {
         overflow: hidden;
         h1,
