@@ -13,6 +13,10 @@
         }
         .widget.widget_block {
             .wp-block-group.tt1skin-widget-columns {
+                // テーマのスタイルを打ち消し
+                .wp-block-group__inner-container > :last-child {
+                    margin-bottom: var(--global--spacing-vertical);
+                }
                 .wp-block-cover {
                     align-items: stretch;
                     .wp-block-cover__inner-container {
@@ -28,8 +32,6 @@
 @media only screen and (min-width: #{cmn.$breakpoint_xxl}) {
     .#{cmn.$prefix-skin--common} {
         .widget-area {
-            // margin-top: calc(3 * var(--global--spacing-vertical));
-            // display: block;
             *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce) {
                 max-width: none;
                 margin-left: 0;
@@ -43,7 +45,7 @@
                     > .wp-block-group__inner-container {
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
-                        gap: var(--base--margin);
+                        gap: var(--gap);
                         > .wp-block-group {
                             margin-top: 0;
                             margin-bottom: 0;
@@ -55,9 +57,6 @@
                                 margin-left: 0;
                                 margin-right: 0;
                                 width: 100%;
-                                .tt1skin-widget-contents {
-                                    padding-bottom: var(--global--spacing-vertical);
-                                }
                             }
                         }
                     }
