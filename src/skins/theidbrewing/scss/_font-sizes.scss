@@ -6,6 +6,7 @@
     @each $key, $font-size in skin.$skin-font-sizes {
         .has-#{$key}-font-size {
             font-size: #{$font-size} !important;
+            font-feature-settings: "palt";
         }
     }
 }
