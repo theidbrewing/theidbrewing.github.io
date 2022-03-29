@@ -1,8 +1,9 @@
 @use "./../../../../common/variables/common" as cmn;
+@use "./../../../../common/mixin_breakpoints" as cmnbp;
+
 @use "./../skin_config" as skin;
 @use "./../colors" as color;
 
-.block-editor-block-list__layout,
 .#{skin.$skin-name} {
     .navigation {
         color: var(--global--color-body);
@@ -19,31 +20,67 @@
                 }
             }
         }
+        .primary-menu-container {
+            .menu-wrapper {
+                > .menu-item {
+                    border-bottom: 2px solid var(--global--color-primary);
+                }
+            }
+            .sub-menu {
+                border-width: 0;
+                > .menu-item {
+                    border-top: 1px dashed var(--global--color-primary);
+                }
+            }
+        }
         .dropdown-icon {
             color: var(--global--color-primary);
             &.open::before {
-                background-image: svg-load("../../../../build/images/icons/hamburger-menu.svg", fill=#{color.$color-primary-500});
+                background-image: svg-load(
+                    "../../../../build/images/icons/hamburger-menu.svg",
+                    fill=#{color.$color-primary-500}
+                );
             }
             &.close svg.svg-icon {
-                width:46px;
+                width: 46px;
                 height: 46px;
             }
         }
     }
 }
 
-// mobile =<
-@media only screen and (max-width: #{cmn.$breakpoint_sm}) {
+// =< tablet
+@include cmnbp.theme-break(tablet) {
     .#{skin.$skin-name} {
         .primary-navigation {
+            .menu-item {
+                > a {
+                    border: 2px solid var(--color-base);
+                    transition: background-color 0.3s ease-in-out 100ms,
+                    color 0.4s ease;
+                    &:hover {
+                        background-color: var(--color-primary);
+                        border-color: var(--color-primary);
+                        color: var(--color-base);
+                        text-decoration: none;
+                    }
+                }
+            }
             .primary-menu-container {
                 .menu-wrapper {
                     > .menu-item {
-                        border-bottom: 2px solid var(--global--color-primary);
-                        .sub-menu {
-                            border: 0;
-                            > .menu-item {
-                                border-top: 1px dashed var(--global--color-primary);
+                        border-bottom: 0;
+                    }
+                    .sub-menu {
+                        padding-top: 0;
+                        border-width: 1px;
+                        > .menu-item {
+                            border-top: 0;
+                            & + .menu-item {
+                                border-top: 1px dashed var(--color-body);
+                            }
+                            > a {
+                                border: 0;
                             }
                         }
                     }
