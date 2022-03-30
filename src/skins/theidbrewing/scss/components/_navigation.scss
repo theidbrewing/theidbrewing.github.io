@@ -50,7 +50,7 @@
 }
 
 // =< tablet
-@include cmnbp.theme-break(tablet) {
+@include cmnbp.theme-break(mobile) {
     .#{skin.$skin-name} {
         .primary-navigation {
             .menu-item {
