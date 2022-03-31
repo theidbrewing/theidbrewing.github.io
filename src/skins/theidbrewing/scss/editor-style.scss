@@ -23,6 +23,7 @@
 @forward "./components/block/wp-block-button";
 @forward "./components/block/wp-block-group";
 @forward "./components/block/wp-block-latest-posts";
+@forward "./components/block/wp-block-cover";
 
 @forward "./components/card";
 @forward "./components/navigation";
@@ -33,6 +34,7 @@
 @forward "./page";
 
 // ----------- Editor only
+
 // TT1側のバグだと思われる ソーシャルアイコンの色を指定している場合に色を上書きしないように修正
 .wp-block-social-links.has-icon-color.is-style-twentytwentyone-social-icons-color {
     button {
@@ -67,5 +69,14 @@
                 width: calc((100% / 3) - 5rem);
             }
         }
+    }
+}
+
+// カバーブロックのカスタムスタイルで最大値を超えた表示の時にセンタリングするように調整
+.block-editor-block-list__layout .wp-block-cover {
+    &.is-style-hero,
+    &.is-style-special {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
