@@ -45,6 +45,13 @@ class Block_Style {
 				'label' => __( 'special', 'tt1skin' ),
 			)
 		);
+		register_block_style(
+			'core/cover',
+			array(
+				'name'  => 'hero',
+				'label' => __( 'hero', 'tt1skin' ),
+			)
+		);
 	}
 }
 
